@@ -2,7 +2,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, Button, Pressable } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-web';
-import Countdown  from './Countdown';
+import Countdown from './Countdown';
 
 {/* This exports the variables (image, name, time) and the function: 'goToDetails' */ }
 export const PetCard = ({ image, name, time, goToDetails }) => {
@@ -14,9 +14,6 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
                 {name}
             </Text>
             <Text style={styles.timeText}>Countdown:<Countdown intialValue={time} /> </Text>
-            {/* <Text style={styles.timeText}>
-                {time}
-            </Text> */}
             <Pressable style={styles.button} onPress={goToDetails}>
                 <Text style={styles.detailButton}> Details </Text>
             </Pressable>
@@ -24,7 +21,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
     )
 }
 
-{/* Stylizes PetCard info */}
+{/* Stylizes PetCard info */ }
 const styles = StyleSheet.create({
     container: {
         flex: 1,

@@ -1,4 +1,4 @@
-{/* IMPORTS COMPONENTS */}
+{/* IMPORTS COMPONENTS */ }
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 import { PetCard } from './Components/PetCard';
@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AnimalList from './Components/AnimalList';
 import AnimalDetails from './Components/AnimalDetails';
 import ExploreOptions from './Components/ExploreOptions';
+import Support from './Components/Support';
+import Adopt from './Components/Adopt';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,10 +28,22 @@ export default function App() {
           options={{ title: 'Details' }}
         />
 
-<Stack.Screen
+        <Stack.Screen
           name="ExploreOptions"
           component={ExploreOptions}
-          options={{ title: 'ExploreOptions' }}
+          options={{ title: 'Explore Options' }}
+        />
+
+        <Stack.Screen
+          name="Support"
+          component={Support}
+          options={{ title: 'Support' }}
+        />
+
+        <Stack.Screen
+          name="Adopt"
+          component={ Adopt }
+          options={{ title: 'Adopt' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

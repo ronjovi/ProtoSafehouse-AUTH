@@ -1,6 +1,7 @@
 {/* Imports React components */ }
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable } from 'react-native';
 import { PetCard } from './PetCard';
+import Countdown  from './Countdown';
 
 {/* Tells the details of the animal through console log... provides ROUTE*/ }
 export default function AnimalDetails({ route, navigation }) {
