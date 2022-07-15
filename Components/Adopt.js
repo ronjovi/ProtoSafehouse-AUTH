@@ -9,6 +9,7 @@ const UselessTextInput = () => {
     return (
         <View style={styles.container}>
             <SafeAreaView>
+            <ScrollView>
                 <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
                 <Text style={styles.safehouseText}>Personal Details</Text>
                 <TextInput
@@ -16,21 +17,21 @@ const UselessTextInput = () => {
                     onChangeText={onChangeNumber}
                     value={numbaOne}
                     placeholder="First Name"
-                    keyboardType="numeric"
+                    keyboardType="default"
                 />
                 <TextInput
                     style={styles.input}
                     onChangeText={onChangeNumber}
                     value={numbaTwo}
                     placeholder="Last Name"
-                    keyboardType="numeric"
+                    keyboardType="default"
                 />
                 <TextInput
                     style={styles.input}
                     onChangeText={onChangeNumber}
                     value={numbaThree}
                     placeholder="Email Adress"
-                    keyboardType="numeric"
+                    keyboardType="email"
                 />
                 <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
                 <Text style={styles.dateTimeConfirmText}>Date:</Text>
@@ -38,6 +39,7 @@ const UselessTextInput = () => {
                 <Pressable style={styles.visitButton}>
                     <Text style={styles.visitText}>Confirm Visit</Text>
                 </Pressable>
+            </ScrollView>
             </SafeAreaView>
         </View>
     );
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         width: 325,
-        marginLeft: 50,
+        alignSelf: 'center',
         margin: 12,
         marginBottom: 20,
         borderWidth: 1,
@@ -79,6 +81,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: 5,
         marginTop: 55,
+        marginBottom: 100,
     },
     visitText: {
         color: 'white',
