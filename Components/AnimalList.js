@@ -1,15 +1,15 @@
-{/* Imports stuff from React and React Native... also imports PetCard info */}
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
+{/* Imports stuff from React and React Native... also imports PetCard info */ }
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Image } from 'react-native';
 import { useState } from 'react';
 import { PetCard } from './PetCard';
 
-{/* Sets constant 'animals' and a new function 'setAnimals' equal to useState */}
-{/* After the constants are set, there is hardcoded information about each of the animals*/}
+{/* Sets constant 'animals' and a new function 'setAnimals' equal to useState */ }
+{/* After the constants are set, there is hardcoded information about each of the animals*/ }
 export default function AnimalList({ navigation }) {
     const [animals, setAnimals] = useState([
         {
             name: 'Hydra',
-            time: 36000,
+            time: '2022-08-13 04:00:20',
             image: 'https://www.princeton.edu/sites/default/files/styles/half_2x/public/images/2022/02/KOA_Nassau_2697x1517.jpg',
             breed: 'Golden Retriever',
             age: '2 year and 2 months',
@@ -21,7 +21,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Fenrir',
-            time: 46800,
+            time: '2022-08-19 04:00:34',
             image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2020%2F10%2F01%2Fblack-dog-489205728-2000.jpg',
             breed: 'Flat-Coated Retriever',
             age: '5 years',
@@ -33,7 +33,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Lucifer',
-            time: 52200,
+            time: '2022-08-25 04:00:29',
             image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
             breed: 'Munchkin Cat',
             age: '1 year',
@@ -45,7 +45,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Chronos',
-            time: 63000,
+            time: '2022-08-31 04:00:18',
             image: 'https://image.petmd.com/files/2022-06/pug-dog-breed.jpg',
             breed: 'Pug',
             age: '3 years and 6 months',
@@ -57,7 +57,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Bob',
-            time: 68400,
+            time: '2022-09-06 04:00:25',
             image: 'https://www.mercurynews.com/wp-content/uploads/2022/04/EBT-L-CATSHOW-0403-11.jpg',
             breed: 'Persian Cat',
             age: '3 years 10 months',
@@ -69,7 +69,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Quetzalcoatl',
-            time: 79200,
+            time: '2022-09-13 04:00:28',
             image: 'https://i.ytimg.com/vi/UCBlg9jFaOM/maxresdefault.jpg',
             breed: 'Chihuahua',
             age: '1 year',
@@ -81,7 +81,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Chupacabra',
-            time: 84600,
+            time: '2022-09-19 04:00:38',
             image: 'https://petkeen.com/wp-content/uploads/2021/12/Xoloitzquintle-dog_Vladimirkarp-Shutterstock-760x507.webp',
             breed: 'Xoloitzcuintli',
             age: '4 years 10 months',
@@ -93,7 +93,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Leviathan',
-            time: 95400,
+            time: '2022-09-25 04:00:49',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/British_blue_2009_%28cropped%29.jpg',
             breed: 'British Shorthair Cat',
             age: '5 years 11 months',
@@ -105,7 +105,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Chimera',
-            time: 100800,
+            time: '2022-10-11 04:00:41',
             image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F12%2F02%2Fbalinese-sitting-in-a-tree-718322914-2000.jpg',
             breed: 'Siamese/Balinese Cat',
             age: '2 years 7 months',
@@ -117,7 +117,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Pablo',
-            time: 111600,
+            time: '2022-10-14 04:00:37',
             image: 'https://cf.ltkcdn.net/dogs/images/orig/245944-2121x1414-Pitbull.jpg',
             breed: 'Pit Bull',
             age: '4 years 1 month',
@@ -128,15 +128,16 @@ export default function AnimalList({ navigation }) {
             notes: 'N/A',
         },
     ])
-{/* This constant: 'goToDetails' navigates to AnimalDetails*/}
+    {/* This constant: 'goToDetails' navigates to AnimalDetails*/ }
     const goToDetails = (animal) => {
         console.log(animal)
-         navigation.navigate('AnimalDetails', animal);
+        navigation.navigate('AnimalDetails', animal);
     }
-{/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */}
+    {/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */ }
     return (
         <View style={styles.container}>
             <SafeAreaView style={styles.container}>
+                <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
                 <ScrollView>
                     {animals.map((animal) => (
                         <PetCard key={animal.name} goToDetails={() => { goToDetails(animal) }} name={animal.name} time={animal.time} image={animal.image} />
@@ -150,10 +151,13 @@ export default function AnimalList({ navigation }) {
     );
 }
 
-{/* Style of the background behind PetCards */}
+{/* Style of the background behind PetCards */ }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
+    },
+    safehouseLogo: {
+        alignSelf: 'center',
     },
 });

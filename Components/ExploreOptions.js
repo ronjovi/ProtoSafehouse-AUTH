@@ -1,3 +1,6 @@
+//THIS WENT UNUSED AS OF JULY 14!!!!!!!!!!!!
+// LOOK OVER HERE
+
 {/* Imports React components */ }
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable } from 'react-native';
 

@@ -12,6 +12,14 @@ export default function AnimalDetails({ route, navigation }) {
         navigation.navigate('ExploreOptions');
     }
 
+    const goToSupport = () => {
+        navigation.navigate('Support');
+    }
+
+    const goToAdopt = () => {
+        navigation.navigate('Adopt');
+    }
+
     {/* Gets info from ROUTE to display details of the animal you are viewing */ }
     return (
 
@@ -20,6 +28,7 @@ export default function AnimalDetails({ route, navigation }) {
             <SafeAreaView style={styles.container}>
                 <FlatList
                     data={[
+                        {value: route.params.image },
                         { key: 'Name', value: route.params.name },
                         { key: 'Time', value: route.params.time },
                         { key: 'Breed', value: route.params.breed },
@@ -33,8 +42,11 @@ export default function AnimalDetails({ route, navigation }) {
                     renderItem={({ item }) => <Text style={styles.item}>{'\u2022' + ' '}{item.key}: {item.value}</Text>}
                 />
                 {/* The onPress event to these Pressables to go to Explore Options */}
-                <Pressable onPress={goToOptions}>
-                    <Text style={styles.optionsButton}>Explore Options</Text>
+                <Pressable onPress={goToAdopt}>
+                    <Text style={styles.adoptButton}>Adopt</Text>
+                </Pressable>
+                <Pressable onPress={goToSupport}>
+                    <Text style={styles.supportButton}>Support</Text>
                 </Pressable>
             </SafeAreaView>
         </View >
@@ -53,13 +65,22 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 25,
     },
-    optionsButton: {
+    supportButton: {
         fontSize: 40,
         borderWidth: 2.5,
         borderStyle: 'solid',
         borderColor: 'orange',
         borderRadius: 5,
         backgroundColor: '#62BA75',
+        marginBottom: 40,
+    },
+    adoptButton: {
+        fontSize: 40,
+        borderWidth: 2.5,
+        borderStyle: 'solid',
+        borderColor: 'brown',
+        borderRadius: 5,
+        backgroundColor: 'gold',
         marginBottom: 40,
     },
 });

@@ -14,7 +14,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
                 {name}
             </Text>
             <Text style={styles.timeText}>Countdown:<Countdown intialValue={time} /> </Text>
-            <Pressable style={styles.button} onPress={goToDetails}>
+            <Pressable style={styles.buttonBox} onPress={goToDetails}>
                 <Text style={styles.detailButton}> Details </Text>
             </Pressable>
         </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         marginLeft: 15,
     },
-    button: {
+    buttonBox: {
         borderWidth: 10,
         borderStyle: 'solid',
         borderColor: 'red',

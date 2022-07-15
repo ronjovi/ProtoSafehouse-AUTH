@@ -1,6 +1,6 @@
 {/* IMPORTS COMPONENTS */ }
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Image } from 'react-native';
 import { PetCard } from './Components/PetCard';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -19,7 +19,7 @@ export default function App() {
         <Stack.Screen
           name="AnimalList"
           component={AnimalList}
-          options={{ title: 'Welcome' }}
+          options={{ title: 'Safehouse' }}
         />
 
         <Stack.Screen
