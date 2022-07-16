@@ -22,21 +22,21 @@ const UselessTextInput = () => {
           />
           <Text style={styles.transactionText}>Transaction Method</Text>
           <View style={styles.transRow}>
-          <TextInput
-            style={styles.transBoxStyle}
-            onChangeText={onChangeText}
-            value={transText}
-          />
-          <TextInput
-            style={styles.transBoxStyle}
-            onChangeText={onChangeText}
-            value={transText}
-          />
-          <TextInput
-            style={styles.transBoxStyle}
-            onChangeText={onChangeText}
-            value={transText}
-          />
+            <TextInput
+              style={styles.transBoxStyle}
+              onChangeText={onChangeText}
+              value={transText}
+            />
+            <TextInput
+              style={styles.transBoxStyle}
+              onChangeText={onChangeText}
+              value={transText}
+            />
+            <TextInput
+              style={styles.transBoxStyle}
+              onChangeText={onChangeText}
+              value={transText}
+            />
           </View>
           <TextInput
             style={styles.inputCardInfo}
@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'white',
   },
+
   input: {
     height: 40,
     width: 325,

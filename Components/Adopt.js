@@ -9,37 +9,37 @@ const UselessTextInput = () => {
     return (
         <View style={styles.container}>
             <SafeAreaView>
-            <ScrollView>
-                <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-                <Text style={styles.safehouseText}>Personal Details</Text>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeNumber}
-                    value={numbaOne}
-                    placeholder="First Name"
-                    keyboardType="default"
-                />
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeNumber}
-                    value={numbaTwo}
-                    placeholder="Last Name"
-                    keyboardType="default"
-                />
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeNumber}
-                    value={numbaThree}
-                    placeholder="Email Adress"
-                    keyboardType="email"
-                />
-                <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
-                <Text style={styles.dateTimeConfirmText}>Date:</Text>
-                <Text style={styles.dateTimeConfirmText}>Time:</Text>
-                <Pressable style={styles.visitButton}>
-                    <Text style={styles.visitText}>Confirm Visit</Text>
-                </Pressable>
-            </ScrollView>
+                <ScrollView>
+                    <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
+                    <Text style={styles.safehouseText}>Personal Details</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={onChangeNumber}
+                        value={numbaOne}
+                        placeholder="First Name"
+                        keyboardType="default"
+                    />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={onChangeNumber}
+                        value={numbaTwo}
+                        placeholder="Last Name"
+                        keyboardType="default"
+                    />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={onChangeNumber}
+                        value={numbaThree}
+                        placeholder="Email Adress"
+                        keyboardType="email"
+                    />
+                    <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
+                    <Text style={styles.dateTimeConfirmText}>Date:</Text>
+                    <Text style={styles.dateTimeConfirmText}>Time:</Text>
+                    <Pressable style={styles.visitButton}>
+                        <Text style={styles.visitText}>Confirm Visit</Text>
+                    </Pressable>
+                </ScrollView>
             </SafeAreaView>
         </View>
     );

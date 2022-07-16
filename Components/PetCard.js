@@ -9,15 +9,14 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
     {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
     return (
         <View style={styles.container}>
-            <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />
-            <Text style={styles.nameText}>
-                {name}
-            </Text>
-            <Text style={styles.timeText}>Countdown:<Countdown intialValue={time} /> </Text>
-            <Pressable style={styles.buttonBox} onPress={goToDetails}>
-                <Text style={styles.detailButton}> Details </Text>
+
+            <Pressable onPress={goToDetails}>
+                <Image source={{ uri: image }} style={styles.petImage} />
+                <Countdown intialValue={time} style={{ position: 'absolute' }} />
             </Pressable>
+
         </View>
+
     )
 }
 
@@ -25,8 +24,15 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        height: 175,
+        width: 175,
         backgroundColor: 'blue',
         marginTop: 10,
+    },
+    petImage: {
+        height: 175,
+        width: '100%',
+        position: 'absolute',
     },
     nameText: {
         color: 'white',
@@ -40,12 +46,4 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         marginLeft: 15,
     },
-    buttonBox: {
-        borderWidth: 10,
-        borderStyle: 'solid',
-        borderColor: 'red',
-    },
-    detailButton: {
-        backgroundColor: 'gold',
-    }
 });

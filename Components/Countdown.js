@@ -28,19 +28,34 @@ export default function CountDownTimer(props) {
   }, []);
 
   //If it's not showing the time, delete the ending parentheses and type something random like: wrwr and then delete it and replace it with a parentheses
-console.log(setTotalDuration);
+  console.log(setTotalDuration);
 
   return (
 
-    <CountDown
+    <CountDown style={styles.countdownStyle}
       until={parseInt(totalDuration)}
       //duration of countdown in seconds
       timetoShow={('H', 'M', 'S')}
       //formate to show
       onFinish={() => alert('finished')}
       //on Finish call
-      size={20}
+      //The size below controls the ssize of the countdown timer
+      size={15}
+      timeLabelStyle={{ color: 'red', fontWeight: 'bold', marginBottom: 20 }}
+      digitStyle={{ backgroundColor: 'rgba(52, 52, 52, 0)' }}
+      digitTxtStyle={{ color: 'cyan', fontWeight: 'bold' }}
+      showSeparator
+      separatorStyle={{ color: 'cyan', marginBottom: 15 }}
     />
 
   )
 }
+
+//This below contains the border that contains the timer
+const styles = StyleSheet.create({
+  countdownStyle: {
+    marginTop: 120,
+    marginRight: 15,
+    justifyContent: 'flex-start',
+  },
+});

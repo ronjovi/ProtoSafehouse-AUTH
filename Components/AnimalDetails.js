@@ -26,30 +26,32 @@ export default function AnimalDetails({ route, navigation }) {
 
         <View style={styles.container}>
             <SafeAreaView style={styles.container}>
-            <Image style={styles.headerImage} source={{ uri: 'https://www.princeton.edu/sites/default/files/styles/half_2x/public/images/2022/02/KOA_Nassau_2697x1517.jpg' }}/>
-                <FlatList
-                    data={[
-                        { key: 'Name', value: route.params.name },
-                        { key: 'Time', value: route.params.time },
-                        { key: 'Breed', value: route.params.breed },
-                        { key: 'Age', value: route.params.age },
-                        { key: 'Sex', value: route.params.sex },
-                        { key: 'Weight', value: route.params.weight },
-                        { key: 'Shelter', value: route.params.shelter },
-                        { key: 'Description', value: route.params.desc },
-                        { key: 'Additional Notes', value: route.params.notes },
-                    ]}
-                    renderItem={({ item }) => <Text style={styles.item}>{'\u2022' + ' '}{item.key}: {item.value}</Text>}
-                />
-                {/* The onPress event to these Pressables to go to Explore Options */}
-                <View style={styles.twoButtonsRow}>
-                    <Pressable style={styles.twoButtons} onPress={goToAdopt}>
-                        <Text style={styles.twoButtonsText}>Adopt</Text>
-                    </Pressable>
-                    <Pressable style={styles.twoButtons} onPress={goToSupport}>
-                        <Text style={styles.twoButtonsText}>Donate</Text>
-                    </Pressable>
-                </View>
+                <Image style={styles.headerImage} source={{ uri: 'https://www.princeton.edu/sites/default/files/styles/half_2x/public/images/2022/02/KOA_Nassau_2697x1517.jpg' }} />
+                <ScrollView>
+                    <FlatList style={styles.flatList}
+                        data={[
+                            { key: 'Name', value: route.params.name },
+                            { key: 'Time', value: route.params.time },
+                            { key: 'Breed', value: route.params.breed },
+                            { key: 'Age', value: route.params.age },
+                            { key: 'Sex', value: route.params.sex },
+                            { key: 'Weight', value: route.params.weight },
+                            { key: 'Shelter', value: route.params.shelter },
+                            { key: 'Description', value: route.params.desc },
+                            { key: 'Additional Notes', value: route.params.notes },
+                        ]}
+                        renderItem={({ item }) => <Text style={styles.item}>{'\u2022' + ' '}{item.key}: {item.value}</Text>}
+                    />
+                    {/* The onPress event to these Pressables to go to Explore Options */}
+                    <View style={styles.twoButtonsRow}>
+                        <Pressable style={styles.twoButtons} onPress={goToAdopt}>
+                            <Text style={styles.twoButtonsText}>Adopt</Text>
+                        </Pressable>
+                        <Pressable style={styles.twoButtons} onPress={goToSupport}>
+                            <Text style={styles.twoButtonsText}>Donate</Text>
+                        </Pressable>
+                    </View>
+                </ScrollView>
             </SafeAreaView>
         </View >
 
@@ -64,9 +66,16 @@ const styles = StyleSheet.create({
     },
     headerImage: {
         width: "100%",
-        height: 300,
+        height: 325,
+        position: 'absolute',
+    },
+    flatList: {
+        marginTop: 300,
+        backgroundColor: 'white',
+        borderRadius: 10,
     },
     item: {
+        marginTop: 25,
         color: 'black',
         fontSize: 20,
         marginBottom: 25,
@@ -88,5 +97,5 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row-reverse',
         justifyContent: 'center',
-      },
+    },
 });
