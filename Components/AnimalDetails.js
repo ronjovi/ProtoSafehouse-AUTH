@@ -8,10 +8,6 @@ export default function AnimalDetails({ route, navigation }) {
     console.log(route);
 
     {/* Creates the route to go to 'options' tab (via const goToOptions) */ }
-    const goToOptions = () => {
-        navigation.navigate('ExploreOptions');
-    }
-
     const goToSupport = () => {
         navigation.navigate('Support');
     }

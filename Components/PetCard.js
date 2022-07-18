@@ -26,13 +26,15 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 175,
         width: 175,
-        backgroundColor: 'blue',
         marginTop: 10,
+        marginLeft: 5,
     },
     petImage: {
         height: 175,
         width: '100%',
         position: 'absolute',
+        borderRadius: 10,
+        marginRight: 5,
     },
     nameText: {
         color: 'white',

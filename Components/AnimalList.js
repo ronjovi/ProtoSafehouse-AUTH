@@ -1,10 +1,17 @@
 {/* Imports stuff from React and React Native... also imports PetCard info */ }
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Image } from 'react-native';
+
+{/* IN CASE OF ANY ERROR WITH PETCARD ARRANGEMENTS GO TO imageContainer*/}
+import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image } from 'react-native';
 import { useState } from 'react';
 import { PetCard } from './PetCard';
 
 {/* Sets constant 'animals' and a new function 'setAnimals' equal to useState */ }
 {/* After the constants are set, there is hardcoded information about each of the animals*/ }
+
+const goToShelter = () => {
+    navigation.navigate('Shelter Options');
+}
+
 export default function AnimalList({ navigation }) {
     const [animals, setAnimals] = useState([
         {
@@ -133,23 +140,35 @@ export default function AnimalList({ navigation }) {
         console.log(animal)
         navigation.navigate('AnimalDetails', animal);
     }
+    const goToShelter = (animal) => {
+        console.log(animal)
+        navigation.navigate('ShelterOptions', animal);
+    }
     {/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */ }
     return (
         <View style={styles.container}>
             <SafeAreaView style={styles.container}>
                 <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
                 <ScrollView>
+                    <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
+                    <Text>Shelter Button Text Placeholder</Text>
+                    </Pressable>
+                    <View style={styles.containerOfImageContainer}>
+                    <View style={styles.imageContainer}>
                     {animals.map((animal) => (
                         <PetCard key={animal.name} goToDetails={() => { goToDetails(animal) }} name={animal.name} time={animal.time} image={animal.image} />
                     ))}
-
-
+                    </View>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </View>
 
     );
 }
+
+// style={{ flexDirection: 'row', flexWrap: 'wrap' }} ADD THIS FOR TWO COLUMNS OF IMAGES
+
 
 {/* Style of the background behind PetCards */ }
 const styles = StyleSheet.create({
@@ -160,4 +179,21 @@ const styles = StyleSheet.create({
     safehouseLogo: {
         alignSelf: 'center',
     },
+    shelterButtonContainer: {
+        backgroundColor: 'lightgray',
+        width: 100,
+        alignSelf: 'flex-end',
+    },
+    imageContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        /* flexDirection isn't working as it should... remove it if it causes any problems */
+        margin: 5,
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        flexWrap: 'wrap',
+    },
+    containerOfImageContainer: {
+        marginRight: 5,
+    }
 });

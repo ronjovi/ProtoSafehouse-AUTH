@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AnimalList from './Components/AnimalList';
 import AnimalDetails from './Components/AnimalDetails';
-import ExploreOptions from './Components/ExploreOptions';
+import ShelterOptions from './Components/ShelterOptions';
 import Support from './Components/Support';
 import Adopt from './Components/Adopt';
 
@@ -29,9 +29,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="ExploreOptions"
-          component={ExploreOptions}
-          options={{ title: 'Explore Options' }}
+          name="ShelterOptions"
+          component={ShelterOptions}
+          options={{ title: 'Shelter Options' }}
         />
 
         <Stack.Screen

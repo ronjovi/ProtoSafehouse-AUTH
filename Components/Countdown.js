@@ -31,31 +31,29 @@ export default function CountDownTimer(props) {
   console.log(setTotalDuration);
 
   return (
-
     <CountDown style={styles.countdownStyle}
       until={parseInt(totalDuration)}
       //duration of countdown in seconds
       timetoShow={('H', 'M', 'S')}
       //formate to show
-      onFinish={() => alert('finished')}
+      // onFinish={() => alert('finished')}
       //on Finish call
       //The size below controls the ssize of the countdown timer
-      size={15}
-      timeLabelStyle={{ color: 'red', fontWeight: 'bold', marginBottom: 20 }}
+      size={10}
+      timeLabelStyle={{ color: 'red', fontWeight: 'bold', marginBottom: 20, fontSize: 8 }}
       digitStyle={{ backgroundColor: 'rgba(52, 52, 52, 0)' }}
-      digitTxtStyle={{ color: 'cyan', fontWeight: 'bold' }}
+      digitTxtStyle={{ color: 'cyan', fontWeight: 'bold', fontSize: 18 }}
       showSeparator
-      separatorStyle={{ color: 'cyan', marginBottom: 15 }}
+      separatorStyle={{ color: 'cyan', marginBottom: 25, fontSize: 15 }}
     />
-
   )
 }
 
 //This below contains the border that contains the timer
 const styles = StyleSheet.create({
   countdownStyle: {
-    marginTop: 120,
-    marginRight: 15,
+    marginTop: 135,
+    marginRight: 30,
     justifyContent: 'flex-start',
   },
 });
