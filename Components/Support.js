@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
 
-const UselessTextInput = () => {
+const UselessTextInput = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
   const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, numbaFour, numbaFive, numbaSix, transText] = React.useState(null);
 
@@ -76,7 +76,7 @@ const UselessTextInput = () => {
             keyboardType="numeric"
           />
           <Pressable style={styles.donateButton}>
-            <Text style={styles.donateText}>Donate</Text>
+            <Text onPress={() => navigation.navigate("SupportConfirm") } style={styles.donateText}>Donate</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>

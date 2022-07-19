@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
 
-const UselessTextInput = () => {
+const UselessTextInput = ({ navigation }) => {
     const [text, onChangeText] = React.useState("Useless Text");
     const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree] = React.useState(null);
 
@@ -36,7 +36,7 @@ const UselessTextInput = () => {
                     <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
-                    <Pressable style={styles.visitButton}>
+                    <Pressable onPress={() => navigation.navigate("VisitConfirm") } style={styles.visitButton}>
                         <Text style={styles.visitText}>Confirm Visit</Text>
                     </Pressable>
                 </ScrollView>

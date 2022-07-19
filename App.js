@@ -9,6 +9,8 @@ import AnimalDetails from './Components/AnimalDetails';
 import ShelterOptions from './Components/ShelterOptions';
 import Support from './Components/Support';
 import Adopt from './Components/Adopt';
+import VisitConfirm from './Components/VisitConfirm';
+import SupportConfirm from './Components/SupportConfirm';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +46,18 @@ export default function App() {
           name="Adopt"
           component={ Adopt }
           options={{ title: 'Adopt' }}
+        />
+
+        <Stack.Screen
+          name="VisitConfirm"
+          component={ VisitConfirm }
+          options={{ title: 'Visit Confirmed' }}
+        />
+
+        <Stack.Screen
+          name="SupportConfirm"
+          component={ SupportConfirm }
+          options={{ title: 'Support Confirmed' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

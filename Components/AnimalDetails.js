@@ -5,7 +5,7 @@ import Countdown from './Countdown';
 
 {/* Tells the details of the animal through console log... provides ROUTE*/ }
 export default function AnimalDetails({ route, navigation }) {
-    console.log(route);
+    console.log(route.params.image); 
 
     {/* Creates the route to go to 'options' tab (via const goToOptions) */ }
     const goToSupport = () => {
@@ -22,7 +22,7 @@ export default function AnimalDetails({ route, navigation }) {
 
         <View style={styles.container}>
             <SafeAreaView style={styles.container}>
-                <Image style={styles.headerImage} source={{ uri: 'https://www.princeton.edu/sites/default/files/styles/half_2x/public/images/2022/02/KOA_Nassau_2697x1517.jpg' }} />
+                <Image style={styles.headerImage} source={{ uri: route.params.image }} />
                 <ScrollView>
                     <FlatList style={styles.flatList}
                         data={[

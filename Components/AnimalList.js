@@ -8,10 +8,6 @@ import { PetCard } from './PetCard';
 {/* Sets constant 'animals' and a new function 'setAnimals' equal to useState */ }
 {/* After the constants are set, there is hardcoded information about each of the animals*/ }
 
-const goToShelter = () => {
-    navigation.navigate('Shelter Options');
-}
-
 export default function AnimalList({ navigation }) {
     const [animals, setAnimals] = useState([
         {
