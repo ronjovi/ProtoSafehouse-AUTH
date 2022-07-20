@@ -11,6 +11,7 @@ import Support from './Components/Support';
 import Adopt from './Components/Adopt';
 import VisitConfirm from './Components/VisitConfirm';
 import SupportConfirm from './Components/SupportConfirm';
+import ReservePage from './Components/ReservePage';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +47,12 @@ export default function App() {
           name="Adopt"
           component={ Adopt }
           options={{ title: 'Adopt' }}
+        />
+
+        <Stack.Screen
+          name="ReservePage"
+          component={ ReservePage }
+          options={{ title: 'Reservation' }}
         />
 
         <Stack.Screen

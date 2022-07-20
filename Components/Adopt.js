@@ -36,8 +36,8 @@ const UselessTextInput = ({ navigation }) => {
                     <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
-                    <Pressable onPress={() => navigation.navigate("VisitConfirm") } style={styles.visitButton}>
-                        <Text style={styles.visitText}>Confirm Visit</Text>
+                    <Pressable onPress={() => navigation.navigate("ReservePage") } style={styles.visitButton}>
+                        <Text style={styles.visitText}>Proceed to Reservation</Text>
                     </Pressable>
                 </ScrollView>
             </SafeAreaView>

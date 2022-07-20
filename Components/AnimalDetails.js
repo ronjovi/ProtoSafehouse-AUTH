@@ -41,10 +41,10 @@ export default function AnimalDetails({ route, navigation }) {
                     {/* The onPress event to these Pressables to go to Explore Options */}
                     <View style={styles.twoButtonsRow}>
                         <Pressable style={styles.twoButtons} onPress={goToAdopt}>
-                            <Text style={styles.twoButtonsText}>Adopt</Text>
+                            <Text style={styles.twoButtonsText}>Reserve</Text>
                         </Pressable>
                         <Pressable style={styles.twoButtons} onPress={goToSupport}>
-                            <Text style={styles.twoButtonsText}>Donate</Text>
+                            <Text style={styles.twoButtonsText}>Support</Text>
                         </Pressable>
                     </View>
                 </ScrollView>
@@ -66,6 +66,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
     },
     flatList: {
+        // flexDirection: 'row',
         marginTop: 300,
         backgroundColor: 'white',
         borderRadius: 10,

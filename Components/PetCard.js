@@ -23,11 +23,12 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 {/* Stylizes PetCard info */ }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         height: 175,
         width: 175,
         marginTop: 10,
-        marginLeft: 5,
+        marginLeft: 15,
+        margin: 10,
     },
     petImage: {
         height: 175,

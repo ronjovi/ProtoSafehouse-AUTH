@@ -11,13 +11,13 @@ const UselessTextInput = ({ navigation }) => {
       <SafeAreaView>
         <ScrollView>
           <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-          <Text style={styles.header}>Extend this animal's life with a donation</Text>
-          <Text style={styles.safehouseText}></Text>
+          <Text style={styles.header}>Freeze this cat's time with a reservation</Text>
+          <Text style={styles.safehouseText}>Failiure to adopt this cat within 36 hours after your reservation will result in the timer being continued!</Text>
           <TextInput
             style={styles.input}
             onChangeText={onChangeNumber}
             value={numbaOne}
-            placeholder="$XX.XX"
+            placeholder="Reservation Price: $XX.XX"
             keyboardType="default"
           />
           <Text style={styles.xText}>$XX.XX will go to Safehouse</Text>
@@ -77,7 +77,7 @@ const UselessTextInput = ({ navigation }) => {
             keyboardType="numeric"
           />
           <Pressable style={styles.donateButton}>
-            <Text onPress={() => navigation.navigate("SupportConfirm") } style={styles.donateText}>Confirm Support</Text>
+            <Text onPress={() => navigation.navigate("VisitConfirm") } style={styles.donateText}>Confirm Reservation</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>
@@ -91,11 +91,14 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     marginTop: 30,
   },
+
   header: {
     alignSelf: 'center',
     marginBottom: 10,
     fontSize: 20,
+    fontWeight: '600',
   },
+
   container: {
     flex: 1,
     flexDirection: "row",
@@ -169,10 +172,12 @@ const styles = StyleSheet.create({
     borderLeftColor: 'white',
   },
   safehouseText: {
-    marginTop: 10,
-    fontSize: 20,
+    marginTop: 0,
+    fontSize: 15,
     fontWeight: '400',
-    margin: 0,
+    height: 40,
+    width: 350,
+    alignSelf: 'center',
   },
   donateButton: {
     backgroundColor: "#62BA75",
