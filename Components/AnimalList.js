@@ -1,7 +1,7 @@
 {/* Imports stuff from React and React Native... also imports PetCard info */ }
 
 {/* IN CASE OF ANY ERROR WITH PETCARD ARRANGEMENTS GO TO imageContainer*/}
-import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image, FlatList } from 'react-native';
 import { useState } from 'react';
 import { PetCard } from './PetCard';
 
@@ -143,22 +143,36 @@ export default function AnimalList({ navigation }) {
     {/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */ }
     return (
         <View style={styles.container}>
-            <SafeAreaView style={styles.container}>
-                <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-                <ScrollView>
-                    <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
-                    <Text>Shelter Button Text Placeholder</Text>
-                    </Pressable>
-                    <View style={styles.containerOfImageContainer}>
-                    <View style={styles.imageContainer}>
-                    {animals.map((animal) => (
-                        <PetCard key={animal.name} goToDetails={() => { goToDetails(animal) }} name={animal.name} time={animal.time} image={animal.image} />
-                    ))}
-                    </View>
-                    </View>
-                </ScrollView>
-            </SafeAreaView>
+            <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
+            <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
+                <Text>Shelter Button Text Placeholder</Text>
+            </Pressable>
+
+            <FlatList style={styles.list}
+            numColumns={2}
+            data = {animals}
+            renderItem = {({ item }) => (
+                <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
+            )}
+            />
         </View>
+        // <View style={styles.container}>
+        //     <SafeAreaView style={styles.container}>
+        //         <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
+        //         <ScrollView>
+        //             <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
+        //             <Text>Shelter Button Text Placeholder</Text>
+        //             </Pressable>
+        //             <View style={styles.containerOfImageContainer}>
+        //             <View style={styles.imageContainer}>
+        //             {animals.map((animal) => (
+        //                 <PetCard key={animal.name} goToDetails={() => { goToDetails(animal) }} name={animal.name} time={animal.time} image={animal.image} />
+        //             ))}
+        //             </View>
+        //             </View>
+        //         </ScrollView>
+        //     </SafeAreaView>
+        // </View>
 
     );
 }
@@ -190,5 +204,8 @@ const styles = StyleSheet.create({
     },
     containerOfImageContainer: {
         marginRight: 5,
+    },
+    list: {
+        marginLeft: 12,
     }
 });
