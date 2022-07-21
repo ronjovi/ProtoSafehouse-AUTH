@@ -76,8 +76,8 @@ const UselessTextInput = ({ navigation }) => {
             placeholder="Zip Code"
             keyboardType="numeric"
           />
-          <Pressable style={styles.donateButton}>
-            <Text onPress={() => navigation.navigate("VisitConfirm") } style={styles.donateText}>Confirm Reservation</Text>
+          <Pressable style={styles.reserveButton}>
+            <Text onPress={() => navigation.navigate("VisitConfirm") } style={styles.reserveText}>Confirm Reservation</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     width: 350,
     alignSelf: 'center',
   },
-  donateButton: {
+  reserveButton: {
     backgroundColor: "#62BA75",
     width: 190,
     height: 40,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     marginTop: 55,
     marginBottom: 100,
   },
-  donateText: {
+  reserveText: {
     color: 'white',
     alignSelf: 'center',
     marginTop: 10,

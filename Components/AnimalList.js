@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
     },
     safehouseLogo: {
         alignSelf: 'center',
+        marginTop: 30,
     },
     shelterButtonContainer: {
         backgroundColor: 'lightgray',

@@ -7,6 +7,14 @@ import moment from 'moment';
 export default function CountDownTimer(props) {
   const [totalDuration, setTotalDuration] = useState(0);
 
+  const getCountdownColor = () => {
+    if (totalDuration > 5256005.76) {
+      return 'lime'
+    } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
+      return 'yellow'
+    } else {return 'red'}
+  }
+
   useEffect(() => {
     //We are showing the coundown timer for a given expiry date-time
     //If you are making a quize type app then you need to make a simple timer
@@ -42,7 +50,7 @@ export default function CountDownTimer(props) {
       size={10}
       timeLabelStyle={{ color: 'red', fontWeight: 'bold', marginBottom: 20, fontSize: 8 }}
       digitStyle={{ backgroundColor: 'rgba(52, 52, 52, 0)' }}
-      digitTxtStyle={{ color: 'cyan', fontWeight: 'bold', fontSize: 18 }}
+      digitTxtStyle={{ color: getCountdownColor(), fontWeight: 'bold', fontSize: 18 }}
       showSeparator
       separatorStyle={{ color: 'cyan', marginBottom: 25, fontSize: 15 }}
     />

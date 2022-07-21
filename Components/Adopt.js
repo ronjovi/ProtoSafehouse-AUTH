@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     safehouseLogo: {
         alignSelf: 'center',
         marginBottom: 45,
-        marginTop: 10,
+        marginTop: 30,
     },
     container: {
         flex: 1,
