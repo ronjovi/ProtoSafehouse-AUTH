@@ -95,7 +95,7 @@ export default function AnimalDetails({ route, navigation }) {
                         // <Text style={styles.item}>{item.key}: {item.value}</Text>
 
                         <View style={styles.dataContainer}>
-                            <Text> {item.key} </Text>
+                            <Text style={{backgroundColor: 'yellow', alignSelf: 'flex-start'}}> {item.key} </Text>
                             <Text style={styles.item}> {item.value} </Text>
                         </View>
 
@@ -110,19 +110,19 @@ export default function AnimalDetails({ route, navigation }) {
                             </View>
 
                             <View style={styles.phoneContainer}>
-                                <Text> Phone Number </Text>
+                                <Text style={styles.phoneNumber}> Phone Number </Text>
                                 <Text style={styles.item}>1 (818)-149-1495 </Text>
                             </View>
                             </View>
                             <View style={styles.adressEmailContainer}>
                             <View style={styles.addressContainer}>
-                                <Text> Address </Text>
+                                <Text style={{marginRight: 10}}> Address </Text>
                                 <Text style={styles.item}> 600 Wilshire Blvd Suite 500 #13, Los Angeles, CA 90015
                                 </Text>
                             </View>
                             
                             <View style={styles.emailContainer}>
-                                <Text> Email </Text>
+                                <Text style={{right: 5}}> Email </Text>
                                 <Text style={styles.item}> firstnamelastname@outlook.com </Text>
                             </View>
                             </View>
@@ -185,6 +185,7 @@ const styles = StyleSheet.create({
         marginTop: 2.5,
         color: 'black',
         fontSize: 10,
+        alignSelf: 'flex-start',
         // marginBottom: 25,
     },
     name: {
@@ -252,6 +253,12 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     dataContainer: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
+        backgroundColor: 'red'
+    },
+    phoneNumber: {
+        // backgroundColor: 'yellow',
+        width: 60,
+        right: 10,
     },
 });

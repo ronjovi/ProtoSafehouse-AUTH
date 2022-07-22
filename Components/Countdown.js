@@ -48,11 +48,11 @@ export default function CountDownTimer(props) {
       //on Finish call
       //The size below controls the ssize of the countdown timer
       size={10}
-      timeLabelStyle={{ color: 'red', fontWeight: 'bold', marginBottom: 20, fontSize: 8 }}
+      timeLabelStyle={{ color: 'rgba(52, 52, 52, 0)', fontWeight: 'bold', marginBottom: 20, fontSize: 8 }}
       digitStyle={{ backgroundColor: 'rgba(52, 52, 52, 0)' }}
       digitTxtStyle={{ color: getCountdownColor(), fontWeight: 'bold', fontSize: 18 }}
       showSeparator
-      separatorStyle={{ color: 'cyan', marginBottom: 25, fontSize: 15 }}
+      separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15 }}
     />
   )
 }

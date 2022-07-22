@@ -28,7 +28,10 @@ export default function App() {
         <Stack.Screen
           name="AnimalDetails"
           component={AnimalDetails}
-          options={{ title: 'Details' }}
+          options={{
+             title: 'Details',
+            // headerShown: false
+          }}
         />
 
         <Stack.Screen
