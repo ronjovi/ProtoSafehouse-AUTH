@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         resizeMode: 'contain',
-        marginTop: 230,
+        marginTop: 325,
     },
     confirmStyle: {
         alignSelf: 'center',
-        fontSize: 40,
+        fontSize: 36,
         color: '#62BA75',
         fontWeight: '500',
-        marginTop: 10,
+        marginTop: 5,
     },
     returnButton: {
         alignSelf: 'center',

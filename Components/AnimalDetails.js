@@ -12,6 +12,10 @@ export default function AnimalDetails({ route, navigation }) {
         navigation.navigate('Support');
     }
 
+    const goToDetails = () => {
+        navigation.navigate('AnimalDetails')
+    }
+    
     const goToAdopt = () => {
         navigation.navigate('Adopt');
     }
@@ -21,6 +25,9 @@ export default function AnimalDetails({ route, navigation }) {
         <View style={styles.container}>
             <SafeAreaView style={styles.container}>
                 <Image style={styles.headerImage} source={{ uri: route.params.image }} />
+                <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
+                <Image source={require('../assets/Vector.png')} style={{alignSelf: 'center', marginTop: 15}}/>
+                </Pressable>
                 <FlatList style={styles.flatList}
                     numColumns={2}
                     columnWrapperStyle={styles.row}
@@ -48,7 +55,7 @@ export default function AnimalDetails({ route, navigation }) {
                         // <Text style={styles.item}>{item.key}: {item.value}</Text>
 
                         <View style={styles.dataContainer}>
-                            <Text style={{backgroundColor: 'yellow', marginRight: 10}}> {item.key} </Text>
+                            <Text style={{backgroundColor: 'yellow', fontSize: 18, fontWeight: '500'}}> {item.key} </Text>
                             <Text style={styles.item}> {item.value} </Text>
                         </View>
 
@@ -58,7 +65,7 @@ export default function AnimalDetails({ route, navigation }) {
                             <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 30 }}></View>
                             <View style={styles.shelterPhoneContainer}>
                             <View style={styles.shelterContainer}>
-                                <Text> Shelter </Text>
+                                <Text style={{fontSize: 18, fontWeight: '500',}}> Shelter </Text>
                                 <Text style={styles.item}> {route.params.shelter} </Text>
                             </View>
 
@@ -69,17 +76,28 @@ export default function AnimalDetails({ route, navigation }) {
                             </View>
                             <View style={styles.adressEmailContainer}>
                             <View style={styles.addressContainer}>
-                                <Text style={{marginRight: 10}}> Address </Text>
+                                <Text style={{marginRight: 10, fontSize: 18, fontWeight: '500',}}> Address </Text>
                                 <Text style={styles.item}> 600 Wilshire Blvd Suite 500 #13, Los Angeles, CA 90015
                                 </Text>
                             </View>
                             
                             <View style={styles.emailContainer}>
-                                <Text style={{right: 5}}> Email </Text>
+                                <Text style={{right: 5, fontSize: 18, fontWeight: '500',}}> Email </Text>
                                 <Text style={styles.item}> firstnamelastname@outlook.com </Text>
                             </View>
                             </View>
-                            <View style={styles.twoButtonsRow}>
+                            {/* <View style={styles.twoButtonsRow}>
+                                <Pressable style={styles.twoButtons} onPress={goToAdopt}>
+                                    <Text style={styles.twoButtonsText}>Reserve</Text>
+                                </Pressable>
+                                <Pressable style={styles.twoButtons} onPress={goToSupport}>
+                                    <Text style={styles.twoButtonsText}>Support</Text>
+                                </Pressable>
+                            </View> */}
+                        </>
+                    }
+                />
+                <View style={styles.twoButtonsRow}>
                                 <Pressable style={styles.twoButtons} onPress={goToAdopt}>
                                     <Text style={styles.twoButtonsText}>Reserve</Text>
                                 </Pressable>
@@ -87,9 +105,6 @@ export default function AnimalDetails({ route, navigation }) {
                                     <Text style={styles.twoButtonsText}>Support</Text>
                                 </Pressable>
                             </View>
-                        </>
-                    }
-                />
             </SafeAreaView>
         </View >
     );
@@ -97,6 +112,11 @@ export default function AnimalDetails({ route, navigation }) {
 
 {/* Styles for the sceen when you press 'Details' */ }
 const styles = StyleSheet.create({
+    backButton: {
+        // backgroundColor: 'black',
+        height: 50,
+        width: 50,
+    },
     container: {
         flex: 1,
         height: '100%',
@@ -104,8 +124,9 @@ const styles = StyleSheet.create({
     },
     headerImage: {
         width: "100%",
-        height: 350,
+        height: 450,
         position: 'absolute',
+        marginTop: 50,
     },
     flatList: {
         // flex: 1,
@@ -114,7 +135,7 @@ const styles = StyleSheet.create({
         marginTop: 340,
         backgroundColor: 'white',
         borderRadius: 10,
-        height: '100%',
+        height: 500,
     },
     twoButtons: {
         backgroundColor: "#62BA75",
@@ -127,6 +148,7 @@ const styles = StyleSheet.create({
     twoButtonsText: {
         color: 'white',
         alignSelf: 'center',
+        fontSize: 15,
         marginTop: 10,
     },
     twoButtonsRow: {
@@ -137,7 +159,7 @@ const styles = StyleSheet.create({
     item: {
         marginTop: 2.5,
         color: 'black',
-        fontSize: 10,
+        fontSize: 16,
         alignSelf: 'flex-start',
         // marginBottom: 25,
     },
@@ -154,7 +176,7 @@ const styles = StyleSheet.create({
         lineHeight: 18,
     },
     nameBreedContainer: {
-        backgroundColor: 'white',
+        // backgroundColor: 'white',
         marginLeft: 10,
         position: 'relative'
     },
@@ -211,8 +233,9 @@ const styles = StyleSheet.create({
     },
     phoneNumber: {
         // backgroundColor: 'yellow',
-        width: 60,
         right: 10,
+        fontSize: 18,
+        fontWeight: '500',
     },
     countdownStyle: {
         // backgroundColor: 'yellow',

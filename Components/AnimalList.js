@@ -61,7 +61,7 @@ export default function AnimalList({ navigation }) {
         {
             name: 'Bob',
             time: '2022-09-06 04:00:25',
-            image: 'https://www.mercurynews.com/wp-content/uploads/2022/04/EBT-L-CATSHOW-0403-11.jpg',
+            image: 'https://images.petpress.net/wp-content/uploads/2019/11/F216CEB5-0F02-4894-8F61-FCD9D770C0E0.jpeg',
             breed: 'Persian Cat',
             age: '3 years 10 months',
             sex: 'Female',

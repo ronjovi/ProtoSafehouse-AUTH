@@ -6,10 +6,18 @@ const UselessTextInput = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
   const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, numbaFour, numbaFive, numbaSix, transText] = React.useState(null);
 
+  // const goToDetails = () => {
+  //   navigation.navigate('AnimalDetails')
+  // }
+
   return (
     <View style={styles.container}>
       <SafeAreaView>
         <ScrollView>
+
+          <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
+            <Image source={require('../assets/Vector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
+          </Pressable>
           <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
           <Text style={styles.header}>Extend this animal's life with a donation</Text>
           <Text style={styles.safehouseText}></Text>
@@ -77,7 +85,7 @@ const UselessTextInput = ({ navigation }) => {
             keyboardType="numeric"
           />
           <Pressable style={styles.donateButton}>
-            <Text onPress={() => navigation.navigate("SupportConfirm") } style={styles.donateText}>Confirm Support</Text>
+            <Text onPress={() => navigation.navigate("SupportConfirm")} style={styles.donateText}>Confirm Support</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>
@@ -90,6 +98,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 50,
     marginTop: 30,
+  },
+  backButton: {
+    backgroundColor: 'black',
+    height: 50,
+    width: 50,
+    borderRadius: 100,
+    position: 'relative',
   },
   header: {
     alignSelf: 'center',

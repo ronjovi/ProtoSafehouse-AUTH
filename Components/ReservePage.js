@@ -10,6 +10,9 @@ const UselessTextInput = ({ navigation }) => {
     <View style={styles.container}>
       <SafeAreaView>
         <ScrollView>
+        <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
+                <Image source={require('../assets/Vector.png')} style={{alignSelf: 'center', marginTop: 15}}/>
+                </Pressable>
           <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
           <Text style={styles.header}>Freeze this cat's time with a reservation</Text>
           <Text style={styles.safehouseText}>Failiure to adopt this cat within 36 hours after your reservation will result in the timer being continued!</Text>
@@ -90,6 +93,15 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 50,
     marginTop: 30,
+    borderRadius: 100,
+  },
+
+  backButton: {
+    backgroundColor: 'black',
+    height: 50,
+    width: 50,
+    borderRadius: 100,
+    position: 'relative',
   },
 
   header: {

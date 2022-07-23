@@ -29,45 +29,43 @@ export default function App() {
           name="AnimalDetails"
           component={AnimalDetails}
           options={{
-             title: 'Details',
-            // headerShown: false
-          }}
+             title: 'Details', headerShown: false }}
         />
 
         <Stack.Screen
           name="ShelterOptions"
           component={ShelterOptions}
-          options={{ title: 'Shelter Options' }}
+          options={{ title: 'Shelter Options', headerShown: false }}
         />
 
         <Stack.Screen
           name="Support"
           component={Support}
-          options={{ title: 'Support' }}
+          options={{ title: 'Support', headerShown: false }}
         />
 
         <Stack.Screen
           name="Adopt"
           component={ Adopt }
-          options={{ title: 'Adopt' }}
+          options={{ title: 'Adopt', headerShown: false }}
         />
 
         <Stack.Screen
           name="ReservePage"
           component={ ReservePage }
-          options={{ title: 'Reservation' }}
+          options={{ title: 'Reservation', headerShown: false }}
         />
 
         <Stack.Screen
           name="VisitConfirm"
           component={ VisitConfirm }
-          options={{ title: 'Visit Confirmed' }}
+          options={{ title: 'Visit Confirmed', headerShown: false }}
         />
 
         <Stack.Screen
           name="SupportConfirm"
           component={ SupportConfirm }
-          options={{ title: 'Support Confirmed' }}
+          options={{ title: 'Support Confirmed', headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
