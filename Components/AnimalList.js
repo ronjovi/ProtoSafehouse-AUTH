@@ -144,12 +144,13 @@ export default function AnimalList({ navigation }) {
     return (
         <View style={styles.container}>
             <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-            <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
+            {/* <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
                 <Text>Shelter Button Text Placeholder</Text>
-            </Pressable>
+            </Pressable> */}
 
             <FlatList style={styles.list}
             numColumns={2}
+            columnWrapperStyle={styles.row}
             data = {animals}
             renderItem = {({ item }) => (
                 <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
@@ -188,7 +189,7 @@ const styles = StyleSheet.create({
     },
     safehouseLogo: {
         alignSelf: 'center',
-        marginTop: 30,
+        marginTop: 80,
     },
     shelterButtonContainer: {
         backgroundColor: 'lightgray',
@@ -207,6 +208,12 @@ const styles = StyleSheet.create({
         marginRight: 5,
     },
     list: {
-        marginLeft: 12,
+        // marginLeft: 12,
+        marginTop: 20,
+    },
+    row: {
+        flex: 1,
+        justifyContent: 'space-evenly',
+        marginTop: 10,
     }
 });

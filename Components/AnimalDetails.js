@@ -18,57 +18,6 @@ export default function AnimalDetails({ route, navigation }) {
 
     {/* Gets info from ROUTE to display details of the animal you are viewing */ }
     return (
-
-
-        // <View style={styles.container}>
-        //     <SafeAreaView style={styles.container}>
-        //         <Image style={styles.headerImage} source={{ uri: route.params.image }} />
-        //         <ScrollView>
-        //             <View style={styles.flatList}>
-        //                 <View style={styles.nameBreedContainer}>
-        //                     <Text style={styles.name}> {route.params.name} </Text>
-        //                     <Text style={styles.breed}> {route.params.breed} </Text>
-        //                 </View>
-        //                 <View style={styles.timeContainer}>
-        //                     <Text style={styles.time}> 00:43:38 </Text>
-        //                     <Text>Until Put Down</Text>
-        //                 </View>
-        //                 <View style={styles.ageContainer}>
-        //                     <Text style={styles.ageText}>Age</Text>
-        //                     <Text>{route.params.age} </Text>
-        //                 </View>
-        //                 <View style={styles.weightContainer}>
-        //                     <Text style={styles.weightText}>Weight</Text>
-        //                     <Text style={styles.weight}> {route.params.weight} </Text>
-        //                 </View>
-        //                 <View style={styles.notesContainer}>
-        //                     <Text style={styles.notesText}>Notes</Text>
-        //                     <Text style={styles.notes}> {route.params.notes} </Text>
-        //                 </View>
-        //                 <View style={styles.sexContainer}>
-        //                     <Text style={styles.sexText}>Sex</Text>
-        //                     <Text style={styles.sex}> {route.params.sex} </Text>
-        //                 </View>
-        //                 <View style={{ backgroundColor: 'black', height: 2, width: 418, marginTop: 20, marginBottom: 20, }}></View>
-        //                 <View style={styles.shelterContainer}>
-        //                     <Text style={styles.shelterText}>Shelter</Text>
-        //                     <Text style={styles.shelter}> {route.params.shelter} </Text>
-        //                 </View>
-        //                 <Text style={styles.desc}> {route.params.desc} </Text>
-        //             </View>
-
-        //             {/* The onPress event to these Pressables to go to Explore Options */}
-        //             <View style={styles.twoButtonsRow}>
-        //                 <Pressable style={styles.twoButtons} onPress={goToAdopt}>
-        //                     <Text style={styles.twoButtonsText}>Reserve</Text>
-        //                 </Pressable>
-        //                 <Pressable style={styles.twoButtons} onPress={goToSupport}>
-        //                     <Text style={styles.twoButtonsText}>Support</Text>
-        //                 </Pressable>
-        //             </View>
-        //         </ScrollView>
-        //     </SafeAreaView>
-        // </View >
         <View style={styles.container}>
             <SafeAreaView style={styles.container}>
                 <Image style={styles.headerImage} source={{ uri: route.params.image }} />
@@ -81,7 +30,11 @@ export default function AnimalDetails({ route, navigation }) {
                                 <Text style={styles.name}> {route.params.name} </Text>
                                 <Text> {route.params.breed} </Text>
                             </View>
-                            <Text style={styles.time}> {route.params.time} </Text>
+                            {/* <Text style={styles.time}> {route.params.time} </Text> */}
+                                <View style = {styles.countdownStyle}>
+                                <Countdown/>
+                                <Text style={{position: 'absolute', marginTop: 30, marginLeft: 10,}}>Days until Put Down</Text>
+                                </View>
                         </>
                     }
                     data={[
@@ -95,7 +48,7 @@ export default function AnimalDetails({ route, navigation }) {
                         // <Text style={styles.item}>{item.key}: {item.value}</Text>
 
                         <View style={styles.dataContainer}>
-                            <Text style={{backgroundColor: 'yellow', alignSelf: 'flex-start'}}> {item.key} </Text>
+                            <Text style={{backgroundColor: 'yellow', marginRight: 10}}> {item.key} </Text>
                             <Text style={styles.item}> {item.value} </Text>
                         </View>
 
@@ -260,5 +213,13 @@ const styles = StyleSheet.create({
         // backgroundColor: 'yellow',
         width: 60,
         right: 10,
+    },
+    countdownStyle: {
+        // backgroundColor: 'yellow',
+        width: 175,
+        alignSelf: 'flex-end',
+        position: 'absolute',
+        height: 30,
+        marginTop: 15,
     },
 });

@@ -22,7 +22,7 @@ export default function App() {
         <Stack.Screen
           name="AnimalList"
           component={AnimalList}
-          options={{ title: 'Safehouse' }}
+          options={{ title: 'Safehouse', headerShown: false }}
         />
 
         <Stack.Screen

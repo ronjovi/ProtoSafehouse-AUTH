@@ -39,20 +39,26 @@ export default function CountDownTimer(props) {
   console.log(setTotalDuration);
 
   return (
-    <CountDown style={styles.countdownStyle}
+    // style={styles.countdownStyle}
+    <CountDown 
       until={parseInt(totalDuration)}
+      style = {props.listStyle}
       //duration of countdown in seconds
       timetoShow={('H', 'M', 'S')}
       //formate to show
       // onFinish={() => alert('finished')}
       //on Finish call
       //The size below controls the ssize of the countdown timer
-      size={10}
-      timeLabelStyle={{ color: 'rgba(52, 52, 52, 0)', fontWeight: 'bold', marginBottom: 20, fontSize: 8 }}
-      digitStyle={{ backgroundColor: 'rgba(52, 52, 52, 0)' }}
+      size={15}
+      timeLabelStyle = {{color: 'transparent'}}
+      digitStyle = {{color: 'transparent'}}
+      // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
+      // digitStyle={{ color: 'black' }}
       digitTxtStyle={{ color: getCountdownColor(), fontWeight: 'bold', fontSize: 18 }}
+      // showSeparator
+      // separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15,}}
+      separatorStyle = {{color: getCountdownColor(), bottom: 8}}
       showSeparator
-      separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15 }}
     />
   )
 }
@@ -60,7 +66,7 @@ export default function CountDownTimer(props) {
 //This below contains the border that contains the timer
 const styles = StyleSheet.create({
   countdownStyle: {
-    marginTop: 135,
+    marginTop: 160,
     marginRight: 30,
     justifyContent: 'flex-start',
   },
