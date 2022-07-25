@@ -43,20 +43,21 @@ const UselessTextInput = ({ navigation }) => {
                     />
                     <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
-
                     <CustomDatePicker 
                         textStyle = {{
-                            borderColor: 'grey',
-                            borderWidth: 1,
-                            paddingVertical: 15,
-                            paddingHorizontal: 10,
-                            width: 125,
-                            height: 50,
-                            backgroundColor: 'grey',
-                            color: 'white'
-
+                            // borderWidth: 1,
+                            // borderColor: '#EBEBEB',
+                            // paddingVertical: 15,
+                            // paddingHorizontal: 10,
+                            color: 'black',
+                            // marginRight: 15,
+                            alignSelf: 'flex-start',
+                            marginTop: 10,
+                            position: 'relative',
+                            // borderRadius: 100,
                         }}
                         onChange = {(value) => console.log(`New date set to: ${value}`)}/>
+                    {/* <Image source={require('../assets/ant-design_calendar-filled.png')} /> */}
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
                     <Pressable onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
                         <Text style={styles.visitText}>Proceed to Reservation</Text>

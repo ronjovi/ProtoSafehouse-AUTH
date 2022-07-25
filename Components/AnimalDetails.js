@@ -55,14 +55,14 @@ export default function AnimalDetails({ route, navigation }) {
                         // <Text style={styles.item}>{item.key}: {item.value}</Text>
 
                         <View style={styles.dataContainer}>
-                            <Text style={{ backgroundColor: 'yellow', fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
+                            <Text style={{ fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
                             <Text style={styles.item}> {item.value} </Text>
                         </View>
 
                     )}
                     ListFooterComponent={
                         <>
-                            <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 30 }}></View>
+                            <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 20 }}></View>
                             <View style={styles.shelterPhoneContainer}>
                                 <View style={styles.shelterContainer}>
                                     <Text style={{ fontSize: 18, fontWeight: '500', }}> Shelter </Text>
@@ -71,39 +71,39 @@ export default function AnimalDetails({ route, navigation }) {
 
                                 <View style={styles.phoneContainer}>
                                     <Text style={styles.phoneNumber}> Phone Number </Text>
-                                    <Text style={styles.item}>1 (818)-149-1495 </Text>
+                                    <Text style={styles.item}>(818)-149-1495 </Text>
                                 </View>
                             </View>
                             <View style={styles.adressEmailContainer}>
                                 <View style={styles.addressContainer}>
                                     <Text style={{ marginRight: 10, fontSize: 18, fontWeight: '500', }}> Address </Text>
-                                    <Text style={styles.item}> 600 Wilshire Blvd Suite 500 #13, Los Angeles, CA 90015
+                                    <Text style={styles.item}> 3655 S Grand Ave, Los Angeles, CA 90007
                                     </Text>
                                 </View>
 
                                 <View style={styles.emailContainer}>
                                     <Text style={{ right: 5, fontSize: 18, fontWeight: '500', }}> Email </Text>
-                                    <Text style={styles.item}> firstnamelastname@outlook.com </Text>
+                                    <Text style={styles.item}> name@outlook.com </Text>
                                 </View>
                             </View>
-                            {/* <View style={styles.twoButtonsRow}>
+                            <View style={styles.twoButtonsRow}>
                                 <Pressable style={styles.twoButtons} onPress={goToAdopt}>
                                     <Text style={styles.twoButtonsText}>Reserve</Text>
                                 </Pressable>
                                 <Pressable style={styles.twoButtons} onPress={goToSupport}>
                                     <Text style={styles.twoButtonsText}>Support</Text>
                                 </Pressable>
-                            </View> */}
+                            </View>
                         </>
                     }
                 />
                 <View style={styles.twoButtonsRow}>
-                    <Pressable style={styles.twoButtons} onPress={goToAdopt}>
+                    {/* <Pressable style={styles.twoButtons} onPress={goToAdopt}>
                         <Text style={styles.twoButtonsText}>Reserve</Text>
                     </Pressable>
                     <Pressable style={styles.twoButtons} onPress={goToSupport}>
                         <Text style={styles.twoButtonsText}>Support</Text>
-                    </Pressable>
+                    </Pressable> */}
                 </View>
             </SafeAreaView>
         </View >
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     },
     headerImage: {
         width: "100%",
-        height: 450,
+        height: 360,
         position: 'absolute',
         marginTop: 50,
     },
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
         // flex: 1,
         // flexWrap: 'wrap',
         // flexDirection: 'row',
-        marginTop: 340,
+        marginTop: 280,
         backgroundColor: 'white',
         borderRadius: 10,
         height: 500,
@@ -155,12 +155,12 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row-reverse',
         justifyContent: 'center',
-        marginBottom: 20,
+        marginBottom: -25,
     },
     item: {
         marginTop: 2.5,
         color: 'black',
-        fontSize: 16,
+        fontSize: 14,
         alignSelf: 'flex-start',
         // marginBottom: 25,
     },
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     },
     time: {
         fontWeight: '500',
-        fontSize: 28,
+        fontSize: 38,
         position: 'absolute',
         right: 0,
         marginTop: 15,
@@ -191,37 +191,39 @@ const styles = StyleSheet.create({
     },
     shelterContainer: {
         // backgroundColor: 'pink',
-        width: 100,
         marginLeft: 15,
     },
     phoneContainer: {
         // backgroundColor: 'lightblue',
-        width: 100,
-        marginRight: 15,
+        marginLeft: 115,
     },
     shelterPhoneContainer: {
+        // backgroundColor: 'yellow',
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: 70,
+        width: 425,
     },
     addressContainer: {
         // backgroundColor: 'violet',
-        width: 100,
+        width: 150,
         position: 'relative',
         marginLeft: 15,
     },
     emailContainer: {
         // backgroundColor: 'lightgray',
-        width: 100,
+        width: 250,
         position: 'relative',
-        marginRight: 15,
+        marginLeft: 125,
     },
     adressEmailContainer: {
+        // backgroundColor: 'violet',
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 30,
-        marginBottom: 100,
+        height: 100,
+        width: 425,
     },
     row: {
         flex: 1,
@@ -231,7 +233,8 @@ const styles = StyleSheet.create({
     },
     dataContainer: {
         // backgroundColor: 'white',
-        backgroundColor: 'red'
+        height: 35,
+        width: 275,
     },
     phoneNumber: {
         // backgroundColor: 'yellow',

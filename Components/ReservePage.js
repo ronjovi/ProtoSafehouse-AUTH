@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
 
   transBoxStyle: {
-    backgroundColor: '#D9D9D9',
+    backgroundColor: '#EBEBEB',
     height: 30,
     width: 75,
     borderRadius: 5,

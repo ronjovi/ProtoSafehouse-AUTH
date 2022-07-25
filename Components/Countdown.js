@@ -5,13 +5,13 @@ import moment from 'moment';
 
 
 export default function CountDownTimer(props) {
-  const [totalDuration, setTotalDuration] = useState(893929);
+  const [totalDuration, setTotalDuration] = useState(0);
 
   const getCountdownColor = () => {
     if (totalDuration > 5256005.76) {
       return 'lime'
     } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
-      return 'yellow'
+      return 'gold'
     } else {return 'red'}
   }
 

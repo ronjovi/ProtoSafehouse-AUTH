@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, Modal, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Button, Modal, TouchableHighlight, Image, TouchableOpacity } from 'react-native';
 import Constants from 'expo-constants';
 import DateTimePicker from '@react-native-community/datetimepicker'
 import moment from 'moment';
@@ -25,8 +25,20 @@ export default function CustomDatePicker (props) {
     
     return(
       <TouchableOpacity
+        style = {{
+          width: 125,
+          height: 40,
+          borderRadius: 5,
+          borderColor: 'transparent',
+          borderWidth: 1,
+          backgroundColor: '#EBEBEB',
+          position: 'absolute',
+          marginTop: 480,
+          right: 175,
+        }}
         activeOpacity={0}
         onPress={() => setShow(true)}>
+          <Image source={require('../assets/ant-design_calendar-filled.png')} style={{position: 'absolute', left: 95, top: 7}}/>
     
         <View>
           <Text style = {textStyle}> {date.format('YYYY-MM-DD')} </Text>
