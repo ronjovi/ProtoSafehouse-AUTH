@@ -15,7 +15,7 @@ export default function AnimalDetails({ route, navigation }) {
     const goToDetails = () => {
         navigation.navigate('AnimalDetails')
     }
-    
+
     const goToAdopt = () => {
         navigation.navigate('Adopt');
     }
@@ -26,7 +26,7 @@ export default function AnimalDetails({ route, navigation }) {
             <SafeAreaView style={styles.container}>
                 <Image style={styles.headerImage} source={{ uri: route.params.image }} />
                 <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-                <Image source={require('../assets/Vector.png')} style={{alignSelf: 'center', marginTop: 15}}/>
+                    <Image source={require('../assets/Vector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
                 </Pressable>
                 <FlatList style={styles.flatList}
                     numColumns={2}
@@ -38,10 +38,10 @@ export default function AnimalDetails({ route, navigation }) {
                                 <Text> {route.params.breed} </Text>
                             </View>
                             {/* <Text style={styles.time}> {route.params.time} </Text> */}
-                                <View style = {styles.countdownStyle}>
-                                <Countdown/>
-                                <Text style={{position: 'absolute', marginTop: 30, marginLeft: 10,}}>Days until Put Down</Text>
-                                </View>
+                            <View style={styles.countdownStyle}>
+                                <Countdown intialValue = {route.params.time} />
+                                <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 10, }}>Days until Put Down</Text>
+                            </View>
                         </>
                     }
                     data={[
@@ -55,7 +55,7 @@ export default function AnimalDetails({ route, navigation }) {
                         // <Text style={styles.item}>{item.key}: {item.value}</Text>
 
                         <View style={styles.dataContainer}>
-                            <Text style={{backgroundColor: 'yellow', fontSize: 18, fontWeight: '500'}}> {item.key} </Text>
+                            <Text style={{ backgroundColor: 'yellow', fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
                             <Text style={styles.item}> {item.value} </Text>
                         </View>
 
@@ -64,27 +64,27 @@ export default function AnimalDetails({ route, navigation }) {
                         <>
                             <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 30 }}></View>
                             <View style={styles.shelterPhoneContainer}>
-                            <View style={styles.shelterContainer}>
-                                <Text style={{fontSize: 18, fontWeight: '500',}}> Shelter </Text>
-                                <Text style={styles.item}> {route.params.shelter} </Text>
-                            </View>
+                                <View style={styles.shelterContainer}>
+                                    <Text style={{ fontSize: 18, fontWeight: '500', }}> Shelter </Text>
+                                    <Text style={styles.item}> {route.params.shelter} </Text>
+                                </View>
 
-                            <View style={styles.phoneContainer}>
-                                <Text style={styles.phoneNumber}> Phone Number </Text>
-                                <Text style={styles.item}>1 (818)-149-1495 </Text>
-                            </View>
+                                <View style={styles.phoneContainer}>
+                                    <Text style={styles.phoneNumber}> Phone Number </Text>
+                                    <Text style={styles.item}>1 (818)-149-1495 </Text>
+                                </View>
                             </View>
                             <View style={styles.adressEmailContainer}>
-                            <View style={styles.addressContainer}>
-                                <Text style={{marginRight: 10, fontSize: 18, fontWeight: '500',}}> Address </Text>
-                                <Text style={styles.item}> 600 Wilshire Blvd Suite 500 #13, Los Angeles, CA 90015
-                                </Text>
-                            </View>
-                            
-                            <View style={styles.emailContainer}>
-                                <Text style={{right: 5, fontSize: 18, fontWeight: '500',}}> Email </Text>
-                                <Text style={styles.item}> firstnamelastname@outlook.com </Text>
-                            </View>
+                                <View style={styles.addressContainer}>
+                                    <Text style={{ marginRight: 10, fontSize: 18, fontWeight: '500', }}> Address </Text>
+                                    <Text style={styles.item}> 600 Wilshire Blvd Suite 500 #13, Los Angeles, CA 90015
+                                    </Text>
+                                </View>
+
+                                <View style={styles.emailContainer}>
+                                    <Text style={{ right: 5, fontSize: 18, fontWeight: '500', }}> Email </Text>
+                                    <Text style={styles.item}> firstnamelastname@outlook.com </Text>
+                                </View>
                             </View>
                             {/* <View style={styles.twoButtonsRow}>
                                 <Pressable style={styles.twoButtons} onPress={goToAdopt}>
@@ -98,13 +98,13 @@ export default function AnimalDetails({ route, navigation }) {
                     }
                 />
                 <View style={styles.twoButtonsRow}>
-                                <Pressable style={styles.twoButtons} onPress={goToAdopt}>
-                                    <Text style={styles.twoButtonsText}>Reserve</Text>
-                                </Pressable>
-                                <Pressable style={styles.twoButtons} onPress={goToSupport}>
-                                    <Text style={styles.twoButtonsText}>Support</Text>
-                                </Pressable>
-                            </View>
+                    <Pressable style={styles.twoButtons} onPress={goToAdopt}>
+                        <Text style={styles.twoButtonsText}>Reserve</Text>
+                    </Pressable>
+                    <Pressable style={styles.twoButtons} onPress={goToSupport}>
+                        <Text style={styles.twoButtonsText}>Support</Text>
+                    </Pressable>
+                </View>
             </SafeAreaView>
         </View >
     );
@@ -155,6 +155,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row-reverse',
         justifyContent: 'center',
+        marginBottom: 20,
     },
     item: {
         marginTop: 2.5,
@@ -220,6 +221,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 30,
+        marginBottom: 100,
     },
     row: {
         flex: 1,

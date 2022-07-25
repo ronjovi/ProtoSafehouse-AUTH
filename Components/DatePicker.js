@@ -1,6 +1,10 @@
-import { TouchableHighlight, View, Text, Modal, DateTimePicker, Date, StyleSheet, moment } from 'react-native';
+import * as React from 'react';
+import { Text, View, StyleSheet, Button, Modal, TouchableHighlight, TouchableOpacity } from 'react-native';
+import Constants from 'expo-constants';
+import DateTimePicker from '@react-native-community/datetimepicker'
+import moment from 'moment';
 
-const CustomDatePicker = (props) => {
+export default function CustomDatePicker (props) {
     const { textStyle, defaultDate } = props;
     
     const [date, setDate] = React.useState(defaultDate);
@@ -20,7 +24,7 @@ const CustomDatePicker = (props) => {
     }
     
     return(
-      <TouchableHighlight
+      <TouchableOpacity
         activeOpacity={0}
         onPress={() => setShow(true)}>
     
@@ -36,7 +40,7 @@ const CustomDatePicker = (props) => {
     
             <View style = {{flex:1}}>
     
-              <TouchableHighlight
+              <TouchableOpacity
                   style = {{
                     flex: 1,
                     alignItems: 'flex-end',
@@ -46,7 +50,7 @@ const CustomDatePicker = (props) => {
                   visible = {show}
                   onPress={() => setShow(false)}>
     
-                  <TouchableHighlight
+                  <TouchableOpacity
                     underlayColor={'#FFFFFF'}
                     style = {{
                       flex:1,
@@ -73,27 +77,27 @@ const CustomDatePicker = (props) => {
                           />
                         </View>
     
-                        <TouchableHighlight
+                        <TouchableOpacity
                           underlayColor={'transparent'}
                           onPress = {onCancel}
                           style = {[styles.btnText, styles.btnCancel]}>
                           <Text> Cancel </Text>
-                        </TouchableHighlight>
-                        <TouchableHighlight
+                        </TouchableOpacity>
+                        <TouchableOpacity
                           underlayColor={'transparent'}
                           onPress = {onDone}
                           style = {[styles.btnText, styles.btnDone]}>                  
                           <Text> Done </Text>
-                        </TouchableHighlight>
+                        </TouchableOpacity>
     
                       </View>
     
-                  </TouchableHighlight>
-              </TouchableHighlight>
+                  </TouchableOpacity>
+              </TouchableOpacity>
             </View>
           </Modal>   
         </View>
-      </TouchableHighlight>
+      </TouchableOpacity>
     )
    }
     
@@ -102,3 +106,29 @@ const CustomDatePicker = (props) => {
     defaultDate: moment(),
     onDateChange: () => {},
    }
+
+   const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingTop: Constants.statusBarHeight,
+      backgroundColor: '#ECF0F1',
+      padding: 8,
+    },
+    btnText: {
+      position: 'absolute',
+      top: 0,
+      height: 42,
+      paddingHorizontal: 20,
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    btnCancel: {
+      left: 0,
+    },
+    btnDone: {
+      right: 0,
+    }
+  });  

@@ -1,6 +1,7 @@
 {/* Imports React components */ }
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
+import CustomDatePicker from './DatePicker';
 
 const UselessTextInput = ({ navigation }) => {
     const [text, onChangeText] = React.useState("Useless Text");
@@ -42,6 +43,20 @@ const UselessTextInput = ({ navigation }) => {
                     />
                     <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
+
+                    <CustomDatePicker 
+                        textStyle = {{
+                            borderColor: 'grey',
+                            borderWidth: 1,
+                            paddingVertical: 15,
+                            paddingHorizontal: 10,
+                            width: 125,
+                            height: 50,
+                            backgroundColor: 'grey',
+                            color: 'white'
+
+                        }}
+                        onChange = {(value) => console.log(`New date set to: ${value}`)}/>
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
                     <Pressable onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
                         <Text style={styles.visitText}>Proceed to Reservation</Text>

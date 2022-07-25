@@ -5,7 +5,7 @@ import moment from 'moment';
 
 
 export default function CountDownTimer(props) {
-  const [totalDuration, setTotalDuration] = useState(0);
+  const [totalDuration, setTotalDuration] = useState(893929);
 
   const getCountdownColor = () => {
     if (totalDuration > 5256005.76) {
@@ -33,7 +33,7 @@ export default function CountDownTimer(props) {
     //converting in seconds
     setTotalDuration(d);
     //Settign up the duration of countdown in seconds to re-render
-  }, []);
+  }, [totalDuration]);
 
   //If it's not showing the time, delete the ending parentheses and type something random like: wrwr and then delete it and replace it with a parentheses
   console.log(setTotalDuration);
