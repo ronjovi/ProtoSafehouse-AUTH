@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 10,
     fontSize: 20,
+    fontFamily: 'K2D',
   },
   container: {
     flex: 1,
@@ -129,11 +130,13 @@ const styles = StyleSheet.create({
     borderRightColor: 'white',
     borderTopColor: 'white',
     borderLeftColor: 'white',
+    fontFamily: 'K2D',
   },
 
   xText: {
     marginBottom: 30,
     marginLeft: 10,
+    fontFamily: 'K2D',
   },
 
   transBoxStyle: {
@@ -154,6 +157,7 @@ const styles = StyleSheet.create({
     borderRightColor: 'white',
     borderTopColor: 'white',
     borderLeftColor: 'white',
+    fontFamily: 'K2D',
   },
   cvvExpiryInfo: {
     flex: 1,
@@ -164,6 +168,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     fontSize: 17,
     fontWeight: '200',
+    fontFamily: 'lightK2D',
   },
   transRow: {
     flex: 1,
@@ -182,6 +187,7 @@ const styles = StyleSheet.create({
     borderRightColor: 'white',
     borderTopColor: 'white',
     borderLeftColor: 'white',
+    fontFamily: 'K2D',
   },
   safehouseText: {
     marginTop: 10,
@@ -202,6 +208,7 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
     marginTop: 10,
+    fontFamily: 'semiBoldK2D',
   },
 });
 

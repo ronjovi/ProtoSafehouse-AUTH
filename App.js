@@ -12,10 +12,18 @@ import Adopt from './Components/Adopt';
 import VisitConfirm from './Components/VisitConfirm';
 import SupportConfirm from './Components/SupportConfirm';
 import ReservePage from './Components/ReservePage';
+import { useFonts } from 'expo-font';
+
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [loaded] = useFonts({
+    K2D: require('./assets/fonts/K2D-Regular.ttf'),
+    boldK2D: require('./assets/fonts/K2D-Bold.ttf'),
+    semiBoldK2D: require('./assets/fonts/K2D-SemiBold.ttf'),
+    lightK2D: require('./assets/fonts/K2D-Light.ttf'),
+  });
   return (
     <NavigationContainer>
       <Stack.Navigator>

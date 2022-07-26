@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         color: '#62BA75',
         fontWeight: '500',
         marginTop: 5,
+        fontFamily: 'semiBoldK2D',
     },
     returnButton: {
         alignSelf: 'center',
@@ -41,5 +42,6 @@ const styles = StyleSheet.create({
         color: 'white',
         alignSelf: 'center',
         marginTop: 10,
+        fontFamily: 'semiBoldK2D',
     },
 });

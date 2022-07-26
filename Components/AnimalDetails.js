@@ -35,12 +35,12 @@ export default function AnimalDetails({ route, navigation }) {
                         <>
                             <View style={styles.nameBreedContainer}>
                                 <Text style={styles.name}> {route.params.name} </Text>
-                                <Text> {route.params.breed} </Text>
+                                <Text style={styles.breedText}> {route.params.breed} </Text>
                             </View>
                             {/* <Text style={styles.time}> {route.params.time} </Text> */}
                             <View style={styles.countdownStyle}>
                                 <Countdown intialValue = {route.params.time} />
-                                <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 10, }}>Days until Put Down</Text>
+                                <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 10, fontFamily: 'K2D', }}>Days until Put Down</Text>
                             </View>
                         </>
                     }
@@ -55,7 +55,7 @@ export default function AnimalDetails({ route, navigation }) {
                         // <Text style={styles.item}>{item.key}: {item.value}</Text>
 
                         <View style={styles.dataContainer}>
-                            <Text style={{ fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
+                            <Text style={{ fontFamily: 'semiBoldK2D', fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
                             <Text style={styles.item}> {item.value} </Text>
                         </View>
 
@@ -65,7 +65,7 @@ export default function AnimalDetails({ route, navigation }) {
                             <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 20 }}></View>
                             <View style={styles.shelterPhoneContainer}>
                                 <View style={styles.shelterContainer}>
-                                    <Text style={{ fontSize: 18, fontWeight: '500', }}> Shelter </Text>
+                                    <Text style={{ fontSize: 18, fontWeight: '500', fontFamily: 'semiBoldK2D', }}> Shelter </Text>
                                     <Text style={styles.item}> {route.params.shelter} </Text>
                                 </View>
 
@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontSize: 15,
         marginTop: 10,
+        fontFamily: 'semiBoldK2D',
     },
     twoButtonsRow: {
         flex: 1,
@@ -162,10 +163,11 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 14,
         alignSelf: 'flex-start',
+        fontFamily: 'K2D',
         // marginBottom: 25,
     },
     name: {
-        fontWeight: '500',
+        fontFamily: 'semiBoldK2D',
         fontSize: 28,
         position: 'relative',
         left: 0,
@@ -175,6 +177,9 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         fontSize: 14,
         lineHeight: 18,
+    },
+    breedText: {
+        fontFamily: 'K2D',
     },
     nameBreedContainer: {
         // backgroundColor: 'white',
@@ -232,7 +237,6 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     dataContainer: {
-        // backgroundColor: 'white',
         height: 35,
         width: 275,
     },
@@ -241,6 +245,7 @@ const styles = StyleSheet.create({
         right: 10,
         fontSize: 18,
         fontWeight: '500',
+        fontFamily: 'semiBoldK2D',
     },
     countdownStyle: {
         // backgroundColor: 'yellow',

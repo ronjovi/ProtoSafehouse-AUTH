@@ -54,10 +54,10 @@ export default function CountDownTimer(props) {
       digitStyle = {{color: 'transparent'}}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
       // digitStyle={{ color: 'black' }}
-      digitTxtStyle={{ color: getCountdownColor(), fontWeight: 'bold', fontSize: 18 }}
+      digitTxtStyle={{ color: getCountdownColor(), fontWeight: 'bold', fontSize: 18, fontFamily: 'boldK2D', }}
       // showSeparator
       // separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15,}}
-      separatorStyle = {{color: getCountdownColor(), bottom: 8}}
+      separatorStyle = {{color: getCountdownColor(), bottom: 8, fontFamily: 'semiBoldK2D',}}
       showSeparator
     />
   )

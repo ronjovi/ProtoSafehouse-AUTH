@@ -54,6 +54,8 @@ const UselessTextInput = ({ navigation }) => {
                             alignSelf: 'flex-start',
                             marginTop: 10,
                             position: 'relative',
+                            fontFamily: 'K2D',
+                            marginLeft: 5,
                             // borderRadius: 100,
                         }}
                         onChange = {(value) => console.log(`New date set to: ${value}`)}/>
@@ -96,6 +98,7 @@ const styles = StyleSheet.create({
         borderRightColor: 'white',
         borderTopColor: 'white',
         borderLeftColor: 'white',
+        fontFamily: 'K2D',
     },
 
     safehouseText: {
@@ -103,6 +106,7 @@ const styles = StyleSheet.create({
         fontWeight: '400',
         marginLeft: 50,
         margin: 10,
+        fontFamily: 'K2D',
     },
     visitButton: {
         backgroundColor: "#62BA75",
@@ -117,12 +121,14 @@ const styles = StyleSheet.create({
         color: 'white',
         alignSelf: 'center',
         marginTop: 10,
+        fontFamily: 'semiBoldK2D',
     },
     dateTimeConfirmText: {
         fontSize: 20,
         fontWeight: '200',
         marginLeft: 50,
         margin: 25,
+        fontFamily: 'lightK2D',
     }
 });
 
