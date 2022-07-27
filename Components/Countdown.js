@@ -2,10 +2,20 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 import CountDown from 'react-native-countdown-component';
 import moment from 'moment';
+import { useFonts } from "expo-font";
+
 
 
 export default function CountDownTimer(props) {
-  const [totalDuration, setTotalDuration] = useState(0);
+  // Loading the fonts for the timer
+  const [loaded] = useFonts({
+    K2D: require('../assets/fonts/K2D-Regular.ttf'),
+    boldK2D: require('../assets/fonts/K2D-Bold.ttf'),
+    semiBoldK2D: require('../assets/fonts/K2D-SemiBold.ttf'),
+    lightK2D: require('../assets/fonts/K2D-Light.ttf'),
+  });
+
+  const [totalDuration, setTotalDuration] = useState(props.intialValue);
 
   const getCountdownColor = (changeColor) => {
     if (changeColor == true){
@@ -40,6 +50,7 @@ export default function CountDownTimer(props) {
   //If it's not showing the time, delete the ending parentheses and type something random like: wrwr and then delete it and replace it with a parentheses
   console.log(setTotalDuration);
 
+  if(!loaded) return null
   return (
     // style={styles.countdownStyle}
     <CountDown 

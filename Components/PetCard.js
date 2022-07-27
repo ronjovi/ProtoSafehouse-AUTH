@@ -53,5 +53,6 @@ const styles = StyleSheet.create({
         marginTop: 160,
         marginRight: 30,
         justifyContent: 'flex-start',
+        fontFamily: 'boldK2D'
       }
 });

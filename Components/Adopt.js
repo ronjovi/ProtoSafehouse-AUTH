@@ -41,7 +41,7 @@ const UselessTextInput = ({ navigation }) => {
                         style={styles.input}
                         onChangeText={onChangeNumber}
                         value={numbaThree}
-                        placeholder="Email Adress"
+                        placeholder="Email Address"
                         keyboardType="email"
                     />
                     <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
@@ -57,12 +57,13 @@ const UselessTextInput = ({ navigation }) => {
                         }}
                         onChange = {(value) => console.log(`New date set to: ${value}`)}/>
 
-                        <DateTimePicker style={styles.DateTimePickerStyle}
+                        <DateTimePicker
+                            style={styles.DateTimePickerStyle}
                             timeZoneOffsetInMinutes = {0}
                             value = {new Date()}
                             mode = "time"
                             minuteInterval={10}
-                          />
+                        />
                     {/* <CustomTimePicker></CustomTimePicker> */}
                     {/* <Image source={require('../assets/ant-design_calendar-filled.png')} /> */}
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
@@ -136,9 +137,11 @@ const styles = StyleSheet.create({
         fontFamily: 'lightK2D',
     },
     DateTimePickerStyle: {
-        position: 'absolute',
-        Top: 600,
-        Right: 50,
+        // flex: 1,
+        top: 55,
+        marginRight: 210,
+        // backgroundColor: '#EBEBEB', 
+        fontFamily: 'K2D'
     },
 });
 
