@@ -70,7 +70,7 @@ export default function CountDownTimer(props) {
       digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: 24, lineHeight: 27, fontFamily: 'boldK2D'}}
       // showSeparator
       // separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15,}}
-      separatorStyle = {{color: getCountdownColor(props.changeColor), bottom: 8, fontFamily: 'semiBoldK2D',}}
+      separatorStyle = {{ color: getCountdownColor(props.changeColor), bottom: 8, fontFamily: 'semiBoldK2D', fontSize: 24,}}
       showSeparator
     />
   )

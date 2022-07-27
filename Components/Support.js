@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
 
   input: {
     height: 40,
-    width: 325,
+    width: 365,
     alignSelf: 'center',
     margin: 12,
     marginBottom: 10,
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
 
   inputCardInfo: {
     height: 40,
-    width: 325,
+    width: 365,
     alignSelf: 'center',
     margin: 12,
     marginBottom: 3,
@@ -169,12 +169,13 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: '200',
     fontFamily: 'lightK2D',
+    marginLeft: 20,
   },
   transRow: {
     flex: 1,
     // If there's any errors it may have to do with flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   columnCard: {
     height: 40,

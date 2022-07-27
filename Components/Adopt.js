@@ -44,7 +44,7 @@ const UselessTextInput = ({ navigation }) => {
                         placeholder="Email Address"
                         keyboardType="email"
                     />
-                    <Text style={styles.safehouseText}>When do you plan on visiting?</Text>
+                    <Text style={styles.safehouseText}>When do you plan on visiting the shelter?</Text>
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
                     <CustomDatePicker 
                         textStyle = {{
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     },
 
     safehouseText: {
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: '400',
         marginLeft: 50,
         margin: 10,

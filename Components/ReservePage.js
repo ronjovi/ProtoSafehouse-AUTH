@@ -10,20 +10,24 @@ const UselessTextInput = ({ navigation }) => {
     <View style={styles.container}>
       <SafeAreaView>
         <ScrollView>
-        <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-                <Image source={require('../assets/Vector.png')} style={{alignSelf: 'center', marginTop: 15}}/>
-                </Pressable>
+          <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
+            <Image source={require('../assets/Vector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
+          </Pressable>
           <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-          <Text style={styles.header}>Freeze this cat's time with a reservation</Text>
-          <Text style={styles.safehouseText}>Failiure to adopt this cat within 36 hours after your reservation will result in the timer being continued!</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={onChangeNumber}
-            value={numbaOne}
-            placeholder="Reservation Price: $XX.XX"
-            keyboardType="default"
-          />
-          <Text style={styles.xText}>$XX.XX will go to Safehouse</Text>
+          <View style={styles.timerFreezeHeaderContainer}>
+            <Text style={styles.header}>Freeze this cat's time with a reservation</Text>
+            <Text style={styles.safehouseText}>Failure to adopt this cat within 36 hours after your reservation will result in the timer being continued!</Text>
+          </View>
+          <View style={styles.reservationInput}>
+            <TextInput
+              style={styles.input}
+              onChangeText={onChangeNumber}
+              value={numbaOne}
+              placeholder="Reservation Price: $XX.XX"
+              keyboardType="default"
+            />
+            <Text style={styles.xText}>$XX.XX will go to Safehouse</Text>
+          </View>
           <Text style={styles.transactionText}>Transaction Method</Text>
           <View style={styles.transRow}>
             <TextInput
@@ -104,6 +108,10 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
 
+  timerFreezeHeaderContainer: {
+    marginBottom: 25,
+  },
+
   header: {
     alignSelf: 'center',
     marginBottom: 10,
@@ -112,6 +120,16 @@ const styles = StyleSheet.create({
     fontFamily: 'semiBoldK2D',
   },
 
+  safehouseText: {
+    marginTop: 0,
+    fontSize: 13,
+    fontWeight: '400',
+    height: 40,
+    width: 300,
+    alignSelf: 'center',
+    fontFamily: 'K2D',
+  },
+  
   container: {
     flex: 1,
     flexDirection: "row",
@@ -119,9 +137,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 
+  reservationInput: {
+
+  },
+
   input: {
     height: 40,
-    width: 325,
+    width: 365,
     alignSelf: 'center',
     margin: 12,
     marginBottom: 10,
@@ -135,21 +157,20 @@ const styles = StyleSheet.create({
 
   xText: {
     marginBottom: 30,
-    marginLeft: 10,
+    marginLeft: 13,
     fontFamily: 'K2D',
   },
 
   transBoxStyle: {
     backgroundColor: '#EBEBEB',
-    height: 30,
-    width: 75,
+    height: 35,
+    width: 65,
     borderRadius: 5,
-    
   },
 
   inputCardInfo: {
     height: 40,
-    width: 325,
+    width: 365,
     alignSelf: 'center',
     margin: 12,
     marginBottom: 3,
@@ -170,13 +191,13 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: '200',
     fontFamily: 'lightK2D',
+    marginLeft: 20,
   },
   transRow: {
     flex: 1,
     // If there's any errors it may have to do with flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 12,
+    justifyContent: 'space-evenly',
   },
   columnCard: {
     height: 40,
@@ -189,15 +210,6 @@ const styles = StyleSheet.create({
     borderRightColor: 'white',
     borderTopColor: 'white',
     borderLeftColor: 'white',
-    fontFamily: 'K2D',
-  },
-  safehouseText: {
-    marginTop: 0,
-    fontSize: 15,
-    fontWeight: '400',
-    height: 40,
-    width: 350,
-    alignSelf: 'center',
     fontFamily: 'K2D',
   },
   reserveButton: {

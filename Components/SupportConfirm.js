@@ -8,7 +8,7 @@ export default function GoToHome({ navigation }) {
             <Image source={require('../assets/Safehouse_paw.png')} style={styles.safehousePawLogo} />
             <Text style={styles.confirmStyle}>Support Confirmed!</Text>
             <Pressable onPress={() => navigation.navigate('AnimalList')} style={styles.returnButton}>
-                <Text style={styles.returnButtonText}>Return to home</Text>
+                <Text style={styles.returnButtonText}>Return to Home</Text>
             </Pressable>
         </View>
     )

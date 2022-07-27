@@ -12,7 +12,8 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 
             <Pressable onPress={goToDetails}>
                 <Image source={{ uri: image }} style={styles.petImage} />
-                <Countdown intialValue={time} listStyle = {styles.countdownStyle} style={{ position: 'absolute' }} changeColor = {true}/>
+                <Countdown intialValue={time} listStyle={styles.countdownStyle} style={{ position: 'absolute' }} changeColor={true} />
+                <View style={styles.darkener}></View>
             </Pressable>
 
         </View>
@@ -37,6 +38,14 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         // marginRight: 5,
     },
+    darkener: {
+        backgroundColor: 'black',
+        height: 205,
+        width: 200,
+        borderRadius: 10,
+        opacity: 0.2,
+        bottom: 215,
+    },
     nameText: {
         color: 'white',
         fontSize: 30,
@@ -53,6 +62,7 @@ const styles = StyleSheet.create({
         marginTop: 160,
         marginRight: 30,
         justifyContent: 'flex-start',
-        fontFamily: 'boldK2D'
-      }
+        fontFamily: 'boldK2D',
+        zIndex: 2,
+    }
 });

@@ -33,14 +33,16 @@ export default function AnimalDetails({ route, navigation }) {
                     columnWrapperStyle={styles.row}
                     ListHeaderComponent={
                         <>
-                            <View style={styles.nameBreedContainer}>
-                                <Text style={styles.name}> {route.params.name} </Text>
-                                <Text style={styles.breedText}> {route.params.breed} </Text>
-                            </View>
-                            {/* <Text style={styles.time}> {route.params.time} </Text> */}
-                            <View style={styles.countdownStyle}>
-                                <Countdown intialValue = {route.params.time} changeColor = {false}/>
-                                <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 10, fontFamily: 'K2D', }}>Days until Put Down</Text>
+                            <View style={styles.headersContainer}>
+                                <View style={styles.nameBreedContainer}>
+                                    <Text style={styles.name}> {route.params.name} </Text>
+                                    <Text style={styles.breedText}> {route.params.breed} </Text>
+                                </View>
+                                {/* <Text style={styles.time}> {route.params.time} </Text> */}
+                                <View style={styles.countdownStyle}>
+                                    <Countdown intialValue={route.params.time} changeColor={false} />
+                                    <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 4, fontFamily: 'K2D', }}>Days until Put Down</Text>
+                                </View>
                             </View>
                         </>
                     }
@@ -49,6 +51,10 @@ export default function AnimalDetails({ route, navigation }) {
                         { key: 'Weight', value: route.params.weight },
                         { key: 'Notes', value: '- No Allergies' },
                         { key: 'Sex', value: route.params.sex },
+                        { key: 'Shelter', value: route.params.shelter },
+                        { key: 'Phone Number', value: '(818) 497-419' },
+                        { key: 'Address', value: '3655 South Grand Ave.' },
+                        { key: 'Email', value: 'firstname@outlook.com' },
                         // { key: 'Shelter', value: route.params.shelter },
                     ]}
                     renderItem={({ item }) => (
@@ -62,30 +68,8 @@ export default function AnimalDetails({ route, navigation }) {
                     )}
                     ListFooterComponent={
                         <>
-                            <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 20 }}></View>
-                            <View style={styles.shelterPhoneContainer}>
-                                <View style={styles.shelterContainer}>
-                                    <Text style={{ fontSize: 18, fontWeight: '500', fontFamily: 'semiBoldK2D', }}> Shelter </Text>
-                                    <Text style={styles.item}> {route.params.shelter} </Text>
-                                </View>
+                            <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 20, bottom: 150 }}></View>
 
-                                <View style={styles.phoneContainer}>
-                                    <Text style={styles.phoneNumber}> Phone Number </Text>
-                                    <Text style={styles.item}>(818)-149-1495 </Text>
-                                </View>
-                            </View>
-                            <View style={styles.adressEmailContainer}>
-                                <View style={styles.addressContainer}>
-                                    <Text style={{ marginRight: 10, fontSize: 18, fontWeight: '500', }}> Address </Text>
-                                    <Text style={styles.item}> 3655 S Grand Ave, Los Angeles, CA 90007
-                                    </Text>
-                                </View>
-
-                                <View style={styles.emailContainer}>
-                                    <Text style={{ right: 5, fontSize: 18, fontWeight: '500', }}> Email </Text>
-                                    <Text style={styles.item}> name@outlook.com </Text>
-                                </View>
-                            </View>
                             <View style={styles.twoButtonsRow}>
                                 <Pressable style={styles.twoButtons} onPress={goToAdopt}>
                                     <Text style={styles.twoButtonsText}>Reserve</Text>
@@ -98,12 +82,6 @@ export default function AnimalDetails({ route, navigation }) {
                     }
                 />
                 <View style={styles.twoButtonsRow}>
-                    {/* <Pressable style={styles.twoButtons} onPress={goToAdopt}>
-                        <Text style={styles.twoButtonsText}>Reserve</Text>
-                    </Pressable>
-                    <Pressable style={styles.twoButtons} onPress={goToSupport}>
-                        <Text style={styles.twoButtonsText}>Support</Text>
-                    </Pressable> */}
                 </View>
             </SafeAreaView>
         </View >
@@ -166,11 +144,15 @@ const styles = StyleSheet.create({
         fontFamily: 'K2D',
         // marginBottom: 25,
     },
+    headersContainer: {
+        flex: 1,
+        flexDirection: 'column',
+    },
     name: {
         fontFamily: 'semiBoldK2D',
         fontSize: 28,
         position: 'relative',
-        left: 0,
+        right: 7,
         marginTop: 15,
     },
     breed: {
@@ -183,8 +165,8 @@ const styles = StyleSheet.create({
     },
     nameBreedContainer: {
         // backgroundColor: 'white',
-        marginLeft: 10,
-        position: 'relative'
+        marginLeft: 15,
+        position: 'relative',
     },
     time: {
         fontWeight: '500',
@@ -199,8 +181,19 @@ const styles = StyleSheet.create({
         marginLeft: 15,
     },
     phoneContainer: {
-        // backgroundColor: 'lightblue',
-        marginLeft: 115,
+        marginLeft: 103,
+    },
+    phoneNumber: {
+        right: 7,
+        fontSize: 18,
+        fontWeight: '500',
+        fontFamily: 'semiBoldK2D',
+    },
+    phoneItem: {
+        marginTop: 2.5,
+        color: 'black',
+        fontSize: 14,
+        fontFamily: 'K2D',
     },
     shelterPhoneContainer: {
         // backgroundColor: 'yellow',
@@ -208,7 +201,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         height: 70,
-        width: 425,
+        width: 250,
     },
     addressContainer: {
         // backgroundColor: 'violet',
@@ -220,7 +213,7 @@ const styles = StyleSheet.create({
         // backgroundColor: 'lightgray',
         width: 250,
         position: 'relative',
-        marginLeft: 125,
+        marginLeft: 90,
     },
     adressEmailContainer: {
         // backgroundColor: 'violet',
@@ -238,22 +231,15 @@ const styles = StyleSheet.create({
     },
     dataContainer: {
         height: 35,
-        width: 275,
-    },
-    phoneNumber: {
-        // backgroundColor: 'yellow',
-        right: 10,
-        fontSize: 18,
-        fontWeight: '500',
-        fontFamily: 'semiBoldK2D',
+        width: 228,
+        marginLeft: 7,
     },
     countdownStyle: {
-        // backgroundColor: 'yellow',
         width: 175,
         alignSelf: 'flex-end',
         position: 'absolute',
         height: 30,
-        marginTop: 15,
-        
+        marginTop: 20,
+
     },
 });
