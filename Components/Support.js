@@ -84,8 +84,8 @@ const UselessTextInput = ({ navigation }) => {
             placeholder="Zip Code"
             keyboardType="numeric"
           />
-          <Pressable style={styles.donateButton}>
-            <Text onPress={() => navigation.navigate("SupportConfirm")} style={styles.donateText}>Confirm Support</Text>
+          <Pressable onPress={() => navigation.navigate("SupportConfirm")} style={styles.donateButton}>
+            <Text style={styles.donateText}>Confirm Support</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>

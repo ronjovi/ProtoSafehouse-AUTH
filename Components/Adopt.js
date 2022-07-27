@@ -2,6 +2,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
 import CustomDatePicker from './DatePicker';
+import DateTimePicker from '@react-native-community/datetimepicker'
+
+// import CustomTimePicker from './TimePicker';
 
 const UselessTextInput = ({ navigation }) => {
     const [text, onChangeText] = React.useState("Useless Text");
@@ -45,20 +48,22 @@ const UselessTextInput = ({ navigation }) => {
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
                     <CustomDatePicker 
                         textStyle = {{
-                            // borderWidth: 1,
-                            // borderColor: '#EBEBEB',
-                            // paddingVertical: 15,
-                            // paddingHorizontal: 10,
                             color: 'black',
-                            // marginRight: 15,
                             alignSelf: 'flex-start',
                             marginTop: 10,
                             position: 'relative',
                             fontFamily: 'K2D',
                             marginLeft: 5,
-                            // borderRadius: 100,
                         }}
                         onChange = {(value) => console.log(`New date set to: ${value}`)}/>
+
+                        <DateTimePicker style={styles.DateTimePickerStyle}
+                            timeZoneOffsetInMinutes = {0}
+                            value = {new Date()}
+                            mode = "time"
+                            minuteInterval={10}
+                          />
+                    {/* <CustomTimePicker></CustomTimePicker> */}
                     {/* <Image source={require('../assets/ant-design_calendar-filled.png')} /> */}
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
                     <Pressable onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
@@ -129,7 +134,12 @@ const styles = StyleSheet.create({
         marginLeft: 50,
         margin: 25,
         fontFamily: 'lightK2D',
-    }
+    },
+    DateTimePickerStyle: {
+        position: 'absolute',
+        Top: 600,
+        Right: 50,
+    },
 });
 
 export default UselessTextInput;

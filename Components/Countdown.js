@@ -7,12 +7,14 @@ import moment from 'moment';
 export default function CountDownTimer(props) {
   const [totalDuration, setTotalDuration] = useState(0);
 
-  const getCountdownColor = () => {
-    if (totalDuration > 5256005.76) {
-      return 'lime'
-    } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
-      return 'gold'
-    } else {return 'red'}
+  const getCountdownColor = (changeColor) => {
+    if (changeColor == true){
+      if (totalDuration > 5256005.76) {
+        return '#62BA75'
+      } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
+        return '#B8BA62'
+      } else {return '#BA6262'}
+    }
   }
 
   useEffect(() => {
@@ -53,11 +55,11 @@ export default function CountDownTimer(props) {
       timeLabelStyle = {{color: 'transparent'}}
       digitStyle = {{color: 'transparent'}}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
-      // digitStyle={{ color: 'black' }}
-      digitTxtStyle={{ color: getCountdownColor(), fontWeight: 'bold', fontSize: 18, fontFamily: 'boldK2D', }}
+      // digitTxtStyle={{ color: 'black' }}
+      digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: 24, lineHeight: 27, fontFamily: 'boldK2D'}}
       // showSeparator
       // separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15,}}
-      separatorStyle = {{color: getCountdownColor(), bottom: 8, fontFamily: 'semiBoldK2D',}}
+      separatorStyle = {{color: getCountdownColor(props.changeColor), bottom: 8, fontFamily: 'semiBoldK2D',}}
       showSeparator
     />
   )

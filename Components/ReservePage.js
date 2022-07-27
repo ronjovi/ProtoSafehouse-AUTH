@@ -79,8 +79,8 @@ const UselessTextInput = ({ navigation }) => {
             placeholder="Zip Code"
             keyboardType="numeric"
           />
-          <Pressable style={styles.reserveButton}>
-            <Text onPress={() => navigation.navigate("VisitConfirm") } style={styles.reserveText}>Confirm Reservation</Text>
+          <Pressable onPress={() => navigation.navigate("VisitConfirm")} style={styles.reserveButton}>
+            <Text style={styles.reserveText}>Confirm Reservation</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>
@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
     height: 30,
     width: 75,
     borderRadius: 5,
+    
   },
 
   inputCardInfo: {
@@ -175,6 +176,7 @@ const styles = StyleSheet.create({
     // If there's any errors it may have to do with flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    margin: 12,
   },
   columnCard: {
     height: 40,

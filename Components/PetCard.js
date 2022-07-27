@@ -12,7 +12,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 
             <Pressable onPress={goToDetails}>
                 <Image source={{ uri: image }} style={styles.petImage} />
-                <Countdown intialValue={time} listStyle = {styles.countdownStyle} style={{ position: 'absolute' }} />
+                <Countdown intialValue={time} listStyle = {styles.countdownStyle} style={{ position: 'absolute' }} changeColor = {true}/>
             </Pressable>
 
         </View>

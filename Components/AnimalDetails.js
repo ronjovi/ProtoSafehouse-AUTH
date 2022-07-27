@@ -39,7 +39,7 @@ export default function AnimalDetails({ route, navigation }) {
                             </View>
                             {/* <Text style={styles.time}> {route.params.time} </Text> */}
                             <View style={styles.countdownStyle}>
-                                <Countdown intialValue = {route.params.time} />
+                                <Countdown intialValue = {route.params.time} changeColor = {false}/>
                                 <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 10, fontFamily: 'K2D', }}>Days until Put Down</Text>
                             </View>
                         </>
@@ -47,7 +47,7 @@ export default function AnimalDetails({ route, navigation }) {
                     data={[
                         { key: 'Age', value: route.params.age },
                         { key: 'Weight', value: route.params.weight },
-                        { key: ' Notes', value: '- No Allergies' },
+                        { key: 'Notes', value: '- No Allergies' },
                         { key: 'Sex', value: route.params.sex },
                         // { key: 'Shelter', value: route.params.shelter },
                     ]}
@@ -254,5 +254,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         height: 30,
         marginTop: 15,
+        
     },
 });
