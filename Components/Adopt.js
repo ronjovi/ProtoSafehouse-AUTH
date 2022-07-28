@@ -3,17 +3,24 @@ import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
 import CustomDatePicker from './DatePicker';
 import DateTimePicker from '@react-native-community/datetimepicker'
+import { useFonts } from 'expo-font';
 
 // import CustomTimePicker from './TimePicker';
 
 const UselessTextInput = ({ navigation }) => {
     const [text, onChangeText] = React.useState("Useless Text");
-    const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree] = React.useState(null);
-
-    // const goToDetails = () => {
-    //     navigation.navigate('AnimalDetails')
-    // }
-
+    const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, timeSetOne, timeSetTwo] = React.useState(null);
+    const [am, onChangeAM] = React.useState(2);
+    const [pm, onChangePM] = React.useState(1);
+    const timeAM = () => {
+        console.log('Hello')
+        // if AM 1 -> change to 2; if AM is 2 -> 1
+        // onChangeAM(2)
+    }
+    const timePM = () => {
+        console.log('there')
+        // onChangePM if its 1 -> 2; if 2 -> 1
+    }
     return (
         <View style={styles.container}>
             <SafeAreaView>
@@ -46,8 +53,8 @@ const UselessTextInput = ({ navigation }) => {
                     />
                     <Text style={styles.safehouseText}>When do you plan on visiting the shelter?</Text>
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
-                    <CustomDatePicker 
-                        textStyle = {{
+                    <CustomDatePicker
+                        textStyle={{
                             color: 'black',
                             alignSelf: 'flex-start',
                             marginTop: 10,
@@ -55,18 +62,47 @@ const UselessTextInput = ({ navigation }) => {
                             fontFamily: 'K2D',
                             marginLeft: 5,
                         }}
-                        onChange = {(value) => console.log(`New date set to: ${value}`)}/>
+                        onChange={(value) => console.log(`New date set to: ${value}`)} />
 
-                        <DateTimePicker
-                            style={styles.DateTimePickerStyle}
-                            timeZoneOffsetInMinutes = {0}
-                            value = {new Date()}
-                            mode = "time"
-                            minuteInterval={10}
-                        />
-                    {/* <CustomTimePicker></CustomTimePicker> */}
-                    {/* <Image source={require('../assets/ant-design_calendar-filled.png')} /> */}
+                    {/* <DateTimePicker
+                        style={styles.DateTimePickerStyle}
+                        timeZoneOffsetInMinutes={0}
+                        value={new Date()}
+                        mode="time"
+                        minuteInterval={10}
+                    /> */}
+                    <View style={styles.timeSetView}>
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
+                    <TextInput
+                        style={styles.timeSetStyle}
+                        onChangeText={onChangeText}
+                        value={timeSetOne}
+                        textAlign={'center'}
+                    />
+                    <Text style={{marginLeft: 14, marginRight: 10, fontSize: 25,}}>:</Text>
+                    <TextInput
+                        style={styles.timeSetStyle}
+                        onChangeText={onChangeText}
+                        value={timeSetTwo}
+                        textAlign={'center'}
+                    />
+                    {/* <View style={styles.AM_PM_BUTTONS_VIEW}>
+                        <Pressable style={styles.TimeButtons} onPress={timeAM}>
+                            <Text style={styles.TimeButtonsText}>AM</Text>
+                        </Pressable>
+                        <Pressable style={styles.TimeButtons} onPress={timePM}>
+                            <Text style={styles.TimeButtonsText}>PM</Text>
+                        </Pressable>
+                    </View> */}
+                    <View style={styles.AM_PM_BUTTONS_VIEW}>
+                        <Pressable style={(am == 1) ? styles.activeText : styles.inactiveText} onPress={() => onChangeAM(2)}>
+                            <Text style={styles.TimeButtonsText}>AM</Text>
+                        </Pressable>
+                        <Pressable style={styles.TimeButtons} onPress={() => onChangePM(2)}>
+                            <Text style={(pm == 2) ? styles.activeText : styles.inactiveText} >PM</Text>
+                        </Pressable>
+                    </View>
+                    </View>
                     <Pressable onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
                         <Text style={styles.visitText}>Proceed to Reservation</Text>
                     </Pressable>
@@ -136,12 +172,42 @@ const styles = StyleSheet.create({
         margin: 25,
         fontFamily: 'lightK2D',
     },
-    DateTimePickerStyle: {
-        // flex: 1,
-        top: 55,
-        marginRight: 210,
-        // backgroundColor: '#EBEBEB', 
-        fontFamily: 'K2D'
+    timeSetView: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    timeSetStyle: {
+        backgroundColor: '#EBEBEB',
+        height: 46,
+        width: 60,
+        borderRadius: 5,
+        marginLeft: 4,
+        fontFamily: 'K2D',
+    },
+    AM_PM_BUTTONS_VIEW: {
+        marginLeft: 20,
+    },
+    TimeButtons: {
+        backgroundColor: '#EBEBEB',
+        borderRadius: 2,
+        margin: 3,
+        width: 60,
+        height: 18,
+    },
+    TimeButtonsText: {
+        alignSelf: 'center',
+        fontFamily: 'K2D',
+        bottom: 2,
+        color: 'black',
+    },
+    activeText: {
+        backgroundColor: '#62BA75',
+        color: 'white',
+    },
+    inactiveText: {
+        backgroundColor: '#EBEBEB',
+        color: 'black',
     },
 });
 
