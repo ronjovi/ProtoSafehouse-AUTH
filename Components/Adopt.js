@@ -10,17 +10,20 @@ import { useFonts } from 'expo-font';
 const UselessTextInput = ({ navigation }) => {
     const [text, onChangeText] = React.useState("Useless Text");
     const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, timeSetOne, timeSetTwo] = React.useState(null);
-    const [am, onChangeAM] = React.useState(2);
-    const [pm, onChangePM] = React.useState(1);
+    const [am, onChangeAM] = React.useState(false);
+    const [pm, onChangePM] = React.useState(false);
     const timeAM = () => {
-        console.log('Hello')
-        // if AM 1 -> change to 2; if AM is 2 -> 1
-        // onChangeAM(2)
+        onChangeAM(true)
+        onChangePM(false)
     }
     const timePM = () => {
-        console.log('there')
-        // onChangePM if its 1 -> 2; if 2 -> 1
+        onChangeAM(false)
+        onChangePM(true)
     }
+    if (onChangeAM(true)) return (
+        console.log("Set in the morning")
+    ); else if (onChangeAM(false)) return (console.log ("AM is false"), onChangePM(true));
+
     return (
         <View style={styles.container}>
             <SafeAreaView>
@@ -86,20 +89,12 @@ const UselessTextInput = ({ navigation }) => {
                         value={timeSetTwo}
                         textAlign={'center'}
                     />
-                    {/* <View style={styles.AM_PM_BUTTONS_VIEW}>
+                    <View style={styles.AM_PM_BUTTONS_VIEW}>
                         <Pressable style={styles.TimeButtons} onPress={timeAM}>
                             <Text style={styles.TimeButtonsText}>AM</Text>
                         </Pressable>
                         <Pressable style={styles.TimeButtons} onPress={timePM}>
                             <Text style={styles.TimeButtonsText}>PM</Text>
-                        </Pressable>
-                    </View> */}
-                    <View style={styles.AM_PM_BUTTONS_VIEW}>
-                        <Pressable style={(am == 1) ? styles.activeText : styles.inactiveText} onPress={() => onChangeAM(2)}>
-                            <Text style={styles.TimeButtonsText}>AM</Text>
-                        </Pressable>
-                        <Pressable style={styles.TimeButtons} onPress={() => onChangePM(2)}>
-                            <Text style={(pm == 2) ? styles.activeText : styles.inactiveText} >PM</Text>
                         </Pressable>
                     </View>
                     </View>
@@ -201,12 +196,30 @@ const styles = StyleSheet.create({
         bottom: 2,
         color: 'black',
     },
-    activeText: {
+    activeButton: {
         backgroundColor: '#62BA75',
+        borderRadius: 2,
+        margin: 3,
+        width: 60,
+        height: 18,
+    },
+    activeText: {
+        alignSelf: 'center',
+        fontFamily: 'K2D',
+        bottom: 2,
         color: 'white',
     },
+    inactiveButton: {
+            backgroundColor: '#EBEBEB',
+            borderRadius: 2,
+            margin: 3,
+            width: 60,
+            height: 18,
+    },
     inactiveText: {
-        backgroundColor: '#EBEBEB',
+        alignSelf: 'center',
+        fontFamily: 'K2D',
+        bottom: 2,
         color: 'black',
     },
 });
