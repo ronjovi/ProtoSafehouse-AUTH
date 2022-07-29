@@ -10,7 +10,7 @@ import { useFonts } from 'expo-font';
 const UselessTextInput = ({ navigation }) => {
     const [text, onChangeText] = React.useState("Useless Text");
     const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, timeSetOne, timeSetTwo] = React.useState(null);
-    const [am, onChangeAM] = React.useState(false);
+    const [am, onChangeAM] = React.useState(true);
     const [pm, onChangePM] = React.useState(false);
     const timeAM = () => {
         onChangeAM(true)
@@ -20,9 +20,9 @@ const UselessTextInput = ({ navigation }) => {
         onChangeAM(false)
         onChangePM(true)
     }
-    if (onChangeAM(true)) return (
-        console.log("Set in the morning")
-    ); else if (onChangeAM(false)) return (console.log ("AM is false"), onChangePM(true));
+    // if (onChangeAM(true)) return (
+    //     console.log("Set in the morning")
+    // ); else if (onChangeAM(false)) return (console.log ("AM is false"), onChangePM(true));
 
     return (
         <View style={styles.container}>
@@ -90,11 +90,11 @@ const UselessTextInput = ({ navigation }) => {
                         textAlign={'center'}
                     />
                     <View style={styles.AM_PM_BUTTONS_VIEW}>
-                        <Pressable style={styles.TimeButtons} onPress={timeAM}>
-                            <Text style={styles.TimeButtonsText}>AM</Text>
+                        <Pressable style={am ? styles.activeButton : styles.inactiveButton} onPress={timeAM}>
+                            <Text style={am ? styles.activeText : styles.inactiveText}>AM</Text>
                         </Pressable>
-                        <Pressable style={styles.TimeButtons} onPress={timePM}>
-                            <Text style={styles.TimeButtonsText}>PM</Text>
+                        <Pressable style={am ? styles.inactiveButton : styles.activeButton} onPress={timePM}>
+                            <Text style={pm ? styles.activeText : styles.inactiveText}>PM</Text>
                         </Pressable>
                     </View>
                     </View>
