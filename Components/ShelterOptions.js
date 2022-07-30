@@ -82,15 +82,55 @@ export default function ShelterOptions({ route, navigation }) {
             <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
           </TouchableOpacity>
           <Image source={require('../assets/ShelterPanel.png')} style={styles.ShelterPanel} />
-          <View style={styles.shelterContainer}>
-            <Text style={styles.shelterName}>Lost Anglo Animal Shelter</Text>
+          <View style={{ flexDirection: 'row', marginBottom: 3, }}>
+            <View style={styles.shelterContainer}>
+              <Text style={styles.shelterName}>Lost Anglo Animal Shelter</Text>
+            </View>
+            <View style={styles.editButtonContainer}>
+              <TouchableOpacity style={styles.editButton}>
+                <Text style={styles.editButtonText}>Edit</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-          <View>
-            <TouchableOpacity>
-              <Text>aoifhwoj</Text>
-            </TouchableOpacity>
-          </View>
-          <View style={{ height: 2, width: '90%', backgroundColor: 'black', alignSelf: 'center' }}></View>
+          <View style={{ height: 2, width: '90%', backgroundColor: 'black', alignSelf: 'center', }}></View>
+          <FlatList
+            numColumns={2}
+            columnWrapperStyle={styles.row}
+            ListHeaderComponent={
+              <>
+                <View style={styles.headersContainer}>
+                  <View style={styles.nameBreedContainer}>
+                    <Text style={styles.name}> {route.params.name} </Text>
+                    <Text style={styles.breedText}> {route.params.breed} </Text>
+                  </View>
+                  {/* <Text style={styles.time}> {route.params.time} </Text> */}
+                  <View style={styles.countdownStyle}>
+                    <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 4, fontFamily: 'K2D', }}>Days until Put Down</Text>
+                  </View>
+                </View>
+              </>
+            }
+            data={[
+              { key: 'Age', value: route.params.age },
+              { key: 'Weight', value: route.params.weight },
+              { key: 'Notes', value: '- No Allergies' },
+              { key: 'Sex', value: route.params.sex },
+              { key: 'Shelter', value: route.params.shelter },
+              { key: 'Phone Number', value: '(818) 497-419' },
+              { key: 'Address', value: '3655 South Grand Ave.' },
+              { key: 'Email', value: 'firstname@outlook.com' },
+              // { key: 'Shelter', value: route.params.shelter },
+            ]}
+            renderItem={({ item }) => (
+              // <Text style={styles.item}>{item.key}: {item.value}</Text>
+
+              <View style={styles.dataContainer}>
+                <Text style={{ fontFamily: 'semiBoldK2D', fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
+                <Text style={styles.item}> {item.value} </Text>
+              </View>
+
+            )}
+          />
         </ScrollView>
       </SafeAreaView>
     </View>
@@ -114,10 +154,27 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   shelterContainer: {
-    marginLeft: 20,
+    marginLeft: 25,
   },
   shelterName: {
     fontFamily: 'K2D',
+    fontSize: 20,
+  },
+  editButtonContainer: {
+    marginLeft: 35,
+    marginTop: 4,
+  },
+  editButton: {
+    backgroundColor: '#62BA75',
+    height: 20,
+    width: 80,
+    borderRadius: 5,
+  },
+  editButtonText: {
+    fontFamily: 'K2D',
     fontSize: 18,
+    color: 'white',
+    alignSelf: 'center',
+    bottom: 3,
   },
 });
