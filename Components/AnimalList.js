@@ -1,7 +1,7 @@
 {/* Imports stuff from React and React Native... also imports PetCard info */ }
 
 {/* IN CASE OF ANY ERROR WITH PETCARD ARRANGEMENTS GO TO imageContainer*/}
-import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image, FlatList } from 'react-native';
+import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { PetCard } from './PetCard';
 
@@ -143,10 +143,20 @@ export default function AnimalList({ navigation }) {
     {/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */ }
     return (
         <View style={styles.container}>
+            
+            <View style = {{marginTop: 80}}>
             <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-            {/* <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
-                <Text>Shelter Button Text Placeholder</Text>
-            </Pressable> */}
+
+            <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
+                {/* <Text>Shelter Button Text Placeholder</Text> */}
+                <Image   source={require('../assets/shelter.png')} />
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.marketButtonContainer} >
+                {/* <Text>Shelter Button Text Placeholder</Text> */}
+                <Image   source={require('../assets/market.png')} />
+            </TouchableOpacity>
+            </View>
 
             <FlatList style={styles.list}
             numColumns={2}
@@ -189,12 +199,17 @@ const styles = StyleSheet.create({
     },
     safehouseLogo: {
         alignSelf: 'center',
-        marginTop: 80,
+        marginLeft: 13
     },
     shelterButtonContainer: {
-        backgroundColor: 'lightgray',
-        width: 100,
+        position: 'absolute',
         alignSelf: 'flex-end',
+        right: 50
+    },
+    marketButtonContainer: {
+        position: 'absolute',
+        alignSelf: 'flex-start',
+        left: 50
     },
     imageContainer: {
         flex: 1,

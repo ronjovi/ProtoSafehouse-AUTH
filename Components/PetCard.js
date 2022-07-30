@@ -1,20 +1,56 @@
 {/* Imports important stuff from React */ }
 import React from 'react'
-import { StyleSheet, Text, View, Image, Button, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Pressable, TouchableOpacity } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-web';
 import Countdown from './Countdown';
+import moment from 'moment';
 
 {/* This exports the variables (image, name, time) and the function: 'goToDetails' */ }
+const getCountdownColor = (changeColor) => {
+    if (changeColor == true) {
+        if (totalDuration > 5256005.76) {
+            return '#62BA75'
+        } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
+            return '#B8BA62'
+        } else { return '#BA6262' }
+    }
+}
+
 export const PetCard = ({ image, name, time, goToDetails }) => {
     {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
-    return (
-        <View style={styles.container}>
 
-            <Pressable onPress={goToDetails}>
+    const getBorderColor = (countdown) => {
+        console.log('tiem:', countdown)
+
+        var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss');
+        //Getting the current date-time with required formate and UTC
+        var expirydate = countdown; //You can set your own date-time
+        //Let suppose we have to show the countdown for above date-time
+        var diffr = moment.duration(moment(expirydate).diff(moment(date)));
+        //difference of the expiry date-time given and current date-time
+        var hours = parseInt(diffr.asHours());
+        var minutes = parseInt(diffr.minutes());
+        var seconds = parseInt(diffr.seconds());
+        var d = hours * 60 * 60 + minutes * 60 + seconds;
+        //converting in seconds
+        // count down in seconds is stored within var d
+
+       if (d > 5256005.76) {
+        return '#62BA75'
+      } else if (d < 5256005.76 && d > 2630000) {
+        return '#B8BA62'
+      } else {return '#BA6262'}
+    }
+
+    getBorderColor(time)
+    return (
+        <View style={[styles.container, {borderColor: getBorderColor(time)}]}>
+            <View style={styles.countdownBorder}></View>
+            <TouchableOpacity onPress={goToDetails}>
                 <Image source={{ uri: image }} style={styles.petImage} />
                 <Countdown intialValue={time} listStyle={styles.countdownStyle} style={{ position: 'absolute' }} changeColor={true} />
                 <View style={styles.darkener}></View>
-            </Pressable>
+            </TouchableOpacity>
 
         </View>
 
@@ -25,13 +61,19 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 const styles = StyleSheet.create({
     container: {
         // flex: 1,
-        height: 200,
-        width: 200,
+        height: 203,
+        width: 203,
+        // borderColor: 'red',
+        borderWidth: 2,
+        borderRadius: 10,
+        // boxShadow :' rgba(255, 0, 0, 0.6)'
+    
         // marginTop: 10,
         // marginLeft: 15,
         // margin: 10,
     },
     petImage: {
+        // padding: 0,
         height: 200,
         width: 200,
         position: 'absolute',
@@ -40,11 +82,16 @@ const styles = StyleSheet.create({
     },
     darkener: {
         backgroundColor: 'black',
-        height: 205,
+        height: 200,
         width: 200,
         borderRadius: 10,
         opacity: 0.2,
-        bottom: 215,
+        bottom: 214,
+    },
+    countdownBorder: {
+        height: 200,
+        width: 200,
+        position: 'absolute',
     },
     nameText: {
         color: 'white',

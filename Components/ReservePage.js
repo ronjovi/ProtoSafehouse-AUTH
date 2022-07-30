@@ -1,6 +1,6 @@
 {/* Imports React components */ }
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TouchableOpacity, TextInput, Image } from 'react-native';
 
 const UselessTextInput = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
@@ -10,9 +10,9 @@ const UselessTextInput = ({ navigation }) => {
     <View style={styles.container}>
       <SafeAreaView>
         <ScrollView>
-          <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-            <Image source={require('../assets/Vector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
-          </Pressable>
+          <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+            <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
+          </TouchableOpacity>
           <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
           <View style={styles.timerFreezeHeaderContainer}>
             <Text style={styles.header}>Freeze this cat's time with a reservation</Text>
@@ -83,9 +83,9 @@ const UselessTextInput = ({ navigation }) => {
             placeholder="Zip Code"
             keyboardType="numeric"
           />
-          <Pressable onPress={() => navigation.navigate("VisitConfirm")} style={styles.reserveButton}>
+          <TouchableOpacity onPress={() => navigation.navigate("VisitConfirm")} style={styles.reserveButton}>
             <Text style={styles.reserveText}>Confirm Reservation</Text>
-          </Pressable>
+          </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
     </View>
@@ -98,13 +98,12 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     marginTop: 30,
     borderRadius: 100,
+    marginLeft: 13
   },
 
   backButton: {
-    backgroundColor: 'black',
     height: 50,
     width: 50,
-    borderRadius: 100,
     position: 'relative',
   },
 

@@ -1,6 +1,6 @@
 {/* Imports React components */ }
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image, TouchableOpacity } from 'react-native';
 import CustomDatePicker from './DatePicker';
 import DateTimePicker from '@react-native-community/datetimepicker'
 import { useFonts } from 'expo-font';
@@ -28,9 +28,9 @@ const UselessTextInput = ({ navigation }) => {
         <View style={styles.container}>
             <SafeAreaView>
                 <ScrollView>
-                    <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-                        <Image source={require('../assets/Vector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
-                    </Pressable>
+                    <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+                        <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
+                    </TouchableOpacity>
                     <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
                     <Text style={styles.safehouseText}>Personal Details</Text>
                     <TextInput
@@ -52,7 +52,7 @@ const UselessTextInput = ({ navigation }) => {
                         onChangeText={onChangeNumber}
                         value={numbaThree}
                         placeholder="Email Address"
-                        keyboardType="email"
+                        keyboardType="default"
                     />
                     <Text style={styles.safehouseText}>When do you plan on visiting the shelter?</Text>
                     <Text style={styles.dateTimeConfirmText}>Date:</Text>
@@ -67,13 +67,6 @@ const UselessTextInput = ({ navigation }) => {
                         }}
                         onChange={(value) => console.log(`New date set to: ${value}`)} />
 
-                    {/* <DateTimePicker
-                        style={styles.DateTimePickerStyle}
-                        timeZoneOffsetInMinutes={0}
-                        value={new Date()}
-                        mode="time"
-                        minuteInterval={10}
-                    /> */}
                     <View style={styles.timeSetView}>
                     <Text style={styles.dateTimeConfirmText}>Time:</Text>
                     <TextInput
@@ -90,17 +83,17 @@ const UselessTextInput = ({ navigation }) => {
                         textAlign={'center'}
                     />
                     <View style={styles.AM_PM_BUTTONS_VIEW}>
-                        <Pressable style={am ? styles.activeButton : styles.inactiveButton} onPress={timeAM}>
+                        <TouchableOpacity style={am ? styles.activeButton : styles.inactiveButton} onPress={timeAM}>
                             <Text style={am ? styles.activeText : styles.inactiveText}>AM</Text>
-                        </Pressable>
-                        <Pressable style={am ? styles.inactiveButton : styles.activeButton} onPress={timePM}>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={am ? styles.inactiveButton : styles.activeButton} onPress={timePM}>
                             <Text style={pm ? styles.activeText : styles.inactiveText}>PM</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                     </View>
-                    <Pressable onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
+                    <TouchableOpacity onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
                         <Text style={styles.visitText}>Proceed to Reservation</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </ScrollView>
             </SafeAreaView>
         </View>
@@ -112,13 +105,13 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         marginBottom: 45,
         marginTop: 30,
+        marginLeft: 13
     },
     backButton: {
-        backgroundColor: 'black',
         height: 50,
         width: 50,
-        borderRadius: 100,
         position: 'relative',
+        left: 20
     },
     container: {
         flex: 1,

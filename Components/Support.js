@@ -1,6 +1,6 @@
 {/* Imports React components */ }
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TextInput, Image, TouchableOpacity } from 'react-native';
 
 const UselessTextInput = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
@@ -15,9 +15,9 @@ const UselessTextInput = ({ navigation }) => {
       <SafeAreaView>
         <ScrollView>
 
-          <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
-            <Image source={require('../assets/Vector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
-          </Pressable>
+          <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+            <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
+          </TouchableOpacity>
           <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
           <Text style={styles.header}>Extend this animal's life with a donation</Text>
           <Text style={styles.safehouseText}></Text>
@@ -84,9 +84,9 @@ const UselessTextInput = ({ navigation }) => {
             placeholder="Zip Code"
             keyboardType="numeric"
           />
-          <Pressable onPress={() => navigation.navigate("SupportConfirm")} style={styles.donateButton}>
+          <TouchableOpacity onPress={() => navigation.navigate("SupportConfirm")} style={styles.donateButton}>
             <Text style={styles.donateText}>Confirm Support</Text>
-          </Pressable>
+          </TouchableOpacity>
         </ScrollView>
       </SafeAreaView>
     </View>
@@ -98,12 +98,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 50,
     marginTop: 30,
+    marginLeft: 13
   },
   backButton: {
-    backgroundColor: 'black',
     height: 50,
     width: 50,
-    borderRadius: 100,
     position: 'relative',
   },
   header: {

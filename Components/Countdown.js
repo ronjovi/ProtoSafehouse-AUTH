@@ -19,12 +19,14 @@ export default function CountDownTimer(props) {
 
   const getCountdownColor = (changeColor) => {
     if (changeColor == true){
-      if (totalDuration > 5256005.76) {
-        return '#62BA75'
-      } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
-        return '#B8BA62'
-      } else {return '#BA6262'}
+      // if (totalDuration > 5256005.76) {
+      //   return '#62BA75'
+      // } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
+      //   return '#B8BA62'
+      // } else {return '#BA6262'}
+      return '#ffffff'
     }
+    return '#000000'
   }
 
   useEffect(() => {
