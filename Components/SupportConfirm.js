@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, Image, Platform } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, ScrollView, FlatList, Button, Pressable, Image, Platform } from 'react-native';
 import React from 'react';
 
 export default function GoToHome({ navigation }) {

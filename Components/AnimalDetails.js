@@ -142,7 +142,6 @@ const styles = StyleSheet.create({
         fontSize: 14,
         alignSelf: 'flex-start',
         fontFamily: 'K2D',
-        // marginBottom: 25,
     },
     headersContainer: {
         flex: 1,
