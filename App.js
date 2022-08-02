@@ -12,6 +12,7 @@ import Adopt from './Components/Adopt';
 import VisitConfirm from './Components/VisitConfirm';
 import SupportConfirm from './Components/SupportConfirm';
 import ReservePage from './Components/ReservePage';
+import Market from './Components/Market';
 import { useFonts } from 'expo-font';
 
 
@@ -75,6 +76,13 @@ export default function App() {
           component={ SupportConfirm }
           options={{ title: 'Support Confirmed', headerShown: false }}
         />
+
+        <Stack.Screen
+          name="Market"
+          component={ Market }
+          options={{ title: 'Market Page', headerShown: false}}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

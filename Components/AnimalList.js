@@ -140,6 +140,9 @@ export default function AnimalList({ navigation }) {
         console.log(animal)
         navigation.navigate('ShelterOptions', animal);
     }
+    const goToMarket = (animal) => {
+        navigation.navigate('Market');
+    }
     {/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */ }
     return (
         <View style={styles.container}>
@@ -152,7 +155,7 @@ export default function AnimalList({ navigation }) {
                 <Image   source={require('../assets/shelter.png')} />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.marketButtonContainer} >
+            <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
                 {/* <Text>Shelter Button Text Placeholder</Text> */}
                 <Image   source={require('../assets/market.png')} />
             </TouchableOpacity>

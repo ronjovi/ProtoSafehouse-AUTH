@@ -20,9 +20,6 @@ const UselessTextInput = ({ navigation }) => {
         onChangeAM(false)
         onChangePM(true)
     }
-    // if (onChangeAM(true)) return (
-    //     console.log("Set in the morning")
-    // ); else if (onChangeAM(false)) return (console.log ("AM is false"), onChangePM(true));
 
     return (
         <View style={styles.container}>
