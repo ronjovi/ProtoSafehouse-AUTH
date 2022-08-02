@@ -35,16 +35,21 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
         //converting in seconds
         // count down in seconds is stored within var d
 
-       if (d > 5256005.76) {
-        return '#62BA75'
-      } else if (d < 5256005.76 && d > 2630000) {
-        return '#B8BA62'
-      } else {return '#BA6262'}
+        if (d > 172800) {
+            return 'lime'
+        } else if (d < 172800 && d > 86400) {
+            return 'yellow'
+        } else if (d < 86400) { return 'red' }
     }
 
     getBorderColor(time)
     return (
-        <View style={[styles.container, {borderColor: getBorderColor(time),}]}>
+        <View style={[styles.container, {
+            borderWidth: 0,
+            shadowOpacity: 0.8, shadowRadius: 5, shadowOffset: {
+                height: 1, width: 1
+            }, shadowColor: getBorderColor(time), borderWidth: 2, borderColor: getBorderColor(time),
+        }]}>
             <View style={styles.countdownBorder}></View>
             <TouchableOpacity onPress={goToDetails}>
                 <Image source={{ uri: image }} style={styles.petImage} />
@@ -66,8 +71,9 @@ const styles = StyleSheet.create({
         // borderColor: 'red',
         borderWidth: 2,
         borderRadius: 10,
+        borderColor: 'transparent'
         // boxShadow :' rgba(255, 0, 0, 0.6)'
-    
+
         // marginTop: 10,
         // marginLeft: 15,
         // margin: 10,
@@ -86,7 +92,7 @@ const styles = StyleSheet.create({
         width: 200,
         borderRadius: 10,
         opacity: 0.2,
-        bottom: 214,
+        bottom: 229,
     },
     countdownBorder: {
         height: 200,

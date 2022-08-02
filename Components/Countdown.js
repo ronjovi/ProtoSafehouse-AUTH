@@ -13,6 +13,7 @@ export default function CountDownTimer(props) {
     boldK2D: require('../assets/fonts/K2D-Bold.ttf'),
     semiBoldK2D: require('../assets/fonts/K2D-SemiBold.ttf'),
     lightK2D: require('../assets/fonts/K2D-Light.ttf'),
+    
   });
 
   const [totalDuration, setTotalDuration] = useState(props.intialValue);
@@ -26,7 +27,7 @@ export default function CountDownTimer(props) {
       // } else {return '#BA6262'}
       return '#ffffff'
     }
-    return '#000000'
+    return '#545454'
   }
 
   useEffect(() => {
@@ -59,20 +60,21 @@ export default function CountDownTimer(props) {
       until={parseInt(totalDuration)}
       style = {props.listStyle}
       //duration of countdown in seconds
-      timetoShow={('H', 'M', 'S')}
+      
+      timeToShow={['H', 'M', 'S']}
       //formate to show
       // onFinish={() => alert('finished')}
       //on Finish call
-      //The size below controls the ssize of the countdown timer
-      size={15}
+      //The size below controls the size of the countdown timer
+      size={20}
       timeLabelStyle = {{color: 'transparent'}}
       digitStyle = {{color: 'transparent'}}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
       // digitTxtStyle={{ color: 'black' }}
-      digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: 24, lineHeight: 27, fontFamily: 'boldK2D'}}
+      digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: 24, lineHeight: 27, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' ,}}
       // showSeparator
       // separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15,}}
-      separatorStyle = {{ color: getCountdownColor(props.changeColor), bottom: 8, fontFamily: 'semiBoldK2D', fontSize: 24,}}
+      separatorStyle = {{ color: getCountdownColor(props.changeColor), bottom: 8, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' , fontSize: 24,}}
       showSeparator
     />
   )

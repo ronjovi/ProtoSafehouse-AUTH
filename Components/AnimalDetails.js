@@ -39,9 +39,9 @@ export default function AnimalDetails({ route, navigation }) {
                                     <Text style={styles.breedText}> {route.params.breed} </Text>
                                 </View>
                                 {/* <Text style={styles.time}> {route.params.time} </Text> */}
-                                <View style={styles.countdownStyle}>
+                                <View style={styles.countdownContainerStyle}>
                                     <Countdown intialValue={route.params.time} changeColor={false} />
-                                    <Text style={{ position: 'absolute', marginTop: 30, marginLeft: 4, fontFamily: 'K2D', }}>Days until Put Down</Text>
+                                    <Text style={{ position: 'absolute', marginTop: 35, marginLeft: 4, fontFamily: 'K2D', color: '#545454' }}>Days until Put Down</Text>
                                 </View>
                             </View>
                         </>
@@ -61,7 +61,7 @@ export default function AnimalDetails({ route, navigation }) {
                         // <Text style={styles.item}>{item.key}: {item.value}</Text>
 
                         <View style={styles.dataContainer}>
-                            <Text style={{ fontFamily: 'semiBoldK2D', fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
+                            <Text style={{ fontFamily: 'semiBoldK2D', fontSize: 18, fontWeight: '500', color: '#545454' }}> {item.key} </Text>
                             <Text style={styles.item}> {item.value} </Text>
                         </View>
 
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         alignSelf: 'flex-start',
         fontFamily: 'K2D',
+        color: '#545454',
     },
     headersContainer: {
         flex: 1,
@@ -153,6 +154,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         right: 7,
         marginTop: 15,
+        color: '#545454'
     },
     breed: {
         fontWeight: '400',
@@ -161,6 +163,7 @@ const styles = StyleSheet.create({
     },
     breedText: {
         fontFamily: 'K2D',
+        color: '#545454',
     },
     nameBreedContainer: {
         // backgroundColor: 'white',
@@ -233,12 +236,11 @@ const styles = StyleSheet.create({
         width: 228,
         marginLeft: 7,
     },
-    countdownStyle: {
+    countdownContainerStyle: {
         width: 175,
         alignSelf: 'flex-end',
         position: 'absolute',
         height: 30,
-        marginTop: 20,
-
+        marginTop: 17,
     },
 });
