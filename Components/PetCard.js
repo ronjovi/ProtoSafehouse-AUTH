@@ -44,7 +44,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 
     getBorderColor(time)
     return (
-        <View style={[styles.container, {borderColor: getBorderColor(time)}]}>
+        <View style={[styles.container, {borderColor: getBorderColor(time),}]}>
             <View style={styles.countdownBorder}></View>
             <TouchableOpacity onPress={goToDetails}>
                 <Image source={{ uri: image }} style={styles.petImage} />

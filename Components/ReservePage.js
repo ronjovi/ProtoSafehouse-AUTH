@@ -13,7 +13,7 @@ const UselessTextInput = ({ navigation }) => {
           <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
             <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
           </TouchableOpacity>
-          <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
+          <Image source={require('../assets/Reservation.png')} style={styles.safehouseLogo} />
           <View style={styles.timerFreezeHeaderContainer}>
             <Text style={styles.header}>Freeze this cat's time with a reservation</Text>
             <Text style={styles.safehouseText}>Failure to adopt this cat within 36 hours after your reservation will result in the timer being continued!</Text>

@@ -28,7 +28,7 @@ const UselessTextInput = ({ navigation }) => {
                     <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
                         <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
                     </TouchableOpacity>
-                    <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
+                    <Image source={require('../assets/Scheduling.png')} style={styles.safehouseLogo} />
                     <Text style={styles.safehouseText}>Personal Details</Text>
                     <TextInput
                         style={styles.input}

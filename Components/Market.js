@@ -8,7 +8,7 @@ const Market = ({ navigation }) => {
                 <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
                     <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
                 </TouchableOpacity>
-                <Text style={styles.Market}>MARKET PLACEHOLDER TEXT</Text>
+                <Image source={require('../assets/MarketingPage.png')} style={{alignSelf: 'center', marginBottom: 50,}}/>
                 <FlatList
                 data={[
                     { image: 'https://manoonpetshop.com/upload-img/Picture_Product/Whiskas/Can/9310022807619.png', 
