@@ -12,57 +12,70 @@ const Market = ({ navigation }) => {
                     <FlatList
                         ListHeaderComponent={
                             <>
+                            <View style={{ borderWidth: 1, borderColor: '#BCBCBC', width: 500, }}></View>
                             </>
                         }
 
                         data={[
                             {
-                                image: 'https://manoonpetshop.com/upload-img/Picture_Product/Whiskas/Can/9310022807619.png',
-                                product: 'Cat Food',
+                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
+                                product: 'Arm and Hammer Kit Litter',
                                 brand: 'Whiskas',
                                 price: '$XX.XX',
                             },
                             {
-                                image: 'https://manoonpetshop.com/upload-img/Picture_Product/Whiskas/Can/9310022807619.png',
-                                product: 'Cat Food',
+                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
+                                product: 'Arm and Hammer Kit Litter',
                                 brand: 'Whiskas',
                                 price: '$XX.XX',
                             },
                             {
-                                image: 'https://manoonpetshop.com/upload-img/Picture_Product/Whiskas/Can/9310022807619.png',
-                                product: 'Cat Food',
+                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
+                                product: 'Arm and Hammer Kit Litter',
                                 brand: 'Whiskas',
                                 price: '$XX.XX',
                             },
                             {
-                                image: 'https://manoonpetshop.com/upload-img/Picture_Product/Whiskas/Can/9310022807619.png',
-                                product: 'Cat Food',
+                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
+                                product: 'Arm and Hammer Kit Litter',
                                 brand: 'Whiskas',
                                 price: '$XX.XX',
                             },
                             {
-                                image: 'https://manoonpetshop.com/upload-img/Picture_Product/Whiskas/Can/9310022807619.png',
-                                product: 'Cat Food',
+                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
+                                product: 'Arm and Hammer Kit Litter',
+                                brand: 'Whiskas',
+                                price: '$XX.XX',
+                            },
+                            {
+                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
+                                product: 'Arm and Hammer Kit Litter',
+                                brand: 'Whiskas',
+                                price: '$XX.XX',
+                            },
+                            {
+                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
+                                product: 'Arm and Hammer Kit Litter',
                                 brand: 'Whiskas',
                                 price: '$XX.XX',
                             },
                         ]}
                         renderItem={({ item }) => (
-
                             <View style={styles.dataContainer}>
-                                <Image source={{ uri: item.image }} style={{ height: 150, width: 100, }} />
-                                <View style={styles.catfoodContainer}>
+                                <TouchableOpacity>
+                                <Image source={{ uri: item.image }} style={{ height: 120, width: 90,}} />
+                                <View style={styles.productContainer}>
                                     <Text style={styles.product}>{item.product} </Text>
-                                    <Text style={styles.productText}>Product</Text>
-                                    <Text style={styles.brand}> {item.brand} </Text>
-                                    <Text style={styles.brandText}>Brand</Text>
+                                    {/* <Text style={styles.productText}>Product</Text> */}
+                                    {/* <Text style={styles.brand}> {item.brand} </Text>
+                                    <Text style={styles.brandText}>Brand</Text> */}
                                     <Text style={styles.price}> {item.price} </Text>
-                                    <Text style={styles.priceText}>Price</Text>
-                                    <TouchableOpacity style={styles.buyButton}>
-                                        <Text style={styles.buyButtonText}>Buy</Text>
-                                    </TouchableOpacity>
-                                    <Text style={styles.redirectText}> Redirect to site </Text>
+                                    {/* <Text style={styles.priceText}>Price</Text> */}
+                                    {/* <Text style={styles.buyButtonText}>Buy</Text> */}
+                                    {/* <Text style={styles.redirectText}> Redirect to site </Text> */}
                                 </View>
+                                <View style={{ borderWidth: 1, borderColor: '#BCBCBC', width: 500, }}></View>
+                                </TouchableOpacity>
                             </View>
 
                         )}
@@ -93,27 +106,23 @@ const styles = StyleSheet.create({
     dataContainer: {
         // backgroundColor: 'yellow',
         flexDirection: 'row',
-        borderWidth: 2,
-        borderRightColor: 'transparent',
-        borderLeftColor: 'transparent',
-        borderTopColor: 'transparent',
     },
-    catfoodContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+    productContainer: {
+        flexDirection: 'column',
+        // flexWrap: 'wrap',
         justifyContent: 'space-between',
-        // backgroundColor: 'blue',
-        marginTop: 15,
-        height: 100,
+        position: 'absolute',
         width: 260,
-        marginLeft: 25,
+        marginLeft: 115,
+        marginTop: 30,
     },
     product: {
-        fontFamily: 'boldK2D',
+        fontFamily: 'K2D',
         color: '#545454',
-        fontSize: 24,
+        fontSize: 20,
         // backgroundColor: 'orange',
         height: 30,
+        marginLeft: 3,
     },
     productText: {
         position: 'absolute',
@@ -137,11 +146,12 @@ const styles = StyleSheet.create({
         color: '#545454'
     },
     price: {
-        fontFamily: 'semiBoldK2D',
+        fontFamily: 'boldK2D',
         color: '#545454',
-        fontSize: 18,
+        fontSize: 16,
         // backgroundColor: 'lime',
         height: 20,
+        marginTop: 10,
     },
     priceText: {
         position: 'absolute',

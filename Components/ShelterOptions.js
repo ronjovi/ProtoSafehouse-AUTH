@@ -105,7 +105,7 @@ export default function ShelterOptions({ route, navigation }) {
                 </View>
 
               </View>
-              <View style={{ height: 2, width: '90%', backgroundColor: 'black', alignSelf: 'center', }}></View>
+              <View style={{ height: 2, width: '90%', backgroundColor: '#545454', alignSelf: 'center', }}></View>
             </>
           }
           data={[
@@ -117,7 +117,7 @@ export default function ShelterOptions({ route, navigation }) {
           renderItem={({ item }) => (
             <View style={styles.dataContainer}>
 
-              <Text style={{ fontFamily: 'K2D', fontSize: 18, fontWeight: '500' }}> {item.key} </Text>
+              <Text style={{ fontFamily: 'K2D', fontSize: 18, fontWeight: '500', color: '#545454' }}> {item.key} </Text>
               <Text style={styles.item}> {item.value} </Text>
 
             </View>
@@ -152,14 +152,14 @@ export default function ShelterOptions({ route, navigation }) {
                   </TouchableOpacity>
                 </View>
               </View>
-              <View style={{ height: 2, width: '90%', backgroundColor: 'black', alignSelf: 'center', }}></View>
-              <Text style={{ fontFamily: 'lightK2D', fontSize: 14, marginTop: 5, marginLeft: 25, fontSize: 18 }}>Active Entries</Text>
+              <View style={{ height: 2, width: '90%', backgroundColor: '#545454', alignSelf: 'center', }}></View>
+              <Text style={{ fontFamily: 'lightK2D', fontSize: 14, marginTop: 5, marginLeft: 25, fontSize: 18, color: '#545454' }}>Active Entries</Text>
 
               <FlatList
                 // scrollEnabled={true}
+                style={styles.catList}
                 numColumns={2}
                 data={[
-                  
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
@@ -167,7 +167,7 @@ export default function ShelterOptions({ route, navigation }) {
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
                 ]}
                 renderItem={({ item }) => (
-                  <View style = {{ flexDirection: 'row', borderWidth: 1, alignSelf: 'center' }}>
+                  <View style = {{ flexDirection: 'row', borderWidth: 1, alignSelf: 'center', width: 190, }}>
                     <Image style = {{height: 60, width: 60, borderRadius: 10,}} source={{ uri: item.image }}/>
                     <View>
                       <Text style={{fontSize: 24, marginLeft: 10,}}>
@@ -175,7 +175,7 @@ export default function ShelterOptions({ route, navigation }) {
                       </Text>
 
                     
-                      <CountDownTimer listStyle ={{width: 180}} intialValue={item.time}  changeColor={false} />
+                      <CountDownTimer listStyle ={{width: 38, marginLeft: 60,}} intialValue={item.time}  changeColor={false} />
                     </View>
                   </View>
 
@@ -214,6 +214,7 @@ const styles = StyleSheet.create({
   shelterName: {
     fontFamily: 'K2D',
     fontSize: 20,
+    color: '#545454'
   },
   editButtonContainer: {
     marginLeft: 35,
@@ -253,6 +254,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     alignSelf: 'flex-start',
     fontFamily: 'lightK2D',
+    color: '#545454'
   },
   row: {
     flex: 1,
@@ -263,6 +265,7 @@ const styles = StyleSheet.create({
   Management: {
     fontFamily: 'K2D',
     fontSize: 20,
+    color: '#545454'
   },
   ReserveUploadButtonContainer: {
     flexDirection: 'row',
