@@ -20,7 +20,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
     {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
 
     const getBorderColor = (countdown) => {
-        console.log('tiem:', countdown)
+        console.log('time:', countdown)
 
         var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss');
         //Getting the current date-time with required formate and UTC

@@ -1,10 +1,14 @@
 {/* Imports React components */ }
 import React from 'react';
+import { Elements, useStripe, useElements, PaymentElement, CardElement, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TouchableOpacity, TextInput, Image } from 'react-native';
 
 const UselessTextInput = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
   const [numbaZero, onChangeNumber, numbaOne, numbaTwo, numbaThree, numbaFour, numbaFive, numbaSix, transText] = React.useState(null);
+  // const stripePromise = loadStripe('###');
+
 
   return (
     <View style={styles.container}>
@@ -46,6 +50,9 @@ const UselessTextInput = ({ navigation }) => {
               value={transText}
             />
           </View>
+          {/* <Elements stripe={stripePromise} options={options}>
+            <CheckoutForm />
+          </Elements> */}
           <TextInput
             style={styles.inputCardInfo}
             onChangeText={onChangeNumber}
@@ -128,7 +135,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontFamily: 'K2D',
   },
-  
+
   container: {
     flex: 1,
     flexDirection: "row",
