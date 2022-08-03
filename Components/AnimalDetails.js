@@ -40,7 +40,7 @@ export default function AnimalDetails({ route, navigation }) {
                                 </View>
                                 {/* <Text style={styles.time}> {route.params.time} </Text> */}
                                 <View style={styles.countdownContainerStyle}>
-                                    <Countdown intialValue={route.params.time} changeColor={false} />
+                                    <Countdown listStyle={styles.countdownStyle} intialValue={route.params.time} changeColor={false} />
                                     <Text style={{ position: 'absolute', marginTop: 35, marginLeft: 4, fontFamily: 'K2D', color: '#545454' }}>Days until Put Down</Text>
                                 </View>
                             </View>
@@ -242,5 +242,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         height: 30,
         marginTop: 17,
+    },
+    countdownStyle: {
+        marginRight: 20,
     },
 });

@@ -167,7 +167,7 @@ export default function ShelterOptions({ route, navigation }) {
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
                 ]}
                 renderItem={({ item }) => (
-                  <View style = {{flexDirection: 'row', borderWidth: 1,}}>
+                  <View style = {{ flexDirection: 'row', borderWidth: 1, alignSelf: 'center' }}>
                     <Image style = {{height: 60, width: 60, borderRadius: 10,}} source={{ uri: item.image }}/>
                     <View>
                       <Text style={{fontSize: 24, marginLeft: 10,}}>

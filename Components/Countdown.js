@@ -66,15 +66,15 @@ export default function CountDownTimer(props) {
       // onFinish={() => alert('finished')}
       //on Finish call
       //The size below controls the size of the countdown timer
-      size={20}
+      size={props.changeColor === true ? 15 : 18}
       timeLabelStyle = {{color: 'transparent'}}
       digitStyle = {{color: 'transparent'}}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
       // digitTxtStyle={{ color: 'black' }}
-      digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: 24, lineHeight: 27, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' ,}}
+      digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: props.changeColor === true? 20 : 22, lineHeight: 27, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' ,}}
       // showSeparator
       // separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15,}}
-      separatorStyle = {{ color: getCountdownColor(props.changeColor), bottom: 8, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' , fontSize: 24,}}
+      separatorStyle = {{ color: getCountdownColor(props.changeColor), bottom: 8, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' , fontSize: 20, margin: 0}}
       showSeparator
     />
   )

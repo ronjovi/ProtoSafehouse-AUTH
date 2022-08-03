@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         width: 200,
         borderRadius: 10,
         opacity: 0.2,
-        bottom: 229,
+        bottom: 213,
     },
     countdownBorder: {
         height: 200,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     },
     countdownStyle: {
         marginTop: 160,
-        marginRight: 30,
+        marginRight: 45,
         justifyContent: 'flex-start',
         fontFamily: 'boldK2D',
         zIndex: 2,
