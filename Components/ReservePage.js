@@ -1,8 +1,7 @@
 {/* Imports React components */ }
 import React from 'react';
-import { Elements, useStripe, useElements, PaymentElement, CardElement, CardNumberElement, CardExpiryElement, CardCvcElement } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TouchableOpacity, TextInput, Image } from 'react-native';
+import StripeComponent from './StripeComponent';
 
 const UselessTextInput = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
@@ -13,7 +12,6 @@ const UselessTextInput = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <ScrollView>
           <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
             <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
           </TouchableOpacity>
@@ -33,7 +31,7 @@ const UselessTextInput = ({ navigation }) => {
             <Text style={styles.xText}>$XX.XX will go to Safehouse</Text>
           </View>
           <Text style={styles.transactionText}>Transaction Method</Text>
-          <View style={styles.transRow}>
+          <View style={[styles.transRow, {marginBottom: 70}]}>
             <TextInput
               style={styles.transBoxStyle}
               onChangeText={onChangeText}
@@ -53,7 +51,8 @@ const UselessTextInput = ({ navigation }) => {
           {/* <Elements stripe={stripePromise} options={options}>
             <CheckoutForm />
           </Elements> */}
-          <TextInput
+          <StripeComponent />
+          {/* <TextInput
             style={styles.inputCardInfo}
             onChangeText={onChangeNumber}
             value={numbaTwo}
@@ -82,18 +81,17 @@ const UselessTextInput = ({ navigation }) => {
               placeholder="Expiration Date"
               keyboardType="default"
             />
-          </View>
-          <TextInput
+          </View> */}
+          {/* <TextInput
             style={styles.inputCardInfo}
             onChangeText={onChangeNumber}
             value={numbaSix}
             placeholder="Zip Code"
             keyboardType="numeric"
-          />
+          /> */}
           <TouchableOpacity onPress={() => navigation.navigate("VisitConfirm")} style={styles.reserveButton}>
             <Text style={styles.reserveText}>Confirm Reservation</Text>
           </TouchableOpacity>
-        </ScrollView>
       </SafeAreaView>
     </View>
   );
