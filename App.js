@@ -13,6 +13,7 @@ import VisitConfirm from './Components/VisitConfirm';
 import SupportConfirm from './Components/SupportConfirm';
 import ReservePage from './Components/ReservePage';
 import Market from './Components/Market';
+import ProfilePage from './Components/ProfilePage';
 import { useFonts } from 'expo-font';
 
 
@@ -87,6 +88,12 @@ export default function App() {
           name="Market"
           component={ Market }
           options={{ title: 'Market Page', headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="ProfilePage"
+          component={ProfilePage}
+          options={{ title: 'Profile Page', headerShown: false }}
         />
 
       </Stack.Navigator>

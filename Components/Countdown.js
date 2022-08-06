@@ -58,7 +58,7 @@ export default function CountDownTimer(props) {
     // style={styles.countdownStyle}
     <CountDown 
       until={parseInt(totalDuration)}
-      style = {props.listStyle}
+      style = {[props.listStyle, styles.listStyle]}
       //duration of countdown in seconds
       
       timeToShow={['H', 'M', 'S']}
@@ -68,10 +68,10 @@ export default function CountDownTimer(props) {
       //The size below controls the size of the countdown timer
       size={props.changeColor === true ? 15 : 18}
       timeLabelStyle = {{color: 'transparent'}}
-      digitStyle = {{color: 'transparent'}}
+      digitStyle = {{color: 'transparent', display: 'flex', width: 43}}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
       // digitTxtStyle={{ color: 'black' }}
-      digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: props.changeColor === true? 20 : 22, lineHeight: 27, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' ,}}
+      digitTxtStyle={{ color: getCountdownColor(props.changeColor), fontWeight: 'bold', fontSize: props.changeColor === true? 20 : 22, lineHeight: 27, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D', paddingHorizontal: -10, }}
       // showSeparator
       // separatorStyle={{ color: 'white', marginBottom: 25, fontSize: 15,}}
       separatorStyle = {{ color: getCountdownColor(props.changeColor), bottom: 8, fontFamily:  props.changeColor === true ? 'CountdownMontserrat' : 'boldK2D' , fontSize: 20, margin: 0}}
@@ -87,4 +87,8 @@ const styles = StyleSheet.create({
     marginRight: 30,
     justifyContent: 'flex-start',
   },
+  listStyle: {
+    paddingHorizontal: 0,
+    display: 'flex'
+  }
 });

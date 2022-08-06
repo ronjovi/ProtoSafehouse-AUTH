@@ -1,6 +1,6 @@
 {/* Imports stuff from React and React Native... also imports PetCard info */ }
 
-{/* IN CASE OF ANY ERROR WITH PETCARD ARRANGEMENTS GO TO imageContainer*/}
+{/* IN CASE OF ANY ERROR WITH PETCARD ARRANGEMENTS GO TO imageContainer*/ }
 import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { PetCard } from './PetCard';
@@ -143,32 +143,49 @@ export default function AnimalList({ navigation }) {
     const goToMarket = (animal) => {
         navigation.navigate('Market');
     }
+
+    const goToProfile = (animal) => {
+        navigation.navigate('ProfilePage');
+    }
     {/* The 'PetCard' outside of the 'Details' button... it displays the animals' names, times, images */ }
     return (
         <View style={styles.container}>
-            
-            <View style = {{marginTop: 80}}>
-            <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
 
-            <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
-                {/* <Text>Shelter Button Text Placeholder</Text> */}
-                <Image   source={require('../assets/shelter.png')} />
-            </TouchableOpacity>
+            <View style={{ marginTop: 80 }}>
+                <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
 
-            <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
-                {/* <Text>Shelter Button Text Placeholder</Text> */}
-                <Image   source={require('../assets/market.png')} />
-            </TouchableOpacity>
+                {/* <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
+                   
+                    <Image source={require('../assets/shelter.png')} />
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
+ 
+                    <Image source={require('../assets/market.png')} />
+                </TouchableOpacity> */}
             </View>
 
-            <FlatList style={styles.list}
-            numColumns={2}
-            columnWrapperStyle={styles.row}
-            data = {animals}
-            renderItem = {({ item }) => (
-                <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
-            )}
-            />
+            <View style={{ flex: 1 }}>
+                <FlatList style={styles.list}
+                    numColumns={2}
+                    columnWrapperStyle={styles.row}
+                    data={animals}
+                    renderItem={({ item }) => (
+                        <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
+                    )}
+                />
+                <View style={styles.bar}>
+                    <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
+                        <Image source={require('../assets/market.png')} />
+                    </TouchableOpacity>
+                    {/* <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
+                        <Image source={require('../assets/shelter.png')} />
+                    </TouchableOpacity> */}
+                    <TouchableOpacity style={styles.profileButtonContainer} onPress={goToProfile}>
+                        <Image source={require('../assets/profile.png')} />
+                    </TouchableOpacity>
+                </View>
+            </View>
         </View>
         // <View style={styles.container}>
         //     <SafeAreaView style={styles.container}>
@@ -198,7 +215,8 @@ export default function AnimalList({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
+        padding: 0
     },
     safehouseLogo: {
         alignSelf: 'center',
@@ -206,13 +224,28 @@ const styles = StyleSheet.create({
     },
     shelterButtonContainer: {
         position: 'absolute',
-        alignSelf: 'flex-end',
-        right: 50
+        marginLeft: 130,
     },
     marketButtonContainer: {
         position: 'absolute',
-        alignSelf: 'flex-start',
-        left: 50
+        marginLeft: 30,
+        bottom: -6,
+    },
+    profileButtonContainer: {
+        position: 'absolute',
+        marginLeft: 220,
+        marginTop: 2,
+    },
+    bar: {
+        backgroundColor: '#62BA72',
+        height: 55,
+        width: 320,
+        alignSelf: 'center',
+        borderRadius: 100,
+        borderColor: 'white',
+        borderWidth: 3,
+        position: 'absolute',
+        marginTop: 730,
     },
     imageContainer: {
         flex: 1,

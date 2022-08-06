@@ -6,7 +6,7 @@ import Countdown from './Countdown';
 import moment from 'moment';
 
 {/* This exports the variables (image, name, time) and the function: 'goToDetails' */ }
-const getCountdownColor = (changeColor) => {
+const getBorderColor = (changeColor) => {
     if (changeColor == true) {
         if (totalDuration > 5256005.76) {
             return '#62BA75'
@@ -19,7 +19,7 @@ const getCountdownColor = (changeColor) => {
 export const PetCard = ({ image, name, time, goToDetails }) => {
     {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
 
-    const getBorderColor = (countdown) => {
+    const getIconMode = (countdown) => {
         console.log('time:', countdown)
 
         var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss');
@@ -35,26 +35,29 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
         //converting in seconds
         // count down in seconds is stored within var d
 
-        if (d > 172800) {
-            return 'lime'
-        } else if (d < 172800 && d > 86400) {
-            return 'yellow'
-        } else if (d < 86400) { return 'red' }
+        if (d > 604800) {
+            return ('../assets/GreenIcon.png')
+        } else if (d < 604800 && d > 259200) {
+            return ('../assets/YellowIcon.png')
+        } else if (d < 259200) { return '../assets/RedIcon.png' }
     }
 
-    getBorderColor(time)
+    getIconMode(time)
     return (
         <View style={[styles.container, {
-            borderWidth: 0,
-            shadowOpacity: 0.8, shadowRadius: 5, shadowOffset: {
-                height: 1, width: 1
-            }, shadowColor: getBorderColor(time), borderWidth: 2, borderColor: getBorderColor(time),
+            // borderWidth: 0,
+            //  shadowOpacity: 0.8, shadowRadius: 5, shadowOffset: {
+            //      height: 1, width: 1
+            // }, shadowColor: getBorderColor(time), borderWidth: 2, borderColor: getBorderColor(time),
         }]}>
             <View style={styles.countdownBorder}></View>
             <TouchableOpacity onPress={goToDetails}>
                 <Image source={{ uri: image }} style={styles.petImage} />
                 <Countdown intialValue={time} listStyle={styles.countdownStyle} style={{ position: 'absolute' }} changeColor={true} />
                 <View style={styles.darkener}></View>
+                <View style={styles.iconView}>
+                    <Image source={require('../assets/YellowIcon.png')}/>
+                </View>
             </TouchableOpacity>
 
         </View>
@@ -65,18 +68,11 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 {/* Stylizes PetCard info */ }
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
         height: 203,
         width: 203,
-        // borderColor: 'red',
         borderWidth: 2,
         borderRadius: 10,
         borderColor: 'transparent'
-        // boxShadow :' rgba(255, 0, 0, 0.6)'
-
-        // marginTop: 10,
-        // marginLeft: 15,
-        // margin: 10,
     },
     petImage: {
         // padding: 0,
@@ -85,6 +81,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         borderRadius: 10,
         // marginRight: 5,
+    },
+    iconView: {
+        position: 'absolute',
+        marginTop: 165,
+        marginLeft: 165,
     },
     darkener: {
         backgroundColor: 'black',
