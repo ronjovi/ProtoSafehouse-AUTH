@@ -14,6 +14,7 @@ import SupportConfirm from './Components/SupportConfirm';
 import ReservePage from './Components/ReservePage';
 import Market from './Components/Market';
 import ProfilePage from './Components/ProfilePage';
+import BadgesRecieved from './Components/BadgesRecieved';
 import { useFonts } from 'expo-font';
 
 
@@ -28,7 +29,7 @@ export default function App() {
     CountdownMontserrat: require('./assets/fonts/MontserratAlternates-Regular_102b5e5e57350b70cf32b2e0ae408a53.ttf'),
   });
 
-  if(!loaded) {
+  if (!loaded) {
     return null
   }
 
@@ -45,7 +46,8 @@ export default function App() {
           name="AnimalDetails"
           component={AnimalDetails}
           options={{
-             title: 'Details', headerShown: false }}
+            title: 'Details', headerShown: false
+          }}
         />
 
         <Stack.Screen
@@ -62,32 +64,38 @@ export default function App() {
 
         <Stack.Screen
           name="Adopt"
-          component={ Adopt }
+          component={Adopt}
           options={{ title: 'Adopt', headerShown: false }}
         />
 
         <Stack.Screen
           name="ReservePage"
-          component={ ReservePage }
+          component={ReservePage}
           options={{ title: 'Reservation', headerShown: false }}
         />
 
         <Stack.Screen
           name="VisitConfirm"
-          component={ VisitConfirm }
+          component={VisitConfirm}
           options={{ title: 'Visit Confirmed', headerShown: false }}
         />
 
         <Stack.Screen
+          name="BadgesRecieved"
+          component={BadgesRecieved}
+          options={{ title: 'Badges Recieved', headerShown: false }}
+        />
+
+        <Stack.Screen
           name="SupportConfirm"
-          component={ SupportConfirm }
+          component={SupportConfirm}
           options={{ title: 'Support Confirmed', headerShown: false }}
         />
 
         <Stack.Screen
           name="Market"
-          component={ Market }
-          options={{ title: 'Market Page', headerShown: false}}
+          component={Market}
+          options={{ title: 'Market Page', headerShown: false }}
         />
 
         <Stack.Screen

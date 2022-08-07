@@ -2,10 +2,11 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Image, Pressable, TouchableOpacity } from 'react-native';
 import { PetCard } from './PetCard';
 import Countdown from './Countdown';
+import moment from 'moment';
 
 {/* Tells the details of the animal through console log... provides ROUTE*/ }
 export default function AnimalDetails({ route, navigation }) {
-    console.log(route.params.image);
+    console.log(route.params);
 
     {/* Creates the route to go to 'options' tab (via const goToOptions) */ }
     const goToSupport = () => {
@@ -20,13 +21,40 @@ export default function AnimalDetails({ route, navigation }) {
         navigation.navigate('Adopt');
     }
 
+    const getIconMode = (countdown) => {
+        console.log('time:', countdown)
+
+        var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss');
+        //Getting the current date-time with required formate and UTC
+        var expirydate = countdown; //You can set your own date-time
+        //Let suppose we have to show the countdown for above date-time
+        var diffr = moment.duration(moment(expirydate).diff(moment(date)));
+        //difference of the expiry date-time given and current date-time
+        var hours = parseInt(diffr.asHours());
+        var minutes = parseInt(diffr.minutes());
+        var seconds = parseInt(diffr.seconds());
+        var d = hours * 60 * 60 + minutes * 60 + seconds;
+        //converting in seconds
+        // count down in seconds is stored within var d
+
+        if (d > 604800) {
+            return require('../assets/GreenIcon.png')
+        } else if (d < 604800 && d > 259200) {
+            return require('../assets/YellowIcon.png')
+        } else if (d < 259200) { return require('../assets/RedIcon.png') }
+    }
     {/* Gets info from ROUTE to display details of the animal you are viewing */ }
+    
     return (
         <View style={styles.container}>
             <SafeAreaView style={styles.container}>
                 <Image style={styles.headerImage} source={{ uri: route.params.image }} />
+                <Image source={getIconMode(route.params.time)} style={styles.iconImage}/>
                 <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
                     <Image source={require('../assets/Vector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.shareButton}>
+                    <Image source={require('../assets/share.png')}/>
                 </TouchableOpacity>
                 <FlatList style={styles.flatList}
                     numColumns={2}
@@ -68,7 +96,7 @@ export default function AnimalDetails({ route, navigation }) {
                     )}
                     ListFooterComponent={
                         <>
-                            <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: 'black', marginTop: 20, marginBottom: 20, bottom: 150 }}></View>
+                            <View style={{ alignSelf: 'center', height: 2, width: '90%', backgroundColor: '#545454', marginTop: 20, marginBottom: 20, bottom: 150 }}></View>
 
                             <View style={styles.twoButtonsRow}>
                                 <TouchableOpacity style={styles.twoButtons} onPress={goToAdopt}>
@@ -94,6 +122,19 @@ const styles = StyleSheet.create({
         // backgroundColor: 'black',
         height: 50,
         width: 50,
+    },
+    shareButton: {
+        position: 'absolute',
+        // backgroundColor: 'black',
+        marginTop: 60,
+        marginLeft: 390,
+    },
+    iconImage: {
+        position: 'absolute',
+        height: 40,
+        width: 40,
+        marginTop: 325,
+        marginLeft: 375,
     },
     container: {
         flex: 1,

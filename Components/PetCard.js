@@ -36,13 +36,12 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
         // count down in seconds is stored within var d
 
         if (d > 604800) {
-            return ('../assets/GreenIcon.png')
+            return require('../assets/GreenIcon.png')
         } else if (d < 604800 && d > 259200) {
-            return ('../assets/YellowIcon.png')
-        } else if (d < 259200) { return '../assets/RedIcon.png' }
+            return require('../assets/YellowIcon.png')
+        } else if (d < 259200) { return require('../assets/RedIcon.png') }
     }
 
-    getIconMode(time)
     return (
         <View style={[styles.container, {
             // borderWidth: 0,
@@ -56,7 +55,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
                 <Countdown intialValue={time} listStyle={styles.countdownStyle} style={{ position: 'absolute' }} changeColor={true} />
                 <View style={styles.darkener}></View>
                 <View style={styles.iconView}>
-                    <Image source={require('../assets/YellowIcon.png')}/>
+                    <Image source={getIconMode(time)}/>
                 </View>
             </TouchableOpacity>
 

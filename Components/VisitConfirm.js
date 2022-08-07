@@ -7,8 +7,8 @@ export default function GoToHome({ navigation }) {
         <View style={{ backgroundColor: 'white', flex: 1 }}>
             <Image source={require('../assets/Safehouse_paw.png')} style={styles.safehousePawLogo} />
             <Text style={styles.confirmStyle}>Reservation Confirmed!</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('AnimalList')} style={styles.returnButton}>
-                <Text style={styles.returnButtonText}>Return to Home</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('BadgesRecieved')} style={styles.badgesButton}>
+                <Text style={styles.badgesButtonText}>Recieve Badges</Text>
             </TouchableOpacity>
         </View>
     )
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         marginTop: 2.5,
         fontFamily: 'semiBoldK2D',
     },
-    returnButton: {
+    badgesButton: {
         alignSelf: 'center',
         backgroundColor: '#62BA75',
         borderRadius: 5,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         height: 40,
         marginTop: 15,
     },
-    returnButtonText: {
+    badgesButtonText: {
         color: 'white',
         alignSelf: 'center',
         marginTop: 10,

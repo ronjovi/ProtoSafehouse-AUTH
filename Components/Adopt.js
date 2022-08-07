@@ -30,67 +30,81 @@ const UselessTextInput = ({ navigation }) => {
                     </TouchableOpacity>
                     <Image source={require('../assets/Scheduling.png')} style={styles.safehouseLogo} />
                     <Text style={styles.safehouseText}>Personal Details</Text>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={onChangeNumber}
-                        value={numbaOne}
-                        placeholder="First Name"
-                        keyboardType="default"
-                    />
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={onChangeNumber}
-                        value={numbaTwo}
-                        placeholder="Last Name"
-                        keyboardType="default"
-                    />
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={onChangeNumber}
-                        value={numbaThree}
-                        placeholder="Email Address"
-                        keyboardType="default"
-                    />
+                    <View style={{marginBottom: 30}}>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeNumber}
+                            value={numbaOne}
+                            placeholder="First Name"
+                            keyboardType="default"
+                        />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeNumber}
+                            value={numbaTwo}
+                            placeholder="Last Name"
+                            keyboardType="default"
+                        />
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeNumber}
+                            value={numbaThree}
+                            placeholder="Email Address"
+                            keyboardType="default"
+                        />
+                    </View>
                     <Text style={styles.safehouseText}>When do you plan on visiting the shelter?</Text>
-                    <Text style={styles.dateTimeConfirmText}>Date:</Text>
-                    <CustomDatePicker
-                        textStyle={{
-                            color: 'black',
-                            alignSelf: 'flex-start',
-                            marginTop: 10,
-                            position: 'relative',
-                            fontFamily: 'K2D',
-                            marginLeft: 5,
-                        }}
-                        onChange={(value) => console.log(`New date set to: ${value}`)} />
-
+                        <Text style={styles.dateTimeConfirmText}>Date:</Text>
+                        <CustomDatePicker
+                            textStyle={{
+                                color: '#545454',
+                                alignSelf: 'flex-start',
+                                marginTop: 10,
+                                position: 'relative',
+                                fontFamily: 'K2D',
+                                marginLeft: 5,
+                            }}
+                            onChange={(value) => console.log(`New date set to: ${value}`)} />
                     <View style={styles.timeSetView}>
-                    <Text style={styles.dateTimeConfirmText}>Time:</Text>
-                    <TextInput
-                        style={styles.timeSetStyle}
-                        onChangeText={onChangeText}
-                        value={timeSetOne}
-                        textAlign={'center'}
-                    />
-                    <Text style={{marginLeft: 14, marginRight: 10, fontSize: 25,}}>:</Text>
-                    <TextInput
-                        style={styles.timeSetStyle}
-                        onChangeText={onChangeText}
-                        value={timeSetTwo}
-                        textAlign={'center'}
-                    />
-                    <View style={styles.AM_PM_BUTTONS_VIEW}>
-                        <TouchableOpacity style={am ? styles.activeButton : styles.inactiveButton} onPress={timeAM}>
-                            <Text style={am ? styles.activeText : styles.inactiveText}>AM</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={am ? styles.inactiveButton : styles.activeButton} onPress={timePM}>
-                            <Text style={pm ? styles.activeText : styles.inactiveText}>PM</Text>
-                        </TouchableOpacity>
+                        <Text style={styles.dateTimeConfirmText}>Time:</Text>
+                        <TextInput
+                            style={styles.timeSetStyle}
+                            onChangeText={onChangeText}
+                            value={timeSetOne}
+                            textAlign={'center'}
+                        />
+                        <Text style={{ marginLeft: 14, marginRight: 10, fontSize: 25, }}>:</Text>
+                        <TextInput
+                            style={styles.timeSetStyle}
+                            onChangeText={onChangeText}
+                            value={timeSetTwo}
+                            textAlign={'center'}
+                        />
+                        <View style={styles.AM_PM_BUTTONS_VIEW}>
+                            <TouchableOpacity style={am ? styles.activeButton : styles.inactiveButton} onPress={timeAM}>
+                                <Text style={am ? styles.activeText : styles.inactiveText}>am</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={am ? styles.inactiveButton : styles.activeButton} onPress={timePM}>
+                                <Text style={pm ? styles.activeText : styles.inactiveText}>pm</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    </View>
-                    <TouchableOpacity onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
+                    {/* <TouchableOpacity onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
                         <Text style={styles.visitText}>Proceed to Reservation</Text>
+                    </TouchableOpacity> */}
+                    <TouchableOpacity onPress={() => navigation.navigate("VisitConfirm")} style={styles.visitButton}>
+                        <Text style={styles.visitText}>Confirm Reservation</Text>
                     </TouchableOpacity>
+                    <View style={styles.reservationInput}>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={onChangeNumber}
+                            value={numbaOne}
+                            placeholder="Reservation Price: $XX.XX"
+                            keyboardType="default"
+                        />
+                        <Text style={styles.xText}>$XX.XX will go to Safehouse</Text>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </View>
@@ -101,7 +115,7 @@ const styles = StyleSheet.create({
     safehouseLogo: {
         alignSelf: 'center',
         marginBottom: 45,
-        marginTop: 30,
+        marginTop: 10,
         marginLeft: 13
     },
     backButton: {
@@ -125,15 +139,27 @@ const styles = StyleSheet.create({
         borderRightColor: 'white',
         borderTopColor: 'white',
         borderLeftColor: 'white',
+        borderBottomColor: '#545454',
         fontFamily: 'K2D',
     },
-
+    reservationInput: {
+        position: 'absolute',
+        top: 630,
+        alignSelf: 'center',
+    },
+    xText: {
+        bottom: 15,
+        marginLeft: 15,
+        fontFamily: 'K2D',
+        color: '#545454',
+    },
     safehouseText: {
         fontSize: 18,
         fontWeight: '400',
         marginLeft: 50,
         margin: 10,
         fontFamily: 'K2D',
+        color: '#545454'
     },
     visitButton: {
         backgroundColor: "#62BA75",
@@ -156,11 +182,13 @@ const styles = StyleSheet.create({
         marginLeft: 50,
         margin: 25,
         fontFamily: 'lightK2D',
+        color: '#545454',
     },
     timeSetView: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+        marginBottom: 70,
     },
     timeSetStyle: {
         backgroundColor: '#EBEBEB',
@@ -184,7 +212,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontFamily: 'K2D',
         bottom: 2,
-        color: 'black',
+        color: '#545454',
     },
     activeButton: {
         backgroundColor: '#62BA75',
@@ -200,17 +228,17 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     inactiveButton: {
-            backgroundColor: '#EBEBEB',
-            borderRadius: 2,
-            margin: 3,
-            width: 60,
-            height: 18,
+        backgroundColor: '#EBEBEB',
+        borderRadius: 2,
+        margin: 3,
+        width: 60,
+        height: 18,
     },
     inactiveText: {
         alignSelf: 'center',
         fontFamily: 'K2D',
         bottom: 2,
-        color: 'black',
+        color: '#545454',
     },
 });
 
