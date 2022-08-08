@@ -63,7 +63,7 @@ const Market = ({ navigation }) => {
                         renderItem={({ item }) => (
                             <View style={styles.dataContainer}>
                                 <TouchableOpacity>
-                                <Image source={{ uri: item.image }} style={{ height: 120, width: 90,}} />
+                                <Image source={{ uri: item.image }} style={{ height: 100, width: 75, marginBottom: 20, marginTop: 10, left: 16}} />
                                 <View style={styles.productContainer}>
                                     <Text style={styles.product}>{item.product} </Text>
                                     {/* <Text style={styles.productText}>Product</Text> */}

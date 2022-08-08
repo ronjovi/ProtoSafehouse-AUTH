@@ -143,9 +143,9 @@ const styles = StyleSheet.create({
     },
     headerImage: {
         width: "100%",
-        height: 360,
+        height: 390,
         position: 'absolute',
-        marginTop: 50,
+        // marginTop: 50,
     },
     flatList: {
         // flex: 1,

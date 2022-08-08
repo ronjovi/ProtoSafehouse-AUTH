@@ -32,9 +32,9 @@ export default function CustomDatePicker (props) {
           borderColor: 'transparent',
           borderWidth: 1,
           backgroundColor: '#EBEBEB',
-          position: 'absolute',
-          marginTop: 480,
-          right: 175,
+          // position: 'absolute',
+          // marginTop: 480,
+          // right: 175,
         }}
         activeOpacity={0}
         onPress={() => setShow(true)}>

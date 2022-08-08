@@ -169,6 +169,7 @@ export default function AnimalList({ navigation }) {
                 <FlatList style={styles.list}
                     numColumns={2}
                     columnWrapperStyle={styles.row}
+                    contentContainerStyle = {{paddingBottom: 50}}
                     data={animals}
                     renderItem={({ item }) => (
                         <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
@@ -178,9 +179,9 @@ export default function AnimalList({ navigation }) {
                     <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
                         <Image source={require('../assets/market.png')} />
                     </TouchableOpacity>
-                    {/* <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
+                    <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
                         <Image source={require('../assets/shelter.png')} />
-                    </TouchableOpacity> */}
+                    </TouchableOpacity>
                     <TouchableOpacity style={styles.profileButtonContainer} onPress={goToProfile}>
                         <Image source={require('../assets/profile.png')} />
                     </TouchableOpacity>
@@ -224,7 +225,8 @@ const styles = StyleSheet.create({
     },
     shelterButtonContainer: {
         position: 'absolute',
-        marginLeft: 130,
+        marginLeft: 131,
+        marginTop: 2,
     },
     marketButtonContainer: {
         position: 'absolute',
@@ -266,5 +268,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-evenly',
         marginTop: 10,
+        // padding: 5
     }
 });
