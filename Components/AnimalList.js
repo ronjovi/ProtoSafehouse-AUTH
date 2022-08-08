@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     shelterButtonContainer: {
         position: 'absolute',
         marginLeft: 131,
-        marginTop: 2,
+        marginTop: 2.5,
     },
     marketButtonContainer: {
         position: 'absolute',

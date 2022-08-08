@@ -162,7 +162,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: '400',
         marginLeft: 50,
-        margin: 10,
         fontFamily: 'K2D',
         color: '#545454'
     },

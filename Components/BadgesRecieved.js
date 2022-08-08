@@ -34,7 +34,7 @@ export default function BadgesRecieved({ navigation }) {
                 <View style={styles.NFTrecieve}>
                     <Image source={item.image} style={styles.NFT} />
                     <View style={styles.nameOfNFT}>
-                        <Text style={{ fontFamily: 'K2D', fontSize: 16, alignSelf: 'center'}}>{item.name}</Text>
+                        <Text style={{ fontFamily: 'K2D', fontSize: 16, alignSelf: 'center', color: '#545454'}}>{item.name}</Text>
                     </View>
                 </View>
 
@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         fontFamily: 'semiBoldK2D',
         fontSize: 24,
+        color: "#545454"
     },
     NFT: {
         alignSelf: 'center',
@@ -79,6 +80,7 @@ const styles = StyleSheet.create({
         width: 100,
         borderWidth: 3,
         borderRadius: 100,
+        borderColor: '#545454'
     },
     confirmStyle: {
         alignSelf: 'center',

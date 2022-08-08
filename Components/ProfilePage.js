@@ -114,7 +114,7 @@ const ProfilePage = ({ navigation }) => {
 
                             ListHeaderComponent={
                                 <>
-                                    <Text style={{ fontSize: 18, fontFamily: 'K2D', marginLeft: 20, marginBottom: 10, }}>Badge Showcase</Text>
+                                    <Text style={{ fontSize: 18, fontFamily: 'K2D', marginLeft: 20, marginBottom: 10, }}>NFT Badge Showcase</Text>
                                 </>
                             }
 
