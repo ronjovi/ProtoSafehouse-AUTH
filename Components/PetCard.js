@@ -55,7 +55,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
                 <Countdown intialValue={time} listStyle={styles.countdownStyle} style={{ position: 'absolute' }} changeColor={true} />
                 <View style={styles.darkener}></View>
                 <View style={styles.iconView}>
-                    <Image source={getIconMode(time)}/>
+                    <Image source={getIconMode(time)} style={{height: 32, width: 32}}/>
                 </View>
             </TouchableOpacity>
 
@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
     },
     iconView: {
         position: 'absolute',
-        marginTop: 165,
-        marginLeft: 165,
+        marginTop: 160,
+        marginLeft: 160,
     },
     darkener: {
         backgroundColor: 'black',

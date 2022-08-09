@@ -34,21 +34,24 @@ const UselessTextInput = ({ navigation }) => {
                     <TextInput
                         style={styles.input}
                         onChangeText={onChangeNumber}
-                        value={numbaOne}
+                        // value={numbaOne}
+                        value={"John"}
                         placeholder="First Name"
                         keyboardType="default"
                     />
                     <TextInput
                         style={styles.input}
                         onChangeText={onChangeNumber}
-                        value={numbaTwo}
+                        // value={numbaTwo}
+                        value={"Doe"}
                         placeholder="Last Name"
                         keyboardType="default"
                     />
                     <TextInput
                         style={styles.input}
                         onChangeText={onChangeNumber}
-                        value={numbaThree}
+                        // value={numbaThree}
+                        value={"safehouse178@gmail.com"}
                         placeholder="Email Address"
                         keyboardType="default"
                     />
@@ -72,14 +75,16 @@ const UselessTextInput = ({ navigation }) => {
                     <TextInput
                         style={styles.timeSetStyle}
                         onChangeText={onChangeText}
-                        value={timeSetOne}
+                        // value={timeSetOne}
+                        value={"08"}
                         textAlign={'center'}
                     />
                     <Text style={{ marginLeft: 14, marginRight: 10, fontSize: 25, }}>:</Text>
                     <TextInput
                         style={styles.timeSetStyle}
                         onChangeText={onChangeText}
-                        value={timeSetTwo}
+                        // value={timeSetTwo}
+                        value={"30"}
                         textAlign={'center'}
                     />
                     <View style={styles.AM_PM_BUTTONS_VIEW}>
@@ -98,7 +103,8 @@ const UselessTextInput = ({ navigation }) => {
                     <TextInput
                         style={styles.input}
                         onChangeText={onChangeNumber}
-                        value={numbaOne}
+                        // value={numbaOne}
+                        value={"$30.00"}
                         placeholder="Reservation Price: $XX.XX"
                         keyboardType="default"
                     />
