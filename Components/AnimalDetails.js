@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     shareButton: {
         position: 'absolute',
         // backgroundColor: 'black',
-        marginTop: 60,
+        marginTop: 58,
         marginLeft: 390,
     },
     iconImage: {

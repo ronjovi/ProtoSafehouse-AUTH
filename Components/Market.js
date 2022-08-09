@@ -47,18 +47,6 @@ const Market = ({ navigation }) => {
                                 brand: 'Whiskas',
                                 price: '$XX.XX',
                             },
-                            {
-                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
-                                product: 'Arm and Hammer Kit Litter',
-                                brand: 'Whiskas',
-                                price: '$XX.XX',
-                            },
-                            {
-                                image: 'https://image.chewy.com/is/image/catalog/46674_MAIN._AC_SL600_V1588864868_.jpg',
-                                product: 'Arm and Hammer Kit Litter',
-                                brand: 'Whiskas',
-                                price: '$XX.XX',
-                            },
                         ]}
                         renderItem={({ item }) => (
                             <View style={styles.dataContainer}>
@@ -106,6 +94,7 @@ const styles = StyleSheet.create({
     dataContainer: {
         // backgroundColor: 'yellow',
         flexDirection: 'row',
+        paddingBottom: 5,
     },
     productContainer: {
         flexDirection: 'column',
