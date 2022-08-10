@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Image, Pressable, TouchableOpacity } from 'react-native';
-
+import { StyleSheet, LogBox, Text, View, SafeAreaView, ScrollView, FlatList, Button, Image, Pressable, TouchableOpacity } from 'react-native';
+LogBox.ignoreLogs(["EventEmitter.removeListener"])
 
 const ProfilePage = ({ navigation }) => {
     return (
