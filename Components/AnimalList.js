@@ -12,7 +12,7 @@ export default function AnimalList({ navigation }) {
     const [animals, setAnimals] = useState([
         {
             name: 'Hydra',
-            time: '2022-08-14 04:00:20',
+            time: '2022-08-16 05:00:20',
             image: 'https://images.squarespace-cdn.com/content/v1/554e744ce4b026a2b08ca248/1618456576189-QHCCF3PD33OAW3H6AL13/2021_1_Vesta_CZ1_EricaDanger_8.jpg',
             breed: 'Calico Cat',
             age: '2 year and 2 months',
@@ -24,7 +24,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Fenrir',
-            time: '2022-08-16 04:00:34',
+            time: '2022-08-17 04:00:34',
             image: 'https://images.unsplash.com/photo-1604916287784-c324202b3205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80',
             breed: 'Black Cat',
             age: '5 years',
@@ -48,7 +48,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Chronos',
-            time: '2022-08-19 04:00:18',
+            time: '2022-08-20 04:00:18',
             image: 'https://p4.wallpaperbetter.com/wallpaper/539/65/318/cat-kitten-hat-hd-wallpaper-preview.jpg',
             breed: 'American Shorthair',
             age: '3 years and 6 months',
