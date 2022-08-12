@@ -13,11 +13,25 @@ import {
 } from "react-native";
 LogBox.ignoreLogs(["EventEmitter.removeListener"]);
 
+const ADOPTED_DATA = [
+  {
+    image: "https://d.newsweek.com/en/full/1980820/curled-sleeping-cat.jpg",
+  },
+  {
+    image:
+      "https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1600-c85.webp",
+  },
+  {
+    image:
+      "https://www.incimages.com/uploaded_files/image/1920x1080/getty_513189787_110007.jpg",
+  },
+];
+
 const ProfilePage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        {/* <View style={styles.NFTView}>
+        <View style={styles.NFTView}>
           <Image
             source={require("../assets/Clean_Rat.png")}
             style={[
@@ -33,9 +47,9 @@ const ProfilePage = ({ navigation }) => {
             source={require("../assets/Cat_stronaut.png")}
             style={[styles.NFTBadge, { alignSelf: "center", marginTop: 150 }]}
           />
-        </View> */}
+        </View>
         <View>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             style={styles.backButton}
             onPress={() => navigation.navigate("AnimalList")}
           >
@@ -43,34 +57,57 @@ const ProfilePage = ({ navigation }) => {
               source={require("../assets/Vector.png")}
               style={{ alignSelf: "center", marginTop: 15 }}
             />
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
         <View style={styles.profileView}>
           {/* <ScrollView> */}
-          <FlatList
-            scrollEnabled={false}
-            // style = {{backgroundColor : 'red'}}
-            // style = {{marginBottom: 50}}
-            numColumns={2}
-            data={[{ username: "Renzo", contributed: "$4,600" }]}
-            renderItem={({ item }) => (
-              <View style={{ width: 430 }}>
-                <View style={styles.userAndConBox}>
-                  <Text style={styles.username}> {item.username} </Text>
+          <View style={styles.profileHeader}>
+            <Text style={styles.username}>Renzo</Text>
+            <Text
+              style={{
+                fontFamily: "K2D",
+                fontSize: 16,
+                color: "#62BA75",
+              }}
+            >
+              $4,600 Contributed
+            </Text>
+          </View>
+          <View style={styles.adoptionContainer}>
+            <Text style={styles.adoptedHeading}>Cats Adopted</Text>
+            <View style={styles.catsAdoptedList}>
+              <FlatList
+                data={ADOPTED_DATA}
+                horizontal={true}
+                renderItem={({ item }) => (
+                  <View>
+                    <Image
+                      source={{ uri: item.image }}
+                      style={{
+                        height: 81,
+                        width: 81,
+                        borderRadius: 15,
+                        borderWidth: 1,
+                        marginHorizontal: 8,
+                      }}
+                    />
+                  </View>
+                )}
+              />
+              <View style={styles.greenButton}>
+                <TouchableOpacity>
                   <Text
                     style={{
-                      fontFamily: "K2D",
-                      fontSize: 16,
-                      color: "#62BA75",
+                      textAlign: "center",
+                      fontSize: 12,
                     }}
                   >
-                    {" "}
-                    {item.contributed} Contributed
+                    View all
                   </Text>
-                </View>
+                </TouchableOpacity>
               </View>
-            )}
-          />
+            </View>
+          </View>
 
           {/* <View>
             <FlatList
@@ -389,7 +426,7 @@ const styles = StyleSheet.create({
     marginLeft: 215,
   },
   NFTView: {
-    bottom: 55,
+    marginBottom: 30,
   },
   CatsAdopted: {
     marginBottom: "10%",
@@ -404,9 +441,9 @@ const styles = StyleSheet.create({
   },
   username: {
     fontFamily: "semiBoldK2D",
-    fontSize: 28,
+    fontSize: 50,
     color: "#545454",
-    marginTop: 30,
+    marginTop: 10,
   },
   biographyText: {
     fontFamily: "lightK2D",
@@ -426,6 +463,26 @@ const styles = StyleSheet.create({
     marginTop: 330,
     borderRadius: 10,
     width: "100%",
+  },
+  profileHeader: {
+    padding: "2%",
+    marginLeft: 15,
+  },
+  adoptionContainer: {
+    // alignItems: "flex-start",
+  },
+  adoptedHeading: {
+    marginLeft: "5%",
+    fontSize: 15,
+  },
+  catsAdoptedList: {
+    flexDirection: "row",
+    padding: "5%",
+  },
+  greenButton: {
+    backgroundColor: "#62BA75",
+    marginHorizontal: 5,
+    justifyContent: "center",
   },
 });
 
