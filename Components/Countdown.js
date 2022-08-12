@@ -58,14 +58,14 @@ export default function CountDownTimer(props) {
       style={[props.listStyle, styles.listStyle]}
       //duration of countdown in seconds
       
-      timeToShow={['H', 'M', 'S']}
+      timeToShow={['D', 'H', 'M', 'S']}
       //formate to show
       // onFinish={() => alert('finished')}
       //on Finish call
       //The size below controls the size of the countdown timer
       size={props.changeColor === true ? 15 : 18}
       timeLabelStyle = {{color: 'transparent'}}
-      digitStyle = {{color: 'transparent', display: 'flex', width: 43}}
+      digitStyle = {{color: 'transparent', display: 'flex', width: 30}}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
       // digitTxtStyle={{ color: 'black' }}
       digitTxtStyle={{
