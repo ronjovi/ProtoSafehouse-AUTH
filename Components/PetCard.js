@@ -55,21 +55,32 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
         style={{ justifyContent: "center" }}
         onPress={goToDetails}
       >
-        <View style={{backgroundColor: '#000', opacity: 0.3, position: 'absolute', zIndex: 2, width: '100%', height: '100%'}}/>
         <Image source={{ uri: image }} style={styles.petImage} />
+        <View style={styles.iconView}>
+            <Image
+              source={getIconMode(time)}
+              style={{ height: 30, width: 30 }}
+            />
+          </View>
         <View style={styles.countdownBorder}>
           <Countdown
             intialValue={time}
             listStyle={styles.countdownStyle}
             changeColor={true}
           />
-          <View style={styles.iconView}>
-            <Image
-              source={getIconMode(time)}
-              style={{ height: 30, width: 30 }}
-            />
-          </View>
         </View>
+
+        <View
+          style={{
+            borderRadius: 10,
+            backgroundColor: "#000",
+            opacity: 0.3,
+            position: "absolute",
+            zIndex: 2,
+            width: "100%",
+            height: "100%",
+          }}
+        />
       </TouchableOpacity>
     </View>
   );
@@ -80,21 +91,24 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 }
 const styles = StyleSheet.create({
   container: {
-    width: 180,
-    height: 176,
+    width: 187,
+    height: 183,
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: 10,
+    overflow: 'hidden'
   },
   petImage: {
     height: 180,
-    width: 176,
-    borderRadius: 10,
+    width: 185,
+
   },
   iconView: {
     alignSelf: "flex-end",
-    marginBottom: 5,
-    marginRight: 5,
-    marginLeft: 5,
+    bottom: 13,
+    right: 4,
+    zIndex: 5,
+    position: 'absolute'
   },
   countdownBorder: {
     height: 180,
@@ -104,8 +118,9 @@ const styles = StyleSheet.create({
     // opacity: 0.3,
     borderRadius: 10,
     position: "absolute",
-    alignSelf: "center",
+    alignSelf: "flext-start",
     justifyContent: "center",
+    paddingRight: 20
   },
   countdownStyle: {
     marginHorizontal: -5,
