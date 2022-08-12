@@ -64,8 +64,8 @@ export default function CountDownTimer(props) {
       //on Finish call
       //The size below controls the size of the countdown timer
       size={props.changeColor === true ? 15 : 18}
-      timeLabelStyle={{ color: "transparent" }}
-      digitStyle={{ color: "transparent", display: "flex", width: 43 }}
+      timeLabelStyle={{ color: "#fff" }}
+      digitStyle={{ color: "#fff", display: "flex", width: 43 }}
       // timeLabelStyle={{ color: 'transparent', fontWeight: 'bold', marginBottom: 20, fontSize: 8, width: 30 }}
       // digitTxtStyle={{ color: 'black' }}
       digitTxtStyle={{

@@ -25,7 +25,9 @@ import Market from "./Components/Market";
 import ProfilePage from "./Components/ProfilePage";
 import BadgesRecieved from "./Components/BadgesRecieved";
 import { useFonts } from "expo-font";
+import { LogBox } from "react-native-web";
 
+LogBox.ignoreAllLogs();
 const Stack = createNativeStackNavigator();
 
 export default function App() {

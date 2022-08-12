@@ -31,8 +31,8 @@ export default function AnimalList({ navigation }) {
     {
       name: "Hydra",
       time: "2022-08-14 04:00:20",
-      image:
-        "https://images.squarespace-cdn.com/content/v1/554e744ce4b026a2b08ca248/1618456576189-QHCCF3PD33OAW3H6AL13/2021_1_Vesta_CZ1_EricaDanger_8.jpg",
+      image:  "https://i.pinimg.com/originals/34/1e/85/341e858f0482f736058eb4f2536a22d2.jpg",
+       
       breed: "Calico Cat",
       age: "2 year and 2 months",
       sex: "Male",
@@ -153,7 +153,7 @@ export default function AnimalList({ navigation }) {
       name: "Pablo",
       time: "2022-08-28 04:00:37",
       image:
-        "https://i.pinimg.com/originals/34/1e/85/341e858f0482f736058eb4f2536a22d2.jpg",
+      "https://images.squarespace-cdn.com/content/v1/554e744ce4b026a2b08ca248/1618456576189-QHCCF3PD33OAW3H6AL13/2021_1_Vesta_CZ1_EricaDanger_8.jpg",
       breed: "Scottish Fold",
       age: "1 year",
       sex: "Female",

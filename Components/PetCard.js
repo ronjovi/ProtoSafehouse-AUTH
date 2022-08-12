@@ -27,8 +27,6 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
   }
 
   const getIconMode = (countdown) => {
-    console.log("time:", countdown);
-
     var date = moment().utcOffset("+05:30").format("YYYY-MM-DD hh:mm:ss");
     //Getting the current date-time with required formate and UTC
     var expirydate = countdown; //You can set your own date-time
@@ -57,6 +55,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
         style={{ justifyContent: "center" }}
         onPress={goToDetails}
       >
+        <View style={{backgroundColor: '#000', opacity: 0.3, position: 'absolute', zIndex: 2, width: '100%', height: '100%'}}/>
         <Image source={{ uri: image }} style={styles.petImage} />
         <View style={styles.countdownBorder}>
           <Countdown
@@ -101,8 +100,8 @@ const styles = StyleSheet.create({
     height: 180,
     width: 176,
     flexDirection: "row",
-    backgroundColor: "#000",
-    opacity: 0.6,
+    // backgroundColor: "#000",
+    // opacity: 0.3,
     borderRadius: 10,
     position: "absolute",
     alignSelf: "center",
