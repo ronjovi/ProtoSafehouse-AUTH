@@ -27,6 +27,27 @@ const ADOPTED_DATA = [
   },
 ];
 
+const SUPPORT_DATA = [
+  {
+    image:
+      "https://imgix.bustle.com/scary-mommy/2019/09/GettyImages-146582583-min-1.jpg",
+  },
+  {
+    image:
+      "https://www.scottishspca.org/sites/default/files/styles/full_content/public/2019-09/Buying%20a%20cat%201000x600.jpeg",
+  },
+  {
+    image:
+      "https://data.whicdn.com/images/347673612/original.jpg",
+  },
+]
+
+const BADGE_DATA = [
+  { image: require("../assets/Cat_stronaut.png") },
+  { image: require("../assets/Clean_Rat.png") },
+  { image: require("../assets/Coolcat.png") },
+]
+
 const ProfilePage = ({ navigation }) => {
   return (
     <View style={styles.container}>
@@ -36,29 +57,31 @@ const ProfilePage = ({ navigation }) => {
             source={require("../assets/Clean_Rat.png")}
             style={[
               styles.NFTBadge,
-              { marginTop: 80, alignSelf: "flex-start" },
+              { marginTop: 60, alignSelf: "flex-start" },
             ]}
           />
           <Image
             source={require("../assets/Coolcat.png")}
-            style={[styles.NFTBadge, { marginTop: 80, alignSelf: "flex-end" }]}
+            style={[styles.NFTBadge, { marginTop: 60, alignSelf: "flex-end" }]}
           />
           <Image
             source={require("../assets/Cat_stronaut.png")}
-            style={[styles.NFTBadge, { alignSelf: "center", marginTop: 150 }]}
+            style={[styles.NFTBadge, { alignSelf: "center", marginTop: 110 }]}
           />
+
+          <View>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => navigation.navigate("AnimalList")}
+            >
+              <Image
+                source={require("../assets/Vector.png")}
+                style={{ alignSelf: "center", marginTop: 15 }}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View>
-          <TouchableOpacity
-            style={styles.backButton}
-            onPress={() => navigation.navigate("AnimalList")}
-          >
-            <Image
-              source={require("../assets/Vector.png")}
-              style={{ alignSelf: "center", marginTop: 15 }}
-            />
-          </TouchableOpacity>
-        </View>
+
         <View style={styles.profileView}>
           {/* <ScrollView> */}
           <View style={styles.profileHeader}>
@@ -94,313 +117,70 @@ const ProfilePage = ({ navigation }) => {
                   </View>
                 )}
               />
-              <View style={styles.greenButton}>
-                <TouchableOpacity>
-                  <Text
-                    style={{
-                      textAlign: "center",
-                      fontSize: 12,
-                    }}
-                  >
-                    View all
-                  </Text>
-                </TouchableOpacity>
-              </View>
+
+              <TouchableOpacity style={styles.greenButton}>
+              <Text style={styles.greenButtonText}>View all</Text>
+              </TouchableOpacity>
             </View>
           </View>
 
-          {/* <View>
-            <FlatList
-              style={styles.CatsAdopted}
-              scrollEnabled={false}
-              columnWrapperStyle={styles.row}
-              numColumns={3}
-              ListHeaderComponent={
-                <>
-                  <Text
-                    style={{
-                      fontSize: 18,
-                      fontFamily: "K2D",
-                      marginLeft: 20,
-                      marginBottom: 20,
-                    }}
-                  >
-                    Cats Adopted
-                  </Text>
-                  <View
-                    style={{
-                      height: 2,
-                      width: "90%",
-                      backgroundColor: "#545454",
-                      alignSelf: "center",
-                      top: 100,
-                    }}
-                  ></View>
-                </>
-              }
-              data={[
-                {
-                  image:
-                    "https://d.newsweek.com/en/full/1980820/curled-sleeping-cat.jpg",
-                },
-                {
-                  image:
-                    "https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1600-c85.webp",
-                },
-                {
-                  image:
-                    "https://www.incimages.com/uploaded_files/image/1920x1080/getty_513189787_110007.jpg",
-                },
-              ]}
-              renderItem={({ item }) => (
-                <View>
-                  <Image
-                    source={{ uri: item.image }}
-                    style={{
-                      height: 81,
-                      width: 81,
-                      borderRadius: 15,
-                      borderWidth: 1,
-                    }}
-                  />
-                  <Image
-                    source={require("../assets/GreenIcon.png")}
-                    style={{ height: 13, width: 13, bottom: 17, left: 63 }}
-                  />
-                </View>
-              )}
-              ListFooterComponent={
-                <>
-                  <TouchableOpacity
-                    style={{
-                      bottom: 93,
-                      backgroundColor: "#62BA75",
-                      display: "flex",
-                      justifyContent: "center",
-                      width: 35,
-                      height: 81,
-                      borderRadius: 10,
-                      alignSelf: "flex-end",
-                      marginRight: "2%",
-                    }}
-                  >
-                    <Text
+          <View style={styles.adoptionContainer}>
+            <Text style={styles.adoptedHeading}>Successful Support</Text>
+            <View style={styles.catsAdoptedList}>
+              <FlatList
+                data={SUPPORT_DATA}
+                horizontal={true}
+                renderItem={({ item }) => (
+                  <View>
+                    <Image
+                      source={{ uri: item.image }}
                       style={{
-                        color: "white",
-                        textAlign: "center",
-                        fontFamily: "K2D",
-                        fontSize: 12,
-                        width: 34.5,
+                        height: 81,
+                        width: 81,
+                        borderRadius: 15,
+                        borderWidth: 1,
+                        marginHorizontal: 8,
                       }}
-                    >
-                      View All
-                    </Text>
-                  </TouchableOpacity>
-                </>
-              }
-            />
-          </View>
-          <View style={{ bottom: 109 }}>
-            <FlatList
-              style={styles.CatsAdopted}
-              scrollEnabled={false}
-              columnWrapperStyle={styles.row}
-              numColumns={3}
-              ListHeaderComponent={
-                <>
-                  <Text
-                    style={{
-                      fontSize: 18,
-                      fontFamily: "K2D",
-                      marginLeft: 20,
-                      marginBottom: 5,
-                    }}
-                  >
-                    Successful Support
-                  </Text>
-                  <View
-                    style={{
-                      height: 2,
-                      width: "90%",
-                      backgroundColor: "#545454",
-                      alignSelf: "center",
-                      top: 100,
-                    }}
-                  ></View>
-                </>
-              }
-              data={[
-                {
-                  image:
-                    "https://imgix.bustle.com/scary-mommy/2019/09/GettyImages-146582583-min-1.jpg",
-                },
-                {
-                  image:
-                    "https://www.scottishspca.org/sites/default/files/styles/full_content/public/2019-09/Buying%20a%20cat%201000x600.jpeg",
-                },
-                {
-                  image:
-                    "https://data.whicdn.com/images/347673612/original.jpg",
-                },
-              ]}
-              renderItem={({ item }) => (
-                <View>
-                  <Image
-                    source={{ uri: item.image }}
-                    style={{
-                      height: 81,
-                      width: 81,
-                      borderRadius: 15,
-                      borderWidth: 1,
-                    }}
-                  />
-                  <Image
-                    source={require("../assets/GreenIcon.png")}
-                    style={{ height: 13, width: 13, bottom: 17, left: 63 }}
-                  />
-                </View>
-              )}
-              ListFooterComponent={
-                <>
-                  <TouchableOpacity
-                    style={{
-                      bottom: 93,
-                      backgroundColor: "#62BA75",
-                      display: "flex",
-                      justifyContent: "center",
-                      width: 35,
-                      height: 81,
-                      borderRadius: 10,
-                      alignSelf: "flex-end",
-                      marginRight: "2%",
-                    }}
-                  >
-                    <Text
-                      style={{
-                        color: "white",
-                        textAlign: "center",
-                        fontFamily: "K2D",
-                        fontSize: 12,
-                        width: 34.5,
-                      }}
-                    >
-                      View All
-                    </Text>
-                  </TouchableOpacity>
-                </>
-              }
-            />
+                    />
+                  </View>
+                )}
+              />
+
+              <TouchableOpacity style={styles.greenButton}>
+                <Text style={styles.greenButtonText}>View all</Text>
+              </TouchableOpacity>
+            </View>
           </View>
 
-          <View
-            style={{
-              bottom: 208,
-            }}
-          >
-            <FlatList
-              style={styles.CatsAdopted}
-              scrollEnabled={false}
-              columnWrapperStyle={styles.row}
-              numColumns={3}
-              ListHeaderComponent={
-                <>
-                  <Text
-                    style={{
-                      fontSize: 18,
-                      fontFamily: "K2D",
-                      marginLeft: 20,
-                      marginBottom: 10,
-                    }}
-                  >
-                    NFT Badge Showcase
-                  </Text>
-                </>
-              }
-              data={[
-                { image: require("../assets/Cat_stronaut.png") },
-                { image: require("../assets/Clean_Rat.png") },
-                { image: require("../assets/Coolcat.png") },
-              ]}
-              // renderItem={({ item }) => (
-              //     <View>
-              //         <Image source={{ uri: item.image }} style={{height: 81, width: 81, borderRadius: 15, borderWidth: 1}}/>
-              //     </View>
-              // )}
-              renderItem={({ item }) => (
-                <View>
-                  <Image
-                    source={item.image}
-                    style={{
-                      height: 85,
-                      width: 85,
-                      borderRadius: 100,
-                      borderWidth: 1,
-                    }}
-                  />
-                </View>
-              )}
-              ListFooterComponent={
-                <>
-                  <TouchableOpacity
-                    style={{
-                      bottom: 90,
-                      backgroundColor: "#62BA75",
-                      justifyContent: "center",
-                      width: 35,
-                      height: 81,
-                      borderRadius: 10,
-                      alignSelf: "flex-end",
-                      marginRight: "2%",
-                    }}
-                  >
-                    <Text
+          <View style={styles.adoptionContainer}>
+            <Text style={styles.adoptedHeading}>NFT Badge Showcase</Text>
+            <View style={styles.catsAdoptedList}>
+              <FlatList
+                data={BADGE_DATA}
+                horizontal={true}
+                renderItem={({ item }) => (
+                  <View>
+                    <Image
+                      source={item.image}
                       style={{
-                        color: "white",
-                        textAlign: "center",
-                        fontFamily: "K2D",
-                        fontSize: 12,
-                        width: 34.5,
+                        height: 81,
+                        width: 81,
+                        borderRadius: 41,
+                        borderWidth: 1,
+                        marginHorizontal: 8,
                       }}
-                    >
-                      View All
-                    </Text>
-                  </TouchableOpacity>
-                </>
-              }
-            /> */}
-          {/* </View> */}
-          {/* <View style={{bottom: 120,}}>
-                    <FlatList
-                    style={styles.CatsAdopted}
-                    scrollEnabled={false}
-                    columnWrapperStyle={styles.row}
-                    numColumns={3}
-                    ListHeaderComponent={
-                        <>
-                        <Text style={{fontSize: 18, fontFamily: 'K2D', marginLeft: 20, marginBottom: 10,}}>Badge Showcase</Text>
-                        <View style={{height: 2, width: '90%', backgroundColor: '#545454', alignSelf: 'center', top: 105}}></View>
-                        </>
-                    }
-                    data={[
-                        {image: 'https://d.newsweek.com/en/full/1980820/curled-sleeping-cat.jpg'},
-                        {image: 'https://d.newsweek.com/en/full/1980820/curled-sleeping-cat.jpg'},
-                        {image: 'https://d.newsweek.com/en/full/1980820/curled-sleeping-cat.jpg'},
-                    ]}
-                    renderItem={({ item }) => (
-                        <View>
-                            <Image source={{ uri: item.image }} style={{height: 90, width: 90, borderRadius: 15, borderWidth: 1}}/>
-                        </View>
-                    )}
-                    ListFooterComponent={
-                        <>
-                        <TouchableOpacity style={{bottom: 90, left: 360, backgroundColor: '#62BA75', justifyContent: 'center', width: 50, height: 90, borderRadius: 10,}}>
-                            <Text style={{color: 'white', alignSelf: 'center', fontFamily: 'K2D', fontSize: 16, width: 34.5}}>View All</Text>
-                        </TouchableOpacity>
-                        </>
-                    }
                     />
-                    </View> */}
-          {/* </ScrollView> */}
+                  </View>
+                )}
+              />
+
+              <TouchableOpacity style={styles.greenButton}>
+                <Text style={styles.greenButtonText}>View all</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+        
         </View>
       </SafeAreaView>
     </View>
@@ -426,7 +206,8 @@ const styles = StyleSheet.create({
     marginLeft: 215,
   },
   NFTView: {
-    marginBottom: 30,
+    height: 310,
+    position: "relative",
   },
   CatsAdopted: {
     marginBottom: "10%",
@@ -456,12 +237,13 @@ const styles = StyleSheet.create({
     width: 50,
     position: "absolute",
     left: 20,
+    top: 0,
   },
   profileView: {
     backgroundColor: "#fff",
     height: 600,
-    marginTop: 330,
-    borderRadius: 10,
+    marginTop: 0,
+    borderRadius: 25,
     width: "100%",
   },
   profileHeader: {
@@ -477,12 +259,26 @@ const styles = StyleSheet.create({
   },
   catsAdoptedList: {
     flexDirection: "row",
-    padding: "5%",
+    paddingVertical: '4%',
+    paddingHorizontal: '4%'
   },
   greenButton: {
     backgroundColor: "#62BA75",
     marginHorizontal: 5,
     justifyContent: "center",
+    borderRadius: 10,
+    width: 60,
+    flexShrink: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  greenButtonText: {
+    color: "#fff",
+    textAlign: "center",
+    fontSize: 18,
+    flex: 1,
+    flexWrap: "wrap",
   },
 });
 
