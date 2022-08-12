@@ -1,121 +1,117 @@
-{/* Imports important stuff from React */ }
-import React from 'react'
-import { StyleSheet, Text, View, Image, Button, Pressable, TouchableOpacity } from 'react-native';
-import { TouchableWithoutFeedback } from 'react-native-web';
-import Countdown from './Countdown';
-import moment from 'moment';
-
-{/* This exports the variables (image, name, time) and the function: 'goToDetails' */ }
-const getBorderColor = (changeColor) => {
-    if (changeColor == true) {
-        if (totalDuration > 5256005.76) {
-            return '#62BA75'
-        } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
-            return '#B8BA62'
-        } else { return '#BA6262' }
-    }
+{
+  /* Imports important stuff from React */
 }
+import React from "react";
+import { StyleSheet, View, Image, TouchableOpacity, Text } from "react-native";
+import Countdown from "./Countdown";
+import moment from "moment";
+
+{
+  /* This exports the variables (image, name, time) and the function: 'goToDetails' */
+}
+const getBorderColor = (changeColor) => {
+  if (changeColor == true) {
+    if (totalDuration > 5256005.76) {
+      return "#62BA75";
+    } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
+      return "#B8BA62";
+    } else {
+      return "#BA6262";
+    }
+  }
+};
 
 export const PetCard = ({ image, name, time, goToDetails }) => {
-    {/* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */ }
+  {
+    /* Displays what you see in the First Page... IMPORTANT: WITHIN THIS, YOU WILL FIND THE 'goToDetails' THAT SENDS YOU TO THE DETAILS PAGE via A STACK */
+  }
 
-    const getIconMode = (countdown) => {
-        console.log('time:', countdown)
+  const getIconMode = (countdown) => {
+    console.log("time:", countdown);
 
-        var date = moment().utcOffset('+05:30').format('YYYY-MM-DD hh:mm:ss');
-        //Getting the current date-time with required formate and UTC
-        var expirydate = countdown; //You can set your own date-time
-        //Let suppose we have to show the countdown for above date-time
-        var diffr = moment.duration(moment(expirydate).diff(moment(date)));
-        //difference of the expiry date-time given and current date-time
-        var hours = parseInt(diffr.asHours());
-        var minutes = parseInt(diffr.minutes());
-        var seconds = parseInt(diffr.seconds());
-        var d = hours * 60 * 60 + minutes * 60 + seconds;
-        //converting in seconds
-        // count down in seconds is stored within var d
+    var date = moment().utcOffset("+05:30").format("YYYY-MM-DD hh:mm:ss");
+    //Getting the current date-time with required formate and UTC
+    var expirydate = countdown; //You can set your own date-time
+    //Let suppose we have to show the countdown for above date-time
+    var diffr = moment.duration(moment(expirydate).diff(moment(date)));
+    //difference of the expiry date-time given and current date-time
+    var hours = parseInt(diffr.asHours());
+    var minutes = parseInt(diffr.minutes());
+    var seconds = parseInt(diffr.seconds());
+    var d = hours * 60 * 60 + minutes * 60 + seconds;
+    //converting in seconds
+    // count down in seconds is stored within var d
 
-        if (d > 604800) {
-            return require('../assets/GreenIcon.png')
-        } else if (d < 604800 && d > 259200) {
-            return require('../assets/YellowIcon.png')
-        } else if (d < 259200) { return require('../assets/RedIcon.png') }
+    if (d > 604800) {
+      return require("../assets/GreenIcon.png");
+    } else if (d < 604800 && d > 259200) {
+      return require("../assets/YellowIcon.png");
+    } else if (d < 259200) {
+      return require("../assets/RedIcon.png");
     }
+  };
 
-    return (
-        <View style={[styles.container, {
-            // borderWidth: 0,
-            //  shadowOpacity: 0.8, shadowRadius: 5, shadowOffset: {
-            //      height: 1, width: 1
-            // }, shadowColor: getBorderColor(time), borderWidth: 2, borderColor: getBorderColor(time),
-        }]}>
-            <View style={styles.countdownBorder}></View>
-            <TouchableOpacity onPress={goToDetails}>
-                <Image source={{ uri: image }} style={styles.petImage} />
-                <Countdown intialValue={time} listStyle={styles.countdownStyle} style={{ position: 'absolute' }} changeColor={true} />
-                <View style={styles.darkener}></View>
-                <View style={styles.iconView}>
-                    <Image source={getIconMode(time)} style={{height: 32, width: 32}}/>
-                </View>
-            </TouchableOpacity>
-
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        style={{ justifyContent: "center" }}
+        onPress={goToDetails}
+      >
+        <Image source={{ uri: image }} style={styles.petImage} />
+        <View style={styles.countdownBorder}>
+          <Countdown
+            intialValue={time}
+            listStyle={styles.countdownStyle}
+            changeColor={true}
+          />
+          <View style={styles.iconView}>
+            <Image
+              source={getIconMode(time)}
+              style={{ height: 30, width: 30 }}
+            />
+          </View>
         </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
-    )
+{
+  /* Stylizes PetCard info */
 }
-
-{/* Stylizes PetCard info */ }
 const styles = StyleSheet.create({
-    container: {
-        height: 203,
-        width: 203,
-        borderWidth: 2,
-        borderRadius: 10,
-        borderColor: 'transparent'
-    },
-    petImage: {
-        // padding: 0,
-        height: 200,
-        width: 200,
-        position: 'absolute',
-        borderRadius: 10,
-        // marginRight: 5,
-    },
-    iconView: {
-        position: 'absolute',
-        marginTop: 160,
-        marginLeft: 160,
-    },
-    darkener: {
-        backgroundColor: 'black',
-        height: 200,
-        width: 200,
-        borderRadius: 10,
-        opacity: 0.2,
-        bottom: 213,
-    },
-    countdownBorder: {
-        height: 200,
-        width: 200,
-        position: 'absolute',
-    },
-    nameText: {
-        color: 'white',
-        fontSize: 30,
-        fontWeight: 'bold',
-        marginLeft: 15,
-    },
-    timeText: {
-        color: 'white',
-        fontSize: 15,
-        fontStyle: 'italic',
-        marginLeft: 15,
-    },
-    countdownStyle: {
-        marginTop: 160,
-        marginRight: 45,
-        justifyContent: 'flex-start',
-        fontFamily: 'boldK2D',
-        zIndex: 2,
-    }
+  container: {
+    width: 180,
+    height: 176,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  petImage: {
+    height: 180,
+    width: 176,
+    borderRadius: 10,
+  },
+  iconView: {
+    alignSelf: "flex-end",
+    marginBottom: 5,
+    marginRight: 5,
+    marginLeft: 5,
+  },
+  countdownBorder: {
+    height: 180,
+    width: 176,
+    flexDirection: "row",
+    backgroundColor: "#000",
+    opacity: 0.6,
+    borderRadius: 10,
+    position: "absolute",
+    alignSelf: "center",
+    justifyContent: "center",
+  },
+  countdownStyle: {
+    marginHorizontal: -5,
+    justifyContent: "center",
+    alignSelf: "flex-start",
+    marginTop: "90%",
+  },
 });
