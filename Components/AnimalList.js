@@ -208,66 +208,67 @@ export default function AnimalList({ navigation }) {
 
     );
 }
+  const goToDetails = (animal) => {
+    console.log(animal);
+    navigation.navigate("AnimalDetails", animal);
+  };
+  const goToShelter = (animal) => {
+    console.log(animal);
+    navigation.navigate("ShelterOptions", animal);
+  };
+  const goToMarket = (animal) => {
+    navigation.navigate("Market");
+  };
 
 // style={{ flexDirection: 'row', flexWrap: 'wrap' }} ADD THIS FOR TWO COLUMNS OF IMAGES
 
 
 {/* Style of the background behind PetCards */ }
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'white',
-        padding: 0
-    },
-    safehouseLogo: {
-        alignSelf: 'center',
-        marginLeft: 13
-    },
-    shelterButtonContainer: {
-        position: 'absolute',
-        marginLeft: 131,
-        marginTop: 2.5,
-    },
-    marketButtonContainer: {
-        position: 'absolute',
-        marginLeft: 30,
-        bottom: -6,
-    },
-    profileButtonContainer: {
-        position: 'absolute',
-        marginLeft: 220,
-        marginTop: 2,
-    },
-    bar: {
-        backgroundColor: '#62BA72',
-        height: 55,
-        width: 320,
-        alignSelf: 'center',
-        borderRadius: 100,
-        borderColor: 'white',
-        borderWidth: 3,
-        position: 'absolute',
-        marginTop: 730,
-    },
-    imageContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        margin: 5,
-        justifyContent: 'center',
-        backgroundColor: 'white',
-        flexWrap: 'wrap',
-    },
-    containerOfImageContainer: {
-        marginRight: 5,
-    },
-    list: {
-        // marginLeft: 12,
-        marginTop: 20,
-    },
-    row: {
-        flex: 1,
-        justifyContent: 'space-evenly',
-        marginTop: 10,
-        // padding: 5
-    }
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  headerContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "10%",
+  },
+  safehouseLogo: {
+    marginTop: "5%",
+  },
+  catList: {},
+  bar: {
+    backgroundColor: "#62BA72",
+    height: 55,
+    width: 320,
+    alignSelf: "center",
+    flexDirection: "row",
+    borderRadius: 100,
+    borderColor: "white",
+    borderWidth: 3,
+    position: "absolute",
+    bottom: 0,
+    marginBottom: "9%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  shelterButtonContainer: { marginHorizontal: "10%" },
+  marketButtonContainer: { marginHorizontal: "5%" },
+  profileButtonContainer: { marginHorizontal: "5%" },
+  imageContainer: {
+    flexDirection: "row",
+    margin: 5,
+    justifyContent: "center",
+    backgroundColor: "white",
+    flexWrap: "wrap",
+  },
+  containerOfImageContainer: {
+    marginRight: 5,
+  },
+  list: {},
+  row: {
+    justifyContent: "space-evenly",
+    marginTop: 15,
+  },
 });
