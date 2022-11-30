@@ -13,13 +13,13 @@ import {
 import { PetCard } from "./Components/PetCard";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AnimalList from "./Components/AnimalList";
-import AnimalDetails from "./Components/AnimalDetails";
+import AnimalList from "./Pages/AnimalList";
+import AnimalDetails from "./Pages/AnimalDetails";
 import ShelterOptions from "./Components/ShelterOptions";
-import Support from "./Components/Support";
+import Support from "./Pages/Support";
 import Adopt from "./Components/Adopt";
 import VisitConfirm from "./Components/VisitConfirm";
-import SupportConfirm from "./Components/SupportConfirm";
+import SupportConfirm from "./Pages/SupportConfirm";
 import ReservePage from "./Components/ReservePage";
 import Market from "./Components/Market";
 import ProfilePage from "./Components/ProfilePage";

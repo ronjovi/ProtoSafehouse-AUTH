@@ -13,8 +13,8 @@ import {
   Pressable,
   TouchableOpacity,
 } from "react-native";
-import { PetCard } from "./PetCard";
-import Countdown from "./Countdown";
+import { PetCard } from "../Components/PetCard";
+import Countdown from "../Components/Countdown";
 import moment from "moment";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -75,16 +75,15 @@ export default function AnimalDetails({ route, navigation }) {
           source={{ uri: route.params.image }}
         />
         <View style={styles.iconContainer}>
-          <View style={styles.backButton}>
+          <View>
             <TouchableOpacity
               style={styles.backButton}
               onPress={() => navigation.goBack()}
             >
               <Ionicons
                 name="arrow-back"
-                size={40}
-                color="black"
-                style={styles.backButton}
+                size={35}
+                color="white"
               />
             </TouchableOpacity>
           </View>
@@ -202,17 +201,11 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     position: "absolute",
-    width: "100%",
-    height: 300,
-    justifyContent: "center",
-    marginTop: "5%",
+    // backgroundColor: "red",
+    height: "100%",
   },
   backButton: {
-    height: "auto",
-    width: 50,
-    marginVertical: "12%",
-    // backgroundColor: "#62BA72",
-    justifyContent: "center",
+    marginTop: "5%",
   },
   shareButton: {
     position: "absolute",
@@ -220,12 +213,11 @@ const styles = StyleSheet.create({
     marginLeft: 390,
   },
   iconImage: {
+    // position: "absolute",
     height: 40,
     width: 40,
-    padding: "5%",
-    marginVertical: "15%",
-    marginLeft: "89%",
-    marginTop: "15%",
+    marginLeft: "88%",
+    marginTop: "47%",
   },
   headerImage: {
     width: "100%",
@@ -233,7 +225,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   flatList: {
-    marginTop: 233,
+    marginTop: "70%",
     backgroundColor: "white",
     borderRadius: 10,
   },
@@ -247,16 +239,15 @@ const styles = StyleSheet.create({
   },
   twoButtonsText: {
     color: "white",
+    marginTop: 8,
     alignSelf: "center",
     fontSize: 15,
-    marginTop: 10,
     fontFamily: "semiBoldK2D",
   },
   twoButtonsRow: {
     flex: 1,
     flexDirection: "row-reverse",
     justifyContent: "center",
-    marginBottom: -25,
   },
   item: {
     marginTop: 2.5,

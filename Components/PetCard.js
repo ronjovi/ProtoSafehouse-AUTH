@@ -9,17 +9,6 @@ import moment from "moment";
 {
   /* This exports the variables (image, name, time) and the function: 'goToDetails' */
 }
-const getBorderColor = (changeColor) => {
-  if (changeColor == true) {
-    if (totalDuration > 5256005.76) {
-      return "#62BA75";
-    } else if (totalDuration < 5256005.76 && totalDuration > 2630000) {
-      return "#B8BA62";
-    } else {
-      return "#BA6262";
-    }
-  }
-};
 
 export const PetCard = ({ image, name, time, goToDetails }) => {
   {
@@ -61,7 +50,7 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
               source={getIconMode(time)}
               style={{ height: 30, width: 30 }}
             />
-          </View>
+        </View>
         <View style={styles.countdownBorder}>
           <Countdown
             intialValue={time}
@@ -91,16 +80,16 @@ export const PetCard = ({ image, name, time, goToDetails }) => {
 }
 const styles = StyleSheet.create({
   container: {
-    width: 187,
-    height: 183,
+    // width: 187,
+    // height: 183,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
     overflow: 'hidden'
   },
   petImage: {
-    height: 180,
-    width: 185,
+    height: 170,
+    width: 175,
 
   },
   iconView: {
@@ -120,7 +109,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     alignSelf: "flext-start",
     justifyContent: "center",
-    paddingRight: 20
+    paddingRight: 20,
+    zIndex: 3,
   },
   countdownStyle: {
     marginHorizontal: -5,

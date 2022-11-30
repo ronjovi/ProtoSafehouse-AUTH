@@ -5,11 +5,13 @@ export default function GoToHome({ navigation }) {
 
     return (
         <View style={{ backgroundColor: 'white', flex: 1 }}>
+            <View style={styles.containerForAll}>
             <Image source={require('../assets/Safehouse_paw.png')} style={styles.safehousePawLogo} />
             <Text style={styles.confirmStyle}>Support Confirmed!</Text>
             <TouchableOpacity onPress={() => navigation.navigate('AnimalList')} style={styles.returnButton}>
                 <Text style={styles.returnButtonText}>Return to Home</Text>
             </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -20,7 +22,9 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         resizeMode: 'contain',
-        marginTop: 325,
+    },
+    containerForAll: {
+        marginTop: '50%'
     },
     confirmStyle: {
         alignSelf: 'center',

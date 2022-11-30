@@ -13,11 +13,14 @@ const UselessTextInput = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <ScrollView>
-
-          <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+      <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
             <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
           </TouchableOpacity>
+        <ScrollView>
+
+          {/* <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
+            <Image source={require('../assets/GreenVector.png')} style={{ alignSelf: 'center', marginTop: 15 }} />
+          </TouchableOpacity> */}
           <Image source={require('../assets/Support.png')} style={styles.safehouseLogo} />
           <Text style={styles.header}>Extend this animal's life with a donation</Text>
           <Text style={styles.safehouseText}></Text>
@@ -103,7 +106,6 @@ const styles = StyleSheet.create({
   backButton: {
     height: 50,
     width: 50,
-    position: 'relative',
   },
   header: {
     alignSelf: 'center',
@@ -119,8 +121,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    height: 40,
-    width: 365,
+    width: "90%",
     alignSelf: 'center',
     margin: 12,
     marginBottom: 10,
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
 
   inputCardInfo: {
     height: 40,
-    width: 365,
+    width: "90%",
     alignSelf: 'center',
     margin: 12,
     marginBottom: 3,
@@ -190,10 +191,7 @@ const styles = StyleSheet.create({
     fontFamily: 'K2D',
   },
   safehouseText: {
-    marginTop: 10,
-    fontSize: 20,
     fontWeight: '400',
-    margin: 0,
   },
   donateButton: {
     backgroundColor: "#62BA75",

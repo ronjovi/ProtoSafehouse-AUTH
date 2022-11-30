@@ -3,7 +3,7 @@
 {/* IN CASE OF ANY ERROR WITH PETCARD ARRANGEMENTS GO TO imageContainer*/ }
 import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
-import { PetCard } from './PetCard';
+import { PetCard } from '../Components/PetCard';
 
 {/* Sets constant 'animals' and a new function 'setAnimals' equal to useState */ }
 {/* After the constants are set, there is hardcoded information about each of the animals*/ }
@@ -12,7 +12,7 @@ export default function AnimalList({ navigation }) {
     const [animals, setAnimals] = useState([
         {
             name: 'Hydra',
-            time: '2022-08-16 05:00:20',
+            time: '2022-12-25 05:00:20',
             image: 'https://i.pinimg.com/originals/34/1e/85/341e858f0482f736058eb4f2536a22d2.jpg',
             breed: 'Calico Cat',
             age: '2 year and 2 months',
@@ -24,7 +24,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Fenrir',
-            time: '2022-08-17 04:00:34',
+            time: '2023-01-17 04:00:34',
             image: 'https://images.unsplash.com/photo-1604916287784-c324202b3205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80',
             breed: 'Black Cat',
             age: '5 years',
@@ -36,7 +36,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Lucifer',
-            time: '2022-08-18 04:00:29',
+            time: '2023-02-18 04:00:29',
             image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
             breed: 'Munchkin Cat',
             age: '1 year',
@@ -48,7 +48,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Chronos',
-            time: '2022-08-20 04:00:18',
+            time: '2023-02-20 04:00:18',
             image: 'https://p4.wallpaperbetter.com/wallpaper/539/65/318/cat-kitten-hat-hd-wallpaper-preview.jpg',
             breed: 'American Shorthair',
             age: '3 years and 6 months',
@@ -60,7 +60,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Bob',
-            time: '2022-08-21 04:00:25',
+            time: '2023-02-21 04:00:25',
             image: 'https://images.petpress.net/wp-content/uploads/2019/11/F216CEB5-0F02-4894-8F61-FCD9D770C0E0.jpeg',
             breed: 'Persian Cat',
             age: '3 years 10 months',
@@ -72,7 +72,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Quetzalcoatl',
-            time: '2022-08-22 04:00:28',
+            time: '2023-02-22 04:00:28',
             image: 'https://i.pinimg.com/originals/5c/92/ac/5c92ac042e5be8fab5c30635d0c36595.jpg',
             breed: 'Companion Cat',
             age: '1 year',
@@ -84,7 +84,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Chupacabra',
-            time: '2022-08-24 04:00:38',
+            time: '2023-03-24 04:00:38',
             image: 'https://i.pinimg.com/originals/8a/9a/c1/8a9ac1aa67aaf56efa2929624adac4b0.jpg',
             breed: 'Sphynx Cat',
             age: '4 years 10 months',
@@ -96,7 +96,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Leviathan',
-            time: '2022-08-25 04:00:49',
+            time: '2023-03-25 04:00:49',
             image: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/British_blue_2009_%28cropped%29.jpg',
             breed: 'British Shorthair Cat',
             age: '5 years 11 months',
@@ -108,7 +108,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Chimera',
-            time: '2022-08-27 04:00:41',
+            time: '2023-03-27 04:00:41',
             image: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F12%2F02%2Fbalinese-sitting-in-a-tree-718322914-2000.jpg',
             breed: 'Siamese/Balinese Cat',
             age: '2 years 7 months',
@@ -120,7 +120,7 @@ export default function AnimalList({ navigation }) {
         },
         {
             name: 'Pablo',
-            time: '2022-08-28 04:00:37',
+            time: '2023-03-28 04:00:37',
             image: 'https://images.squarespace-cdn.com/content/v1/554e744ce4b026a2b08ca248/1618456576189-QHCCF3PD33OAW3H6AL13/2021_1_Vesta_CZ1_EricaDanger_8.jpg',
             breed: 'Scottish Fold',
             age: '1 year',
@@ -151,7 +151,9 @@ export default function AnimalList({ navigation }) {
     return (
         <View style={styles.container}>
 
-            <View style={{ marginTop: 80 }}>
+            <View
+            // style={{ marginTop: 80 }}
+            >
                 <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
 
                 {/* <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
@@ -166,6 +168,7 @@ export default function AnimalList({ navigation }) {
             </View>
 
             <View style={{ flex: 1 }}>
+                {/* This renders the Pet Cards */}
                 <FlatList style={styles.list}
                     numColumns={2}
                     columnWrapperStyle={styles.row}
@@ -235,8 +238,9 @@ const styles = StyleSheet.create({
     marginTop: "10%",
   },
   safehouseLogo: {
-    marginTop: "5%",
-    alignSelf: 'center'
+    marginTop: "15%",
+    marginBottom: "5%",
+    alignSelf: 'center',
   },
   catList: {},
   bar: {
@@ -270,6 +274,6 @@ const styles = StyleSheet.create({
   list: {},
   row: {
     justifyContent: "space-evenly",
-    marginTop: 15,
+    marginTop: 5,
   },
 });
