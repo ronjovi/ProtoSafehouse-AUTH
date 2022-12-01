@@ -28,15 +28,15 @@ export default function AnimalDetails({ route, navigation }) {
     /* Creates the route to go to 'options' tab (via const goToOptions) */
   }
   const goToSupport = () => {
-    navigation.navigate("Support");
+    navigation.navigate("SupportPage");
   };
 
   const goToDetails = () => {
     navigation.navigate("AnimalDetails");
   };
 
-  const goToAdopt = () => {
-    navigation.navigate("Adopt");
+  const goToSchedule = () => {
+    navigation.navigate("SchedulingPage");
   };
 
   const getIconMode = (countdown) => {
@@ -172,7 +172,7 @@ export default function AnimalDetails({ route, navigation }) {
               ></View>
 
               <View style={styles.twoButtonsRow}>
-                <TouchableOpacity style={styles.twoButtons} onPress={goToAdopt}>
+                <TouchableOpacity style={styles.twoButtons} onPress={goToSchedule}>
                   <Text style={styles.twoButtonsText}>Reserve</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     marginTop: "5%",
+    marginLeft: "3%",
   },
   shareButton: {
     position: "absolute",

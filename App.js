@@ -16,11 +16,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AnimalList from "./Pages/AnimalList";
 import AnimalDetails from "./Pages/AnimalDetails";
 import ShelterOptions from "./Components/ShelterOptions";
-import Support from "./Pages/Support";
-import Adopt from "./Components/Adopt";
-import VisitConfirm from "./Components/VisitConfirm";
+import SupportPage from "./Pages/SupportPage";
+import SchedulingPage from "./Pages/SchedulingPage";
+import ReserveConfirm from "./Pages/ReserveConfirm";
 import SupportConfirm from "./Pages/SupportConfirm";
-import ReservePage from "./Components/ReservePage";
+import ReservePage from "./Pages/ReservePage";
 import Market from "./Components/Market";
 import ProfilePage from "./Components/ProfilePage";
 import BadgesRecieved from "./Components/BadgesRecieved";
@@ -68,15 +68,15 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="Support"
-          component={Support}
-          options={{ title: "Support", headerShown: false }}
+          name="SupportPage"
+          component={SupportPage}
+          options={{ title: "Support Page", headerShown: false }}
         />
 
         <Stack.Screen
-          name="Adopt"
-          component={Adopt}
-          options={{ title: "Adopt", headerShown: false }}
+          name="SchedulingPage"
+          component={SchedulingPage}
+          options={{ title: "Scheduling Page", headerShown: false }}
         />
 
         <Stack.Screen
@@ -86,9 +86,9 @@ export default function App() {
         />
 
         <Stack.Screen
-          name="VisitConfirm"
-          component={VisitConfirm}
-          options={{ title: "Visit Confirmed", headerShown: false }}
+          name="ReserveConfirm"
+          component={ReserveConfirm}
+          options={{ title: "Reserve Confirmed", headerShown: false }}
         />
 
         <Stack.Screen

@@ -1,7 +1,7 @@
 {/* Imports React components */ }
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, TouchableOpacity, TextInput, Image } from 'react-native';
-import StripeComponent from './StripeComponent';
+import StripeComponent from '../Components/StripeComponent';
 
 const UselessTextInput = ({ navigation }) => {
   const [text, onChangeText] = React.useState("");
@@ -109,7 +109,6 @@ const styles = StyleSheet.create({
   backButton: {
     height: 50,
     width: 50,
-    position: 'relative',
   },
 
   timerFreezeHeaderContainer: {

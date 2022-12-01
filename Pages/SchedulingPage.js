@@ -15,8 +15,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import CustomDatePicker from "./DatePicker";
-import DateTimePicker from "@react-native-community/datetimepicker";
+import CustomDatePicker from "../Components/DatePicker";
 import { useFonts } from "expo-font";
 
 // import CustomTimePicker from './TimePicker';
@@ -61,7 +60,7 @@ const UselessTextInput = ({ navigation }) => {
           style={styles.safehouseLogo}
         />
         <Text style={styles.safehouseText}>Personal Details</Text>
-        <View style={{ marginBottom: 30 }}>
+        <View>
           <TextInput
             style={styles.input}
             onChangeText={onChangeNumber}
@@ -90,7 +89,7 @@ const UselessTextInput = ({ navigation }) => {
         <Text style={styles.safehouseText}>
           When do you plan on visiting the shelter?
         </Text>
-        <View style={{ flexDirection: "row", marginTop: 39, marginBottom: 43 }}>
+        <View style={{ flexDirection: "row", marginBottom: 30, }}>
           <Text style={styles.dateTimeConfirmText}>Date:</Text>
           <CustomDatePicker
             textStyle={{
@@ -113,7 +112,7 @@ const UselessTextInput = ({ navigation }) => {
             value={"08"}
             textAlign={"center"}
           />
-          <Text style={{ marginLeft: 14, marginRight: 10, fontSize: 25 }}>
+          <Text style={{ marginLeft: "1%", marginRight: "1%", fontSize: 25 }}>
             :
           </Text>
           <TextInput
@@ -142,10 +141,10 @@ const UselessTextInput = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
-        {/* <TouchableOpacity onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
-                        <Text style={styles.visitText}>Proceed to Reservation</Text>
-                    </TouchableOpacity> */}
-        <View style={styles.reservationInput}>
+        <TouchableOpacity onPress={() => navigation.navigate("ReservePage")} style={styles.visitButton}>
+          <Text style={styles.visitText}>Proceed to Reservation</Text>
+        </TouchableOpacity>
+        {/* <View style={styles.reservationInput}>
           <TextInput
             style={styles.input}
             onChangeText={onChangeNumber}
@@ -155,14 +154,14 @@ const UselessTextInput = ({ navigation }) => {
             keyboardType="default"
           />
           <Text style={styles.xText}>$XX.XX will go to Safehouse</Text>
-        </View>
+        </View> */}
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => navigation.navigate("VisitConfirm")}
           style={styles.visitButton}
         >
           <Text style={styles.visitText}>Confirm Reservation</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {/* </ScrollView> */}
       </SafeAreaView>
@@ -179,8 +178,6 @@ const styles = StyleSheet.create({
   backButton: {
     height: 50,
     width: 50,
-    position: "relative",
-    left: 20,
   },
   container: {
     flex: 1,
@@ -190,8 +187,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 325,
     alignSelf: "center",
-    margin: 12,
-    marginBottom: 20,
+    marginBottom: 15,
     borderWidth: 1,
     padding: 10,
     borderRightColor: "white",
@@ -236,7 +232,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     fontFamily: "semiBoldK2D",
-    fontSize: 18,
+    fontSize: 14,
   },
   dateTimeConfirmText: {
     fontSize: 20,
@@ -249,10 +245,7 @@ const styles = StyleSheet.create({
     color: "#545454",
   },
   timeSetView: {
-    // flex: 1,
     flexDirection: "row",
-    // alignItems: 'center',
-    // marginBottom: 70,
   },
   timeSetStyle: {
     backgroundColor: "#EBEBEB",
