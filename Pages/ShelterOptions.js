@@ -2,7 +2,7 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, Image, Platform, TouchableOpacityComponent, TouchableOpacity } from 'react-native';
 import React, { startTransition } from 'react';
 import { launchImageLibrary } from 'react-native-image-picker';
-import CountDownTimer from './Countdown';
+import CountDownTimer from '../Components/Countdown';
 
 // const SERVER_URL = 'http://localhost:3000';
 
@@ -92,7 +92,7 @@ export default function ShelterOptions({ route, navigation }) {
 
               <Image source={require('../assets/ShelterPanel.png')} style={styles.ShelterPanel} />
 
-              <View style={{ flexDirection: 'row', marginBottom: 3, marginTop: 74 }}>
+              <View style={{ flexDirection: 'row', marginBottom: 3, marginTop: '10%' }}>
 
                 <View style={styles.shelterContainer}>
                   <Text style={styles.shelterName}>Lost Anglo Animal Shelter</Text>
@@ -167,15 +167,15 @@ export default function ShelterOptions({ route, navigation }) {
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
                 ]}
                 renderItem={({ item }) => (
-                  <View style = {{ flexDirection: 'row', borderWidth: 1, alignSelf: 'center', width: 190, }}>
-                    <Image style = {{height: 60, width: 60, borderRadius: 10,}} source={{ uri: item.image }}/>
+                  <View style = {{ flexDirection: 'row', borderWidth: 1, alignSelf: 'center', width: 190, backgroundColor: 'yellow' }}>
+                    <Image style = {{height: 50, width: 50, borderRadius: 10, marginLeft: '2%', marginTop: '2%', position: 'absolute'}} source={{ uri: item.image }}/>
                     <View>
-                      <Text style={{fontSize: 24, marginLeft: 10,}}>
+                      <Text style={{fontSize: 30, marginLeft: '40%', marginTop: '6%', position: 'absolute'}}>
                         {item.name}
                       </Text>
 
                     
-                      <CountDownTimer listStyle ={{width: 38, marginLeft: 60,}} intialValue={item.time}  changeColor={false} />
+                      <CountDownTimer listStyle ={{ backgroundColor: 'green', width: '100%', height: 30, marginTop: '36%', marginLeft: '2%'}} intialValue={item.time}  changeColor={false} />
                     </View>
                   </View>
 
@@ -202,14 +202,14 @@ const styles = StyleSheet.create({
   backButton: {
     height: 50,
     width: 50,
-    position: 'relative',
-    left: 20,
   },
   ShelterPanel: {
     alignSelf: 'center',
+    marginTop: '5%',
   },
   shelterContainer: {
-    marginLeft: 25,
+    marginLeft: '3.5%',
+    // backgroundColor: 'pink',
   },
   shelterName: {
     fontFamily: 'K2D',
@@ -237,16 +237,15 @@ const styles = StyleSheet.create({
     top: 4,
     backgroundColor: '#62BA75',
     height: 20,
-    width: 120,
+    width: 105,
     borderRadius: 5,
     marginLeft: 12,
   },
   buttonText: {
     fontFamily: 'K2D',
-    fontSize: 18,
+    fontSize: 15,
     color: 'white',
     alignSelf: 'center',
-    bottom: 3,
   },
   item: {
     marginTop: 2.5,
@@ -272,7 +271,8 @@ const styles = StyleSheet.create({
   },
   dataContainer: {
     height: 35,
-    width: 228,
-    marginLeft: 15,
+    width: 150,
+    marginLeft: '5%',
+    // backgroundColor: 'blue',
   },
 });

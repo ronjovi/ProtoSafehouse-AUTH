@@ -82,7 +82,7 @@ export default function AnimalDetails({ route, navigation }) {
             >
               <Ionicons
                 name="arrow-back"
-                size={35}
+                size={30}
                 color="white"
               />
             </TouchableOpacity>
@@ -201,11 +201,10 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     position: "absolute",
-    // backgroundColor: "red",
     height: "100%",
   },
   backButton: {
-    marginTop: "5%",
+    marginTop: "6%",
     marginLeft: "3%",
   },
   shareButton: {
@@ -218,7 +217,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     marginLeft: "88%",
-    marginTop: "47%",
+    marginTop: "49%",
   },
   headerImage: {
     width: "100%",

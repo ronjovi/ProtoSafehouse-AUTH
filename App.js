@@ -15,15 +15,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AnimalList from "./Pages/AnimalList";
 import AnimalDetails from "./Pages/AnimalDetails";
-import ShelterOptions from "./Components/ShelterOptions";
+import ShelterOptions from "./Pages/ShelterOptions";
 import SupportPage from "./Pages/SupportPage";
 import SchedulingPage from "./Pages/SchedulingPage";
 import ReserveConfirm from "./Pages/ReserveConfirm";
 import SupportConfirm from "./Pages/SupportConfirm";
 import ReservePage from "./Pages/ReservePage";
 import Market from "./Components/Market";
-import ProfilePage from "./Components/ProfilePage";
-import BadgesRecieved from "./Components/BadgesRecieved";
+import ProfilePage from "./Pages/ProfilePage";
+import BadgesRecieved from "./Pages/BadgesRecieved";
 import { useFonts } from "expo-font";
 import { LogBox } from "react-native-web";
 

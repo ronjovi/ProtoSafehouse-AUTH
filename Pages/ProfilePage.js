@@ -52,21 +52,21 @@ const ProfilePage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <View style={styles.NFTView}>
+        <View>
           <Image
             source={require("../assets/Clean_Rat.png")}
             style={[
               styles.NFTBadge,
-              { marginTop: 60, alignSelf: "flex-start" },
+              { marginTop: 40, alignSelf: "flex-start" },
             ]}
           />
           <Image
             source={require("../assets/Coolcat.png")}
-            style={[styles.NFTBadge, { marginTop: 60, alignSelf: "flex-end" }]}
+            style={[styles.NFTBadge, { marginTop: 40, alignSelf: "flex-end" }]}
           />
           <Image
             source={require("../assets/Cat_stronaut.png")}
-            style={[styles.NFTBadge, { alignSelf: "center", marginTop: 110 }]}
+            style={[styles.NFTBadge, { alignSelf: "center", marginTop: 80 }]}
           />
 
           <View>
@@ -107,8 +107,8 @@ const ProfilePage = ({ navigation }) => {
                     <Image
                       source={{ uri: item.image }}
                       style={{
-                        height: 81,
-                        width: 81,
+                        height: 70,
+                        width: 70,
                         borderRadius: 15,
                         borderWidth: 1,
                         marginHorizontal: 8,
@@ -124,7 +124,7 @@ const ProfilePage = ({ navigation }) => {
             </View>
           </View>
 
-          <View style={styles.adoptionContainer}>
+          <View style={styles.supportContainer}>
             <Text style={styles.adoptedHeading}>Successful Support</Text>
             <View style={styles.catsAdoptedList}>
               <FlatList
@@ -135,8 +135,8 @@ const ProfilePage = ({ navigation }) => {
                     <Image
                       source={{ uri: item.image }}
                       style={{
-                        height: 81,
-                        width: 81,
+                        height: 70,
+                        width: 70,
                         borderRadius: 15,
                         borderWidth: 1,
                         marginHorizontal: 8,
@@ -151,8 +151,7 @@ const ProfilePage = ({ navigation }) => {
               </TouchableOpacity>
             </View>
           </View>
-
-          <View style={styles.adoptionContainer}>
+          <View style={styles.NFTContainer}>
             <Text style={styles.adoptedHeading}>NFT Badge Showcase</Text>
             <View style={styles.catsAdoptedList}>
               <FlatList
@@ -163,8 +162,8 @@ const ProfilePage = ({ navigation }) => {
                     <Image
                       source={item.image}
                       style={{
-                        height: 81,
-                        width: 81,
+                        height: 70,
+                        width: 70,
                         borderRadius: 41,
                         borderWidth: 1,
                         marginHorizontal: 8,
@@ -179,8 +178,7 @@ const ProfilePage = ({ navigation }) => {
               </TouchableOpacity>
             </View>
           </View>
-
-        
+          {/* </ScrollView> */}
         </View>
       </SafeAreaView>
     </View>
@@ -198,25 +196,10 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     backgroundColor: "red",
   },
-  userAndConBox: {
-    marginLeft: 20,
-  },
-  bioBox: {
-    position: "absolute",
-    marginLeft: 215,
-  },
-  NFTView: {
-    height: 310,
-    position: "relative",
-  },
-  CatsAdopted: {
-    marginBottom: "10%",
-    bottom: 5,
-  },
   NFTBadge: {
     position: "absolute",
-    height: 181,
-    width: 181,
+    height: 150,
+    width: 150,
     borderWidth: 2,
     borderRadius: 100,
   },
@@ -224,7 +207,6 @@ const styles = StyleSheet.create({
     fontFamily: "semiBoldK2D",
     fontSize: 50,
     color: "#545454",
-    marginTop: 10,
   },
   biographyText: {
     fontFamily: "lightK2D",
@@ -235,23 +217,28 @@ const styles = StyleSheet.create({
   backButton: {
     height: 50,
     width: 50,
-    position: "absolute",
-    left: 20,
-    top: 0,
+    // position: "absolute",
   },
   profileView: {
-    backgroundColor: "#fff",
-    height: 600,
-    marginTop: 0,
-    borderRadius: 25,
+    // backgroundColor: "blue",
+    backgroundColor: 'white',
+    height: '100%',
+    marginTop: '40%',
+    // borderRadius: 25,
     width: "100%",
   },
   profileHeader: {
     padding: "2%",
-    marginLeft: 15,
+    marginLeft: "3%",
   },
   adoptionContainer: {
-    // alignItems: "flex-start",
+    // backgroundColor: 'yellow',
+  },
+  supportContainer: {
+    // backgroundColor: 'pink',
+  },
+  NFTContainer: {
+    // backgroundColor: 'red',
   },
   adoptedHeading: {
     marginLeft: "5%",
@@ -259,12 +246,14 @@ const styles = StyleSheet.create({
   },
   catsAdoptedList: {
     flexDirection: "row",
+    // backgroundColor: 'green',
+    // opacity: 0.4,
     paddingVertical: '4%',
     paddingHorizontal: '4%'
   },
   greenButton: {
     backgroundColor: "#62BA75",
-    marginHorizontal: 5,
+    marginHorizontal: 20,
     justifyContent: "center",
     borderRadius: 10,
     width: 60,

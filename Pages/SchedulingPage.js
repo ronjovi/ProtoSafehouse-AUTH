@@ -59,7 +59,7 @@ const UselessTextInput = ({ navigation }) => {
           source={require("../assets/Scheduling.png")}
           style={styles.safehouseLogo}
         />
-        <Text style={styles.safehouseText}>Personal Details</Text>
+        <Text style={styles.safehouseText1}>Personal Details</Text>
         <View>
           <TextInput
             style={styles.input}
@@ -89,7 +89,7 @@ const UselessTextInput = ({ navigation }) => {
         <Text style={styles.safehouseText}>
           When do you plan on visiting the shelter?
         </Text>
-        <View style={{ flexDirection: "row", marginBottom: 30, }}>
+        <View style={{ flexDirection: "row", marginBottom: 30, marginTop: 30 }}>
           <Text style={styles.dateTimeConfirmText}>Date:</Text>
           <CustomDatePicker
             textStyle={{
@@ -208,13 +208,23 @@ const styles = StyleSheet.create({
     fontFamily: "K2D",
     color: "#545454",
   },
-  safehouseText: {
+  safehouseText1: {
+    marginTop: "5%",
     fontSize: 18,
     fontWeight: "400",
     fontFamily: "K2D",
     color: "#545454",
     justifyContent: "flex-start",
-    marginLeft: 35,
+    marginLeft: "10%",
+  },
+  safehouseText: {
+    marginTop: "8%",
+    fontSize: 18,
+    fontWeight: "400",
+    fontFamily: "K2D",
+    color: "#545454",
+    justifyContent: "flex-start",
+    marginLeft: "10%",
     marginRight: "5%",
   },
   visitButton: {
@@ -226,6 +236,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
     justifyContent: "center",
+    marginTop: "7%",
   },
   visitText: {
     color: "white",

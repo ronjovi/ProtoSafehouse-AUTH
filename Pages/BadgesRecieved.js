@@ -3,13 +3,8 @@ import {
   Text,
   TouchableOpacity,
   View,
-  SafeAreaView,
-  ScrollView,
   FlatList,
-  Button,
-  Pressable,
   Image,
-  Platform,
 } from "react-native";
 import React from "react";
 
@@ -82,8 +77,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-around",
   },
+  NFTrecieve: {
+    marginTop: '10%',
+  },
   header: {
-    marginTop: 330,
+    marginTop: '50%',
     alignSelf: "center",
     fontFamily: "semiBoldK2D",
     fontSize: 24,
@@ -117,7 +115,9 @@ const styles = StyleSheet.create({
     color: "white",
     alignSelf: "center",
     fontFamily: "semiBoldK2D",
-    fontSize: 18,
+    fontSize: 15,
   },
-  proceedToProfile: { marginBottom: "55%" },
+  proceedToProfile: {
+    marginBottom: "55%"
+  },
 });
