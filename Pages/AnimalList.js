@@ -155,16 +155,6 @@ export default function AnimalList({ navigation }) {
             // style={{ marginTop: 80 }}
             >
                 <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-
-                {/* <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
-                   
-                    <Image source={require('../assets/shelter.png')} />
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
- 
-                    <Image source={require('../assets/market.png')} />
-                </TouchableOpacity> */}
             </View>
 
             <View style={{ flex: 1 }}>
@@ -255,12 +245,21 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     marginBottom: "9%",
-    justifyContent: "center",
+    // justifyContent: "center",
     alignItems: "center",
   },
-  shelterButtonContainer: { marginHorizontal: "10%" },
-  marketButtonContainer: { marginHorizontal: "5%" },
-  profileButtonContainer: { marginHorizontal: "5%" },
+  shelterButtonContainer: {
+    position: 'absolute',
+    marginLeft: '41%',
+    },
+  marketButtonContainer: {
+    marginLeft: '9%',
+    position: 'absolute',
+    },
+  profileButtonContainer: {
+    marginLeft: '70%',
+    position: 'absolute',
+    },
   imageContainer: {
     flexDirection: "row",
     margin: 5,

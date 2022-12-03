@@ -24,6 +24,8 @@ import ReservePage from "./Pages/ReservePage";
 import Market from "./Components/Market";
 import ProfilePage from "./Pages/ProfilePage";
 import BadgesRecieved from "./Pages/BadgesRecieved";
+import AdoptionLog from "./Pages/Shelter Panel/AdoptionLog";
+
 import { useFonts } from "expo-font";
 import { LogBox } from "react-native-web";
 
@@ -113,6 +115,12 @@ export default function App() {
           name="ProfilePage"
           component={ProfilePage}
           options={{ title: "Profile Page", headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="AdoptionLog"
+          component={AdoptionLog}
+          options={{ title: "Adoption Log", headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,6 +1,5 @@
 {/* Imports React components */ }
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, FlatList, Button, Pressable, Image, Platform, TouchableOpacityComponent, TouchableOpacity } from 'react-native';
-import React, { startTransition } from 'react';
 import { launchImageLibrary } from 'react-native-image-picker';
 import CountDownTimer from '../Components/Countdown';
 
@@ -70,10 +69,10 @@ import CountDownTimer from '../Components/Countdown';
 export default function ShelterOptions({ route, navigation }) {
   console.log(route);
 
-  {/* Creates the route to go to 'Support' and 'Adopt' tab (via const goToSupport and goToAdopt functions) */ }
-  //NOTHING HERE YET
+  function goToShelterAdopt() {
+    navigation.navigate('AdoptionLog')
+  };
 
-  {/* Displays two buttons... One is meant to adopt the animal as a pet, and the other one is meant to support the animal */ }
   return (
 
     <View style={styles.container}>
@@ -133,7 +132,7 @@ export default function ShelterOptions({ route, navigation }) {
                   <Text style={styles.buttonText}>Support</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.longButton}>
+                <TouchableOpacity style={styles.longButton} onPress={() => goToShelterAdopt()}>
                   <Text style={styles.buttonText}>Adoptions</Text>
                 </TouchableOpacity>
 
@@ -156,7 +155,7 @@ export default function ShelterOptions({ route, navigation }) {
               <Text style={{ fontFamily: 'lightK2D', fontSize: 14, marginTop: 5, marginLeft: 25, fontSize: 18, color: '#545454' }}>Active Entries</Text>
 
               <FlatList
-                // scrollEnabled={true}
+                // scrollEnabled={true}  <-- The scrollEnabled={true} doesn't achieve scrollability for the Cat List under Active Entries for some reason.
                 style={styles.catList}
                 numColumns={2}
                 data={[
@@ -167,7 +166,15 @@ export default function ShelterOptions({ route, navigation }) {
                   { name: 'Cat', time: '2022-08-25 04:00:29', image: 'https://images.unsplash.com/photo-1615789591457-74a63395c990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' },
                 ]}
                 renderItem={({ item }) => (
-                  <View style = {{ flexDirection: 'row', borderWidth: 1, alignSelf: 'center', width: 190, backgroundColor: 'yellow' }}>
+                  <View
+                  style =
+                    {{
+                    flexDirection: 'row',
+                    borderWidth: 1,
+                    alignSelf: 'center',
+                    width: 190,
+                    // backgroundColor: 'yellow'
+                    }}>
                     <Image style = {{height: 50, width: 50, borderRadius: 10, marginLeft: '2%', marginTop: '2%', position: 'absolute'}} source={{ uri: item.image }}/>
                     <View>
                       <Text style={{fontSize: 30, marginLeft: '40%', marginTop: '6%', position: 'absolute'}}>
@@ -175,7 +182,20 @@ export default function ShelterOptions({ route, navigation }) {
                       </Text>
 
                     
-                      <CountDownTimer listStyle ={{ backgroundColor: 'green', width: '100%', height: 30, marginTop: '36%', marginLeft: '2%'}} intialValue={item.time}  changeColor={false} />
+                      <CountDownTimer
+
+                      listStyle =
+                      {{
+                        // backgroundColor: 'green',
+                        width: '100%',
+                        height: 30,
+                        marginTop: '36%',
+                        marginLeft: '2%'
+                      }}
+
+                        intialValue={item.time}
+                        
+                        changeColor={false} />
                     </View>
                   </View>
 
