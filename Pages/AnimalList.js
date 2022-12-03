@@ -4,6 +4,7 @@
 import { StyleSheet, Text, Pressable, View, SafeAreaView, ScrollView, Image, FlatList, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { PetCard } from '../Components/PetCard';
+import NavBar from '../Components/NavBar';
 
 {/* Sets constant 'animals' and a new function 'setAnimals' equal to useState */ }
 {/* After the constants are set, there is hardcoded information about each of the animals*/ }
@@ -168,7 +169,8 @@ export default function AnimalList({ navigation }) {
                         <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
                     )}
                 />
-                <View style={styles.bar}>
+                <NavBar style={styles.NavBar}/>
+                {/* <View style={styles.bar}>
                     <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
                         <Image source={require('../assets/market.png')} />
                     </TouchableOpacity>
@@ -178,40 +180,12 @@ export default function AnimalList({ navigation }) {
                     <TouchableOpacity style={styles.profileButtonContainer} onPress={goToProfile}>
                         <Image source={require('../assets/profile.png')} />
                     </TouchableOpacity>
-                </View>
+                </View> */}
             </View>
         </View>
-        // <View style={styles.container}>
-        //     <SafeAreaView style={styles.container}>
-        //         <Image source={require('../assets/Safehouse_logo.png')} style={styles.safehouseLogo} />
-        //         <ScrollView>
-        //             <Pressable style={styles.shelterButtonContainer} onPress={goToShelter}>
-        //             <Text>Shelter Button Text Placeholder</Text>
-        //             </Pressable>
-        //             <View style={styles.containerOfImageContainer}>
-        //             <View style={styles.imageContainer}>
-        //             {animals.map((animal) => (
-        //                 <PetCard key={animal.name} goToDetails={() => { goToDetails(animal) }} name={animal.name} time={animal.time} image={animal.image} />
-        //             ))}
-        //             </View>
-        //             </View>
-        //         </ScrollView>
-        //     </SafeAreaView>
-        // </View>
 
     );
 }
-  const goToDetails = (animal) => {
-    console.log(animal);
-    navigation.navigate("AnimalDetails", animal);
-  };
-  const goToShelter = (animal) => {
-    console.log(animal);
-    navigation.navigate("ShelterOptions", animal);
-  };
-  const goToMarket = (animal) => {
-    navigation.navigate("Market");
-  };
 
 // style={{ flexDirection: 'row', flexWrap: 'wrap' }} ADD THIS FOR TWO COLUMNS OF IMAGES
 
@@ -233,33 +207,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   catList: {},
-  bar: {
-    backgroundColor: "#62BA72",
-    height: 55,
-    width: 320,
-    alignSelf: "center",
-    flexDirection: "row",
-    borderRadius: 100,
-    borderColor: "white",
-    borderWidth: 3,
-    position: "absolute",
-    bottom: 0,
-    marginBottom: "9%",
-    // justifyContent: "center",
-    alignItems: "center",
-  },
-  shelterButtonContainer: {
-    position: 'absolute',
-    marginLeft: '41%',
-    },
-  marketButtonContainer: {
-    marginLeft: '9%',
-    position: 'absolute',
-    },
-  profileButtonContainer: {
-    marginLeft: '70%',
-    position: 'absolute',
-    },
   imageContainer: {
     flexDirection: "row",
     margin: 5,

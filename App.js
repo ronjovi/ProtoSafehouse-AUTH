@@ -21,7 +21,7 @@ import SchedulingPage from "./Pages/SchedulingPage";
 import ReserveConfirm from "./Pages/ReserveConfirm";
 import SupportConfirm from "./Pages/SupportConfirm";
 import ReservePage from "./Pages/ReservePage";
-import Market from "./Components/Market";
+import Market from "./Pages/Market";
 import ProfilePage from "./Pages/ProfilePage";
 import BadgesRecieved from "./Pages/BadgesRecieved";
 import AdoptionLog from "./Pages/Shelter Panel/AdoptionLog";

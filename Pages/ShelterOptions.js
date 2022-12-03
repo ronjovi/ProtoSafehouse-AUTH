@@ -98,7 +98,7 @@ export default function ShelterOptions({ route, navigation }) {
                 </View>
 
                 <View style={styles.editButtonContainer}>
-                  <TouchableOpacity style={styles.button}>
+                  <TouchableOpacity style={styles.button} onPress={() => {alert('Edit Button is a Work In Progress')}}>
                     <Text style={styles.buttonText}>Edit</Text>
                   </TouchableOpacity>
                 </View>
