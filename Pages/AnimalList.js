@@ -169,18 +169,8 @@ export default function AnimalList({ navigation }) {
                         <PetCard key={item.name} goToDetails={() => { goToDetails(item) }} name={item.name} time={item.time} image={item.image} />
                     )}
                 />
-                <NavBar style={styles.NavBar}/>
-                {/* <View style={styles.bar}>
-                    <TouchableOpacity style={styles.marketButtonContainer} onPress={goToMarket}>
-                        <Image source={require('../assets/market.png')} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.shelterButtonContainer} onPress={goToShelter}>
-                        <Image source={require('../assets/shelter.png')} />
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.profileButtonContainer} onPress={goToProfile}>
-                        <Image source={require('../assets/profile.png')} />
-                    </TouchableOpacity>
-                </View> */}
+                {/* Pass navigation variable from AnimalList through NavBarn  ----  Look at the comment above the navigation routes in NavBar.js */}
+                <NavBar style={styles.NavBar} navigation={navigation}/>
             </View>
         </View>
 

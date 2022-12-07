@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Image, Text, View, SafeAreaView, ScrollView, TouchableOpacity, } from "react-native";
 
-function NavBar({ route, navigation }) {
+
+// This passes in navigation from AnimalList.js from the NavBar component
+function NavBar({ navigation }) {
 
 
     const goToShelter = ( ) => {
         navigation.navigate('ShelterOptions');
-        console.log('to the shelter')
     }
     const goToMarket = ( ) => {
         navigation.navigate('Market');
-        console.log('to the market')
     }
 
     const goToProfile = ( ) => {
         navigation.navigate('ProfilePage');
-        console.log('to profile')
     }
     return (
         <View style={styles.NavBarContainer}>
@@ -47,6 +46,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
+        top: '85%'
     },
     marketButtonContainer: {
         // backgroundColor: 'red',
@@ -61,6 +61,6 @@ const styles = StyleSheet.create({
     profileButtonContainer: {
         // backgroundColor: 'green',
         // position: 'absolute',
-        left: '100%',
+        left: '80%',
     },
   });
