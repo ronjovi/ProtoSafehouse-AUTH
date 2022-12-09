@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     logo: {
         alignSelf: 'center',
         marginTop: '10%',
+        marginBottom: '10%',
     },
   });
   

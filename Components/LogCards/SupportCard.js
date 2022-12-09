@@ -16,5 +16,7 @@ export default SupportCard;
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'blue',
+        height: 52,
+
     },
 })
