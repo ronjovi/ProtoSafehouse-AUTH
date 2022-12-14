@@ -25,6 +25,9 @@ import Market from "./Pages/Market";
 import ProfilePage from "./Pages/ProfilePage";
 import BadgesRecieved from "./Pages/BadgesRecieved";
 import AdoptionLog from "./Pages/Shelter Panel/AdoptionLog";
+import ReservationLog from "./Pages/Shelter Panel/ReservationLog";
+import SupportLog from "./Pages/Shelter Panel/SupportLog";
+
 
 import { useFonts } from "expo-font";
 import { LogBox } from "react-native-web";
@@ -121,6 +124,18 @@ export default function App() {
           name="AdoptionLog"
           component={AdoptionLog}
           options={{ title: "Adoption Log", headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="ReservationLog"
+          component={ReservationLog}
+          options={{ title: "Reservation Log", headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="SupportLog"
+          component={SupportLog}
+          options={{ title: "Support Log", headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

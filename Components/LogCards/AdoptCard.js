@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Image, Text, View, SafeAreaView, ScrollView, TouchableOpacity, } from "react-native";
+import { StyleSheet, Image, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Pressable, } from "react-native";
 
 function AdoptCard() {
     return (
@@ -14,7 +14,7 @@ function AdoptCard() {
                     </View>
                 </View>
             </View>
-            <View style={styles.greenSide}>
+            <TouchableOpacity style={styles.greenSide}>
                 <View style={styles.catData}>
                     <Text style={styles.defaultTextGreenSide}>Felis</Text>
                     <Text style={styles.defaultSmallTextGreenSide}>(Adopted)</Text>
@@ -26,7 +26,7 @@ function AdoptCard() {
                 <View>
                     <Image source={require('../../assets/Coolcat.png')} style={styles.image}/>
                 </View>
-            </View>
+            </TouchableOpacity>
         </View>
     )
 }

@@ -73,6 +73,14 @@ export default function ShelterOptions({ route, navigation }) {
     navigation.navigate('AdoptionLog')
   };
 
+  function goToShelterReserve() {
+    navigation.navigate('ReserveLog')
+  };
+
+  function goToShelterSupport() {
+    navigation.navigate('SupportLog')
+  };
+
   return (
 
     <View style={styles.container}>
@@ -128,7 +136,7 @@ export default function ShelterOptions({ route, navigation }) {
 
                 <Text style={{ fontFamily: 'lightK2D', fontSize: 18, }}>Records:</Text>
 
-                <TouchableOpacity style={styles.longButton}>
+                <TouchableOpacity style={styles.longButton} onPress={() => goToShelterSupport()}>
                   <Text style={styles.buttonText}>Support</Text>
                 </TouchableOpacity>
 
@@ -143,7 +151,7 @@ export default function ShelterOptions({ route, navigation }) {
                   <Text style={styles.Management}>Management</Text>
                 </View>
                 <View style={styles.ReserveUploadButtonContainer}>
-                  <TouchableOpacity style={styles.longerButton}>
+                  <TouchableOpacity style={styles.longerButton} onPress={() => goToShelterReserve()}>
                     <Text style={styles.buttonText}>Reservations</Text>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.longerButton}>

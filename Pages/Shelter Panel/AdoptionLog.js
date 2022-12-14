@@ -15,8 +15,9 @@ function AdoptionLog({ navigation }) {
                     <Image source={require('../../assets/AdoptionLog.png')} style={styles.logo}/>
                 </View>
                 <AdoptCard />
-                <ReserveCard />
-                <SupportCard />
+                <AdoptCard />
+                <AdoptCard />
+                <AdoptCard />
             </SafeAreaView>
         </View>
     )
