@@ -16,7 +16,7 @@ signInWithEmailAndPassword(auth, email, password)
     const user = userCredential.user;
     // ...
         // set in our store
-        dispatch(setUser({ ...user}));
+        dispatch(setUser({ firstname: 'john', age: 21}));
   })
   .catch((error) => {
     const errorCode = error.code;

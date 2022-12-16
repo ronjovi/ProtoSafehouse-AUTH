@@ -22,6 +22,7 @@ import SignIn from "../Pages/logged-out/SignIn";
 import { useState } from "react";
 import { useAppSelector } from "../store/hook";
 import { getIsLoggedIn } from "../store/userSession";
+import SignUp from "../features/auth/routes/SignUp";
 
 const Stack = createNativeStackNavigator();
 
@@ -132,8 +133,8 @@ export default function Route() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Login"
-          component={SignIn}
+          name="Signup"
+          component={SignUp}
           options={{ title: "", headerShown: false }}
         />
       </Stack.Navigator>

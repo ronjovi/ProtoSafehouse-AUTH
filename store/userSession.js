@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loggedIn: false, // user is not logged in by default
-  user: null
+  user: null,
 };
 
 export const userSession = createSlice({
@@ -18,15 +18,16 @@ export const userSession = createSlice({
     logOut: (state) => {
       // when user logs in, update logged in state
       state.loggedIn = false;
+      state.user = null;
     },
   },
 });
-
-export const {setUser} = userSession.actions;
+// export reducers
+export const {setUser, logOut} = userSession.actions;
 
 // create getters
 
-// get the user loggedInSTate
+// get the user log in status
 export const getIsLoggedIn = (state) => state.userSession.loggedIn;
 export const getUser = (state) => state.userSession.user;
 
